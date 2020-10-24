@@ -9,23 +9,26 @@
 	//$e = new Empleados();
 	//$todos = $e->getTodos();
 
-	//session_start();
-	var_dump("hola1");
+	session_start();
+
 	if(count($_POST)>0){
-		var_dump("hola2");
+
 
 		/////////////!!!!!!!!!!!!!!!!!!!! VALIDAR $_POST['usuario'] !!!!!!!!!!!!!!!!!!///////////////
 
 		$u = new Usuarios();
-		var_dump("hola3");
+		
 		$usuario = $u->GetUsuario($_POST['usuario']);
-		var_dump("hola4");
-
-		var_dump($usuario);
+	
 
 		if (!$usuario) {
-			echo "Usuario o contraseña incorrecta";
+		
+			$v = new FormLoginError();
+			$v->ErrorLogin = "Usuario y/o contraseña incorrecta";
+		    //render sería como decirle "dibujate"
+			$v->render();
 			exit();
+
 		} else{
 
 		
@@ -33,22 +36,28 @@
 
 			if ($usuario['pass'] != sha1($_POST['pass'])){
 
-				echo "Usuario o contraseña incorrecta";
+				$v = new FormLoginError();
+				$v->ErrorLogin = "Usuario y/o contraseña incorrecta";
+			    //render sería como decirle "dibujate"
+				$v->render();
 				exit();
 			}
 
 			if ($usuario['cod_estado'] != 'A'){
 
-				echo "El usuario no se encuentra activo";
+				$v = new FormLoginError();
+				$v->ErrorLogin = "Usuario inactivo";
+			    //render sería como decirle "dibujate"
+				$v->render();
 				exit();
 
 			}
 
 			echo "validado correctamente";
-			//$_SESSION['logueado'] = true;
-			//$_SESSION['usuario'] = $_POST['usuario'];
-			//header("Location: consultaSaldos.php");
-			//exit;
+			$_SESSION['logueado'] = true;
+			$_SESSION['usuario'] = $_POST['usuario'];
+			header("Location: PantallaSaldos.php");
+			exit();
 	
 		}
 
