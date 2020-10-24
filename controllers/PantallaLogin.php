@@ -3,13 +3,13 @@
 // controllers/PantallaLogin.php
 
 	require '../fw/fw.php';
-	//require '../models/Empleados.php';
+	require '../models/Usuarios.php';
 	require '../views/FormLogin.php';
 
 	//$e = new Empleados();
 	//$todos = $e->getTodos();
 
-	session_start();
+	//session_start();
 
 	if(count($_POST)>0){
 
