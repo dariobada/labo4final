@@ -76,7 +76,7 @@
 
 
 		<div class="general">
-			<form action="PantallaLogin.php" method="post">
+			<form action="" method="post">
 				<label>Usuario</label>
 				<br>
 				<input type="text" name="usuario" id="usuario" autofocus="autofocus" required="required" title="Ingrese su usuario">
