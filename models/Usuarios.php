@@ -11,7 +11,7 @@
 			$cons = "'" . $usua . "'";
 			$sentencia = 'SELECT * FROM public."USUARIOS" WHERE "nombre_usuario" = ';
 
-			$this->db->query($sentencia . $const);
+			$this->db->query($sentencia . $cons);
 			return $this->db->fetch();
 
 		}
