@@ -5,6 +5,7 @@
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
 	require '../views/FormLogin.php';
+	require '../views/FormLoginError.php';
 
 	//$e = new Empleados();
 	//$todos = $e->getTodos();
@@ -23,11 +24,16 @@
 
 		if (!$usuario) {
 		
+			var_dump("hola1");
 			$v = new FormLoginError();
+			var_dump("hola2");
 			$v->ErrorLogin = "Usuario y/o contraseña incorrecta";
 		    //render sería como decirle "dibujate"
+		    var_dump("hola3");
 			$v->render();
+			var_dump("hola4");
 			exit();
+			var_dump("hola5");
 
 		} else{
 
