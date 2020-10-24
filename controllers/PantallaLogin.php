@@ -23,6 +23,35 @@
 
 		var_dump($usuario);
 
+		if (!$usuario) {
+			echo "Usuario o contraseña incorrecta";
+			exit();
+		} else{
+
+		
+			//$fila = pg_fetch_assoc($resultado);
+
+			if ($usuario['pass'] != sha1($_POST['pass'])){
+
+				echo "Usuario o contraseña incorrecta";
+				exit();
+			}
+
+			if ($usuario['cod_estado'] != 'A'){
+
+				echo "El usuario no se encuentra activo";
+				exit();
+
+			}
+
+			echo "validado correctamente";
+			//$_SESSION['logueado'] = true;
+			//$_SESSION['usuario'] = $_POST['usuario'];
+			//header("Location: consultaSaldos.php");
+			//exit;
+	
+		}
+
 
 
 /*
