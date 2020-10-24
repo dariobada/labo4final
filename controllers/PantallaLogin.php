@@ -10,16 +10,19 @@
 	//$todos = $e->getTodos();
 
 	//session_start();
-
+	var_dump("hola1");
 	if(count($_POST)>0){
-
+		var_dump("hola2");
 
 		/////////////!!!!!!!!!!!!!!!!!!!! VALIDAR $_POST['usuario'] !!!!!!!!!!!!!!!!!!///////////////
 
 		$u = new Usuario();
+		var_dump("hola3");
 		$usuario = $u->GetUsuario($_POST['usuario']);
+		var_dump("hola4");
 
 		var_dump($usuario);
+
 
 
 /*
