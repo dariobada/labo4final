@@ -11,9 +11,10 @@
 	var_dump("hola1");
 	session_start();
 	var_dump("hola2");
-/*
+
 	$c = new Cuentas();
 	var_dump("hola3");
+	/*
 	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
 	$cuentasUsua = $c->getCuentasPorUsuario($_SESSION['IdUsuario']);
 	var_dump("hola4");
