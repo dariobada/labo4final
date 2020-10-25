@@ -20,7 +20,7 @@
 	$cuentasUsua = $c->getCuentasPorUsuario($_SESSION['IdUsuario']);
 	var_dump("hola4");
 	var_dump($cuentasUsua);
-	var_dump($cuentasUsua[0]);
+	var_dump($cuentasUsua[0]['id_usuario']);
 
 	//en este array guardamos las cuentas y sus detalles
 	$aux = array();
