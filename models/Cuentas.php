@@ -15,6 +15,15 @@
 
 		}
 
+		public function getDetalleDeCuenta($idCuen){
+
+			$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "id_cuenta" = ';
+
+			$this->db->query($sentencia . $idCuen);
+			return $this->db->fetchAll();
+
+		}
+
 
 
 	}

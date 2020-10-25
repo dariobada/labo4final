@@ -1,11 +1,11 @@
 <?php
 
 
-	// views/FormLogin.php
+	// views/ListadoCuentas.php
 
-	class FormLogin extends View {
+	class ListadoCuentas extends View {
 
-		//public $empleados;
+		public $cuentas;
 
 		
 
