@@ -22,23 +22,22 @@
 	$i = 0;
 
 	foreach($cuentasUsua as $cu){
-		//$aux[i] = $c->getDetalleDeCuenta($cuentasUsua['id_usuario'][i]);
-		
-		//$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta'])
-/*
+				
+		$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
+
 		$arrayCuentas[i]['nro_cuenta'] = $respGetDetalle['nro_cuenta'];
 		$arrayCuentas[i]['tipo_cuenta'] = $respGetDetalle['tipo_cuenta'];
 		$arrayCuentas[i]['saldo'] = $respGetDetalle['saldo'];
 		$arrayCuentas[i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle['cod_moneda']);
 
 		i++;
-*/
+
 	}
-/*
+
 	$v = new ListadoCuentas();
 	$v->cuentas = $arrayCuentas;
 	//render sería como decirle "dibujate"
 	$v->render();	
 
-*/
+
 ?>
