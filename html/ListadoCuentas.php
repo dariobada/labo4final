@@ -122,7 +122,7 @@
 	<body background="fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="logo.png"></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
 				<div class="headerOpcionImpar">Tarjetas</div>
 				<div class="headerOpcionPar">Transferencias</div>
@@ -140,7 +140,7 @@
 						echo '<th campo-dato="c3">Moneda</th>';
 						echo '<th campo-dato="c4">Saldo</th>';
 						echo '</tr>';
-						foreach($cuentas as $cu){
+						foreach($this->cuentas as $cu){
 							echo '<tr>';
 								echo '<td campo-dato="c1">' . $cu['nro_cuenta'] . '</td>';
 								echo '<td campo-dato="c2">' . $cu['tipo_cuenta'] . '</td>';
@@ -179,7 +179,7 @@
 				
 				$("#divConsultaSaldos").click(function(){
 					
-					window.location.href="consultaSaldos.php";
+					window.location.href="ListadoCuentas.php";
 
 				});
 
