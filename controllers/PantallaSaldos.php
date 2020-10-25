@@ -25,7 +25,7 @@
 				
 		$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
 
-		var_dump($respGetDetalle[i]['nro_cuenta']);
+		var_dump($respGetDetalle);
 		//$arrayCuentas[i]['nro_cuenta'] = $respGetDetalle['nro_cuenta'];
 		//$arrayCuentas[i]['tipo_cuenta'] = $respGetDetalle['tipo_cuenta'];
 		//$arrayCuentas[i]['saldo'] = $respGetDetalle['saldo'];
