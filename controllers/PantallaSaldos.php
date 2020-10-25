@@ -27,13 +27,13 @@
 	var_dump("hola5");
 	$i = 0;
 
-	//foreach($cuentasUsua as $cu){
+	foreach($cuentasUsua as $cu){
 		//$aux[i] = $c->getDetalleDeCuenta($cuentasUsua['id_usuario'][i]);
-		//var_dump($cuentasUsua[i]['id_usuario']);
+		var_dump($cu['id_cuenta']);
 
-	//	i++;
+		//i++;
 
-	//}
+	}
 
 	
 
