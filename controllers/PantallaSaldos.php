@@ -1,14 +1,14 @@
 <?php
 
 // controllers/PantallaSaldos.php
-
+	var_dump("holaaaa");
 	require '../fw/fw.php';
 	require '../models/Cuentas.php';
 	//require '../views/ListadoCuentas.php';
 
 
 
-
+/*
 	session_start();
 
 	$c = new Cuentas();
@@ -30,6 +30,6 @@
 
 	
 	
-
+*/
 
 ?>

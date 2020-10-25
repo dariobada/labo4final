@@ -54,7 +54,7 @@
 
 			}
 
-			echo "validado correctamente";
+			
 			$_SESSION['logueado'] = true;
 			$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 			header("Location: PantallaSaldos.php");
