@@ -34,11 +34,11 @@
 		i++;
 
 	}
-
+/*
 	$v = new ListadoCuentas();
 	$v->cuentas = $arrayCuentas;
 	//render sería como decirle "dibujate"
 	$v->render();	
 
-
+*/
 ?>
