@@ -142,11 +142,11 @@
 						echo '</tr>';
 						foreach($this->cuentas as $cu){
 							echo '<tr>';
-								echo '<td campo-dato="c1">' . $cu['nro_cuenta'] . '</td>';
-								echo '<td campo-dato="c2">' . $cu['tipo_cuenta'] . '</td>';
-								echo '<td campo-dato="c3">' . $cu['moneda'] . '</td>';
-								echo '<td campo-dato="c4">' . $cu['saldo'] . '</td>';
-								echo '</tr>';								
+							echo '<td campo-dato="c1">' . $cu['nro_cuenta'] . '</td>';
+							echo '<td campo-dato="c2">' . $cu['tipo_cuenta'] . '</td>';
+							echo '<td campo-dato="c3">' . $cu['moneda'] . '</td>';
+							echo '<td campo-dato="c4">' . $cu['saldo'] . '</td>';
+							echo '</tr>';								
 						}
 						echo '</table>';					
 					?>

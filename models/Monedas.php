@@ -14,7 +14,7 @@
 			$this->db->query($sentencia . $cons);
 			$ret = $this->db->fetch();
 
-			return $ret['descripcion'];
+			return $ret['nombre_moneda'];
 
 		}
 		
