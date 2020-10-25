@@ -24,13 +24,13 @@
 	foreach($cuentasUsua as $cu){
 				
 		$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
-/*
+
 		$arrayCuentas[i]['nro_cuenta'] = $respGetDetalle['nro_cuenta'];
 		$arrayCuentas[i]['tipo_cuenta'] = $respGetDetalle['tipo_cuenta'];
 		$arrayCuentas[i]['saldo'] = $respGetDetalle['saldo'];
-		$arrayCuentas[i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle['cod_moneda']);
+		//$arrayCuentas[i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle['cod_moneda']);
 
-		i++;*/
+		i++;
 
 	}
 /*
