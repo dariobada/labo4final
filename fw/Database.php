@@ -27,7 +27,7 @@ class Database {
 
 		
 		$this->res = pg_query($this->cn, $q);
-		if(!$this->res) die(pg_result_error($this->cn) . " -- Consulta: " . $q);
+		if(!$this->res) die(pg_last_error($this->cn) . " -- Consulta: " . $q);
 		//$this->res = mysqli_query($this->cn, $q);
 		//if(!$this->res) die(mysqli_error($this->cn) . " -- Consulta: " . $q);
 	}
