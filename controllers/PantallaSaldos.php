@@ -31,7 +31,7 @@
 		//$arrayCuentas[i]['saldo'] = $respGetDetalle['saldo'];
 		//$arrayCuentas[i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle['cod_moneda']);
 
-		i++;
+		$i++;
 
 	}
 /*
