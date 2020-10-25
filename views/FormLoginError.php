@@ -1,7 +1,7 @@
 <?php
 
 
-	// views/FormLogin.php
+	// views/FormLoginError.php
 
 	class FormLoginError extends View {
 
