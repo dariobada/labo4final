@@ -19,7 +19,7 @@
 	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
 	$cuentasUsua = $c->getCuentasPorUsuario($_SESSION['IdUsuario']);
 	var_dump("hola4");
-	/*
+
 	//en este array guardamos las cuentas y sus detalles
 	$aux = array();
 	var_dump("hola5");
@@ -27,13 +27,12 @@
 
 	foreach($cuentasUsua as $cu){
 		//$aux[i] = $c->getDetalleDeCuenta($cuentasUsua['id_usuario'][i]);
-		var_dump($cuentasUsua['id_usuario'][i]);
+		var_dump($cuentasUsua[i]['id_usuario']);
 
 		i++;
 
 	}
 
-	*/
 	
 
 
