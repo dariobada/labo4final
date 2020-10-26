@@ -3,11 +3,11 @@
 // controllers/PantallaTarjetas.php
 	
 	require '../fw/fw.php';
-	require '../models/Cuentas.php';
-	require '../models/Monedas.php';
+	//require '../models/Cuentas.php';
+	//require '../models/Monedas.php';
 	require '../models/Tarjetas.php';
-	require '../views/ListadoCuentas.php';
-	require '../views/ListadoTarjetas.php';
+	//require '../views/ListadoCuentas.php';
+	//require '../views/ListadoTarjetas.php';
 
 	session_start();
 
@@ -20,8 +20,9 @@
 	$auxDT = array();
 	$auxEXT = array();
 	$iP = 0;
+	var_dump("pepe");
 	
-
+	/*
 	//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
 	$tarjetasUsuario = $t->getTarjetasPorUsuario(($_SESSION['IdUsuario']);
 
