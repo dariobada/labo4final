@@ -157,7 +157,7 @@
 
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
-			alert("entra1");
+			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
 				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
 			}
@@ -176,16 +176,16 @@
 			}
 
 			$(document).ready(function(){
-				alert("entra2");
+				
 				
 				$("#divConsultaSaldos").click(function(){
-					alert("entra3");
-					window.location.href="ListadoCuentas.php";
+					
+					window.location.href="PantallaSaldos.php";
 
 				});
 
 				$("#divCerrarSesion").click(function(){
-					alert("entra4");
+					
 					$.ajax({
 						type:"post",
 						url:"./CerrarSesion.php",
