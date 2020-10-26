@@ -24,7 +24,7 @@
 	
 	
 	//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
-	$tarjetasUsuario = $t->getTarjetasPorUsuario(($_SESSION['IdUsuario']);
+	$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
 	var_dump($tarjetasUsuario);
 	/*
 	//obtengo los datos necesarios para armar la lista de tarjetas principales
