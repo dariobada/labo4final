@@ -124,7 +124,7 @@
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
-				<div class="headerOpcionImpar">Tarjetas</div>
+				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
@@ -175,12 +175,26 @@
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
 			}
 
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
 				
 				$("#divConsultaSaldos").click(function(){
 					
 					window.location.href="PantallaSaldos.php";
+
+				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaTarjetas.php";
 
 				});
 
