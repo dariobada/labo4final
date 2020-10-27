@@ -6,6 +6,7 @@
 	//require '../models/Cuentas.php';
 	//require '../models/Monedas.php';
 	require '../models/Tarjetas.php';
+	require '../models/Proveedores.php';
 	//require '../views/ListadoCuentas.php';
 	//require '../views/ListadoTarjetas.php';
 
@@ -38,14 +39,16 @@
 			var_dump($auxDT['cod_estado']);
 			//valido que el estado sea activo
 			if($auxDT['cod_estado'] == 'A'){
-				var_dump("entra1");
+				//obtengo el nombre del proveedor de tarjeta
+				$p = new Proveedores();
+				$nombreProv = $p->getNombreProveedor($auxDT['cod_proveedor']);
 
 				//si es una tarjeta principal, informo al array el detalle de la tarjeta.
 				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
 				if($auxDT['tipo_tarjeta'] == 'P'){
 					var_dump("entra2");
 					$listaPrincipales[$iP]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
-					$listaPrincipales[$iP]['cod_proveedor'] = $auxDT['cod_proveedor'];
+					$listaPrincipales[$iP]['nombre_proveedor'] = $nombreProv;
 
 					$iP++;
 				} else{
@@ -54,6 +57,7 @@
 					$auxEXT = $t->getDetalleExtension($tu['id_tarjeta']);
 					$listaExtensiones[$iE]['nombre_ext'] = $auxEXT['nombre_ext'];
 					$listaExtensiones[$iE]['apellido_ext'] = $auxEXT['apellido_ext'];
+					$listaExtensiones[$iE]['nombre_proveedor'] = $nombreProv;
 
 					$iE++;
 				}
