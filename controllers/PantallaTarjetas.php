@@ -25,7 +25,7 @@
 	
 	//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
 	$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
-	var_dump($tarjetasUsuario);
+	//var_dump($tarjetasUsuario);
 	
 	//obtengo los datos necesarios para armar la lista de tarjetas principales
 	foreach($tarjetasUsuario as $tu){
@@ -33,6 +33,7 @@
 		if($tu['cod_estado'] == 'A'){
 			//obtengo el detalle de esa tarjeta
 			$auxDT = $t->getDetalleTarjeta($tu['id_tarjeta']);
+			var_dump($auxDT);
 			//valido que el estado sea activo
 			if($auxDT[0]['cod_estado'] == 'A'){
 
