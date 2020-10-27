@@ -13,6 +13,7 @@
 	session_start();
 
 	$t = new Tarjetas();
+	$p = new Proveedores();
 
 	$tarjetasUsuario = array();
 
@@ -35,24 +36,23 @@
 		if($tu['cod_estado'] == 'A'){
 			//obtengo el detalle de esa tarjeta
 			$auxDT = $t->getDetalleTarjeta($tu['id_tarjeta']);
-			var_dump($auxDT);
-			var_dump($auxDT['cod_estado']);
+			
 			//valido que el estado sea activo
 			if($auxDT['cod_estado'] == 'A'){
-				//obtengo el nombre del proveedor de tarjeta
-				$p = new Proveedores();
+				//obtengo el nombre del proveedor de tarjeta				
 				$nombreProv = $p->getNombreProveedor($auxDT['cod_proveedor']);
+				var_dump($nombreProv);
 
 				//si es una tarjeta principal, informo al array el detalle de la tarjeta.
 				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
 				if($auxDT['tipo_tarjeta'] == 'P'){
-					var_dump("entra2");
+					
 					$listaPrincipales[$iP]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
 					$listaPrincipales[$iP]['nombre_proveedor'] = $nombreProv;
 
 					$iP++;
 				} else{
-					var_dump("entra3");
+			
 					$listaExtensiones[$iE]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
 					$auxEXT = $t->getDetalleExtension($tu['id_tarjeta']);
 					$listaExtensiones[$iE]['nombre_ext'] = $auxEXT['nombre_ext'];
