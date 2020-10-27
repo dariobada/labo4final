@@ -20,6 +20,7 @@
 	$auxDT = array();
 	$auxEXT = array();
 	$iP = 0;
+	$iE = 0;
 
 	
 	
@@ -34,18 +35,21 @@
 			//obtengo el detalle de esa tarjeta
 			$auxDT = $t->getDetalleTarjeta($tu['id_tarjeta']);
 			var_dump($auxDT);
+			var_dump($auxDT[0]['cod_estado']);
 			//valido que el estado sea activo
 			if($auxDT[0]['cod_estado'] == 'A'){
+				var_dump("entra1");
 
 				//si es una tarjeta principal, informo al array el detalle de la tarjeta.
 				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
 				if($auxDT[0]['tipo_tarjeta'] == 'P'){
-
+					var_dump("entra2");
 					$listaPrincipales[$iP]['nro_tarjeta'] = $auxDT[0]['nro_tarjeta'];
 					$listaPrincipales[$iP]['cod_proveedor'] = $auxDT[0]['cod_proveedor'];
 
 					$iP++;
 				} else{
+					var_dump("entra3");
 					$listaExtensiones[$iE]['nro_tarjeta'] = $auxDT[0]['nro_tarjeta'];
 					$auxEXT = $t->getDetalleExtension($tu['id_tarjeta']);
 					$listaExtensiones[$iE]['nombre_ext'] = $auxEXT[0]['nombre_ext'];
