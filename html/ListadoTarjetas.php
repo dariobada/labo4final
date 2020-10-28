@@ -164,10 +164,10 @@
 		</style>
 	</head>
 
-	<body background="fondo.jpg">
+	<body background="../fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="logo.png"></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
 				<div class="headerOpcionImpar">Tarjetas</div>
 				<div class="headerOpcionPar">Transferencias</div>
@@ -178,13 +178,13 @@
 				<div class="contenedorMarca">
 					<h1>&nbsp; Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
-					<img class="logo" src="visa.png">
+					<img class="logo" src="../visa.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="master.png">
+					<img class="logo" src="../master.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="cabal.png">
+					<img class="logo" src="../cabal.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="american.png">
+					<img class="logo" src="../american.png">
 				</div>
 
 				<label class="mistarjetas">Mis Tarjetas</label>

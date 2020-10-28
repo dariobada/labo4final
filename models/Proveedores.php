@@ -13,7 +13,7 @@
 
 			$this->db->query($sentencia . $cons);
 			$nombre = $this->db->fetch();
-			var_dump($nombre);
+		
 
 			return $nombre['nombre_proveedor'];
 
