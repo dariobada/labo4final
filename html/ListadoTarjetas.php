@@ -217,11 +217,13 @@
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número de tarjeta</th>';
 						echo '<th campo-dato="c2">Proveedor</th>';
+						echo '<th campo-dato="c3">Imagen</th>';
 						echo '</tr>';
 						foreach($this->tarjetasPrincipales as $tp){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '</td>';
+							echo '<td campo-dato="c3"><img class="logo" src="../visa.png"></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -292,6 +294,12 @@
 				$("#divConsultaSaldos").click(function(){
 					
 					window.location.href="consultaSaldos.php";
+
+				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaTarjetas.php";
 
 				});
 
