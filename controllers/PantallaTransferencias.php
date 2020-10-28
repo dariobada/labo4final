@@ -1,14 +1,14 @@
 <?php
 
-// controllers/PantallaTarjetas.php
+// controllers/PantallaTransferencias.php
 	
 	require '../fw/fw.php';
 	//require '../models/Cuentas.php';
 	//require '../models/Monedas.php';
-	require '../models/Tarjetas.php';
-	require '../models/Proveedores.php';
+	//require '../models/Tarjetas.php';
+	//require '../models/Proveedores.php';
 	//require '../views/ListadoCuentas.php';
-	require '../views/ListadoTarjetas.php';
+	//require '../views/ListadoTarjetas.php';
 
 	session_start();
 
@@ -41,7 +41,7 @@
 			if($auxDT['cod_estado'] == 'A'){
 				//obtengo el nombre del proveedor de tarjeta				
 				$nombreProv = $p->getNombreProveedor($auxDT['cod_proveedor']);
-			
+				var_dump($nombreProv);
 
 				//si es una tarjeta principal, informo al array el detalle de la tarjeta.
 				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
@@ -66,12 +66,18 @@
 		}
 	}
 
-	$v = new ListadoTarjetas();
-	$v->tarjetasPrincipales = $listaPrincipales;
-	$v->tarjetasExtensiones = $listaExtensiones;
+	var_dump("principales: ");
+	var_dump($listaPrincipales);
+
+	var_dump("extensiones: ");
+	var_dump($listaExtensiones);
+	/*
+
+	$v = new ListadoCuentas();
+	$v->cuentas = $arrayCuentas;
 
 	//render sería como decirle "dibujate"
 	$v->render();	
-
+*/
 
 ?>
