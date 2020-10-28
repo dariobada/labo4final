@@ -246,8 +246,8 @@
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $te['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $te['nombre_proveedor'] . '</td>';
-							echo '<td campo-dato="c3">' . $te['nombre'] . '</td>';
-							echo '<td campo-dato="c4">' . $te['apellido'] . '</td>';
+							echo '<td campo-dato="c3">' . $te['nombre_ext'] . '</td>';
+							echo '<td campo-dato="c4">' . $te['apellido_ext'] . '</td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -259,7 +259,7 @@
 			</div>	
 		</div>
 
-	<script src="./jquery.js"></script>
+	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
@@ -277,6 +277,14 @@
 
 			document.getElementById("divCerrarSesion").onmouseout = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
+			}
+
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
 			}
 
 			$(document).ready(function(){
