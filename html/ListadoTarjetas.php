@@ -139,20 +139,41 @@
 			width:25%; 
 			}
 
-			#cuentas{
+			#principales{
 				border-collapse: collapse;
   				width: 100%;
 			}
 
-			#cuentas td, #cuentas th{
+			#principales td, #principales th{
 				border: 1px solid #ddd;
 			}
 
-			#cuentas tr:nth-child(even){background-color: #f2f2f2;}
+			#principales tr:nth-child(even){background-color: #f2f2f2;}
 
-			#cuentas tr:hover {background-color: #ddd;}
+			#principales tr:hover {background-color: #ddd;}
 
-			#cuentas th {
+			#principales th {
+			  padding-top: 12px;
+			  padding-bottom: 12px;
+			  text-align: left;
+			  background-color: #4CAF50;
+			  color: white;
+			}
+
+			#extensiones{
+				border-collapse: collapse;
+  				width: 100%;
+			}
+
+			#extensiones td, #extensiones th{
+				border: 1px solid #ddd;
+			}
+
+			#extensiones tr:nth-child(even){background-color: #f2f2f2;}
+
+			#extensiones tr:hover {background-color: #ddd;}
+
+			#extensiones th {
 			  padding-top: 12px;
 			  padding-bottom: 12px;
 			  text-align: left;
@@ -192,7 +213,7 @@
 					
 					<?php
 					
-						echo '<table id="cuentas">';
+						echo '<table id="principales">';
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número de tarjeta</th>';
 						echo '<th campo-dato="c2">Proveedor</th>';
@@ -212,7 +233,25 @@
 
 				<div class="interiorBody2">
 					
-					<h1>holaaaaaaaaaaaaaaaaaaaa</h1>
+					<?php
+					
+						echo '<table id="extensiones">';
+						echo '<tr>';
+						echo '<th campo-dato="c1">Número de tarjeta</th>';
+						echo '<th campo-dato="c2">Proveedor</th>';
+						echo '<th campo-dato="c3">Nombre</th>';
+						echo '<th campo-dato="c4">Apellido</th>';
+						echo '</tr>';
+						foreach($this->tarjetasExtensiones as $te){
+							echo '<tr>';
+							echo '<td campo-dato="c1">' . $te['nro_tarjeta'] . '</td>';
+							echo '<td campo-dato="c2">' . $te['nombre_proveedor'] . '</td>';
+							echo '<td campo-dato="c3">' . $te['nombre'] . '</td>';
+							echo '<td campo-dato="c4">' . $te['apellido'] . '</td>';
+							echo '</tr>';								
+						}
+						echo '</table>';					
+					?>
 						
 				</div>
 
