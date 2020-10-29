@@ -107,8 +107,8 @@
 			}
 
 			img.logo2{
-				height: 10px;
-				width: 10px;
+				height: 12px;
+				width: 20px;
 				
 
 			}
