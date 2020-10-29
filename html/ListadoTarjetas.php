@@ -230,7 +230,7 @@
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '</td>';
-							echo '<td campo-dato="c3"><img class="logo" src="../visa.png"></td>';
+							echo '<td campo-dato="c3"><img class="logo2" src="../visa.png"></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -300,7 +300,7 @@
 				
 				$("#divConsultaSaldos").click(function(){
 					
-					window.location.href="consultaSaldos.php";
+					window.location.href="PantallaSaldos.php";
 
 				});
 
@@ -314,10 +314,10 @@
 					
 					$.ajax({
 						type:"post",
-						url:"./cerrarSesion.php",
+						url:"./CerrarSesion.php",
 						data:{},
 						success:function(respuestaDelServer,estado){
-							window.location.href="index.php";	
+							window.location.href="PantallaLogin.php";	
 						}
 					});
 
