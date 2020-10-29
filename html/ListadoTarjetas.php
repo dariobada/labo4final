@@ -107,8 +107,8 @@
 			}
 
 			img.logo2{
-				height: 12px;
-				width: 20px;
+				height: 14px;
+				width: 23px;
 				
 
 			}
@@ -230,7 +230,7 @@
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '</td>';
-							echo '<td campo-dato="c3"><img class="logo2" src="../visa.png"></td>';
+							echo '<td campo-dato="c3"><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
