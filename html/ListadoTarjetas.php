@@ -106,6 +106,13 @@
 
 			}
 
+			img.logo2{
+				height: 5%;
+				width: 5%;
+				
+
+			}
+
 			button{
                 width: 13%;
                 height: 30%;   
@@ -190,7 +197,7 @@
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
-				<div class="headerOpcionImpar">Tarjetas</div>
+				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
