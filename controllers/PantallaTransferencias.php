@@ -25,6 +25,7 @@
 			
 		} else{
 			var_dump("posee saldo");
+			echo money_format("The output in locales" . " national format is %n", $respGetDetalle[0]['saldo']); 
 		}
 
 	}

@@ -87,11 +87,11 @@
 
 			select.form{
 				height: 7%;
-				width: 40%;
+				width: 50%;
 			}
 			input.form{
 				height: 6%;
-				width: 30%;
+				width: 40%;
 			}
 			button.enviar{
 				height: 20%;
