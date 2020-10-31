@@ -7,6 +7,7 @@
 	require '../models/Monedas.php';
 	require '../models/TipoCuentas.php';
 	require '../views/FormTransferencias.php';
+	require '../views/FormTransferenciasError.php';
 
 	session_start();
 
@@ -16,6 +17,21 @@
 		//obtenemos el saldo de la cuenta
 		var_dump($_POST['cuenta']);
 		var_dump($_POST['monto']);
+
+		$c = new Cuentas();
+		$respGetDetalle = $c->getDetalleDeCuenta($_POST['cuenta']);
+
+		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
+			//no posee saldo suficiente para realizar la transferencia
+			$v = new FormTransferenciasError();
+			$v->error = 'No posee saldo suficiente para realizar esta transferencia.';
+
+			//render sería como decirle "dibujate"
+			$v->render();			
+
+		} else{
+			var_dump("posee saldo");
+		}
 
 	} else {
 

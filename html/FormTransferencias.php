@@ -87,11 +87,11 @@
 
 			select.form{
 				height: 7%;
-				width: 20%;
+				width: 40%;
 			}
 			input.form{
 				height: 6%;
-				width: 20%;
+				width: 30%;
 			}
 			button.enviar{
 				height: 20%;
@@ -164,7 +164,7 @@
 						<br>
 						<br>
 						<label>Ingresar cuenta destino: </label>
-						<input class="form" type="number" name="destino" required="required" style="width:30px">
+						<input class="form" type="number" name="destino" required="required" >
 						<br>
 						<br>
 						<br>

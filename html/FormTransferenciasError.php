@@ -1,4 +1,4 @@
-<!-- html/FormTransferencias.php-->
+<!-- html/FormTransferenciasError.php-->
 
 <!DOCTYPE html>
 
@@ -173,6 +173,8 @@
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>
 					</form>
+					<br/><br/>
+					<label style="color:red"><?= $this->error ?></label>
 
 				
 
