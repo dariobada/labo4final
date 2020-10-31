@@ -147,7 +147,7 @@
 			</div>
 			<div class="contenedorBody">
 				<div class="interiorBody">
-					<form>
+					<form action="" method="post">
 						
 						<label>Seleccionar cuenta remitente: </label>
 						<select class="form" name="cuenta" required="required"> 
@@ -169,7 +169,7 @@
 						<br>
 						<br>
 						<label>Ingresar monto: </label>
-						<input class="form" type="number" name="monto" required="required"><br/>
+						<input class="form" type="number" name="monto" required="required">
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>
 					</form>

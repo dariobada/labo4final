@@ -22,11 +22,13 @@
 			//no posee saldo suficiente para realizar la transferencia
 			
 			//$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
+			setlocale(LC_MONETARY, "en_US"); 
 			$mensaje = money_format("The output in locales" . " national format is %n", $respGetDetalle[0]['saldo']); 
 			
 		} else{
-			var_dump("posee saldo");
-			echo money_format("The output in locales" . " national format is %n", $respGetDetalle[0]['saldo']); 
+			$nuevoSaldo = $respGetDetalle[0]['saldo'] - $_POST['monto'];
+			$c->actualizarSaldo($_POST['cuenta'], $nuevoSaldo);
+			$mensaje = "La transferencia se ha realizado exitosamente.";
 		}
 
 	}
