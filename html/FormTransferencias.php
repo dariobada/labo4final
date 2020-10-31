@@ -169,7 +169,7 @@
 						<br>
 						<br>
 						<label>Ingresar monto: </label>
-						<input class="form" type="number" name="monto" id="monto" required="required">
+						<input class="form" type="number" name="monto" id="monto" required="required"><br/>
 
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>
 					</form>

@@ -21,7 +21,8 @@
 		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
 			//no posee saldo suficiente para realizar la transferencia
 			
-			$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
+			//$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
+			$mensaje = money_format("The output in locales" . " national format is %n", $respGetDetalle[0]['saldo']); 
 			
 		} else{
 			var_dump("posee saldo");
