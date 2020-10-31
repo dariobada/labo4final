@@ -151,7 +151,14 @@
 						
 						<label>Seleccionar cuenta remitente: </label>
 						<select class="form" name="cuenta" required="required"> 
+							<?php 
+								foreach ($this->cuentas as $cu){
+									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
+								}
 
+
+
+							 ?>
 
 
 						</select>
