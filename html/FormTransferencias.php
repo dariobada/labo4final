@@ -183,13 +183,18 @@
 
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
+			alert("entra");
 			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
+				alert("entra2");
 				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+				
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseout = function(){			
+				alert("entra3");
 				document.getElementById("divConsultaSaldos").style.cursor = "auto";
+
 			}
 
 
