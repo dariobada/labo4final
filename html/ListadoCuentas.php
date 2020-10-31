@@ -125,7 +125,7 @@
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
-				<div class="headerOpcionPar">Transferencias</div>
+				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
@@ -183,6 +183,14 @@
 				document.getElementById("divTarjetas").style.cursor = "auto";
 			}
 
+			document.getElementById("divTransferencias").onmouseover = function(){			
+				document.getElementById("divTransferencias").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTransferencias").onmouseout = function(){			
+				document.getElementById("divTransferencias").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
 				
@@ -195,6 +203,12 @@
 				$("#divTarjetas").click(function(){
 					
 					window.location.href="PantallaTarjetas.php";
+
+				});
+
+				$("#divTransferencias").click(function(){
+					
+					window.location.href="PantallaTransferencias.php";
 
 				});
 

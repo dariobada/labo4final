@@ -3,81 +3,46 @@
 // controllers/PantallaTransferencias.php
 	
 	require '../fw/fw.php';
-	//require '../models/Cuentas.php';
-	//require '../models/Monedas.php';
-	//require '../models/Tarjetas.php';
-	//require '../models/Proveedores.php';
-	//require '../views/ListadoCuentas.php';
-	//require '../views/ListadoTarjetas.php';
+	require '../models/Cuentas.php';
+	require '../models/Monedas.php';
+	require '../models/TipoCuentas.php';
+	require '../views/FormTransferencias.php';
 
 	session_start();
 
-	$t = new Tarjetas();
-	$p = new Proveedores();
-
-	$tarjetasUsuario = array();
-
-	$listaPrincipales = array();
-	$listaExtensiones = array();
-	$auxDT = array();
-	$auxEXT = array();
-	$iP = 0;
-	$iE = 0;
-
+	$c = new Cuentas();
+	$m = new Monedas();
+	$tc = new TipoCuentas();
 	
-	
-	//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
-	$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
-	//var_dump($tarjetasUsuario);
-	
-	//obtengo los datos necesarios para armar la lista de tarjetas principales
-	foreach($tarjetasUsuario as $tu){
-		//si el estado de la relacion tarjeta-usuario es activo, busco el detalle
-		if($tu['cod_estado'] == 'A'){
-			//obtengo el detalle de esa tarjeta
-			$auxDT = $t->getDetalleTarjeta($tu['id_tarjeta']);
-			
-			//valido que el estado sea activo
-			if($auxDT['cod_estado'] == 'A'){
-				//obtengo el nombre del proveedor de tarjeta				
-				$nombreProv = $p->getNombreProveedor($auxDT['cod_proveedor']);
-				var_dump($nombreProv);
+	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
+	$cuentasUsua = $c->getCuentasPorUsuario($_SESSION['IdUsuario']);
 
-				//si es una tarjeta principal, informo al array el detalle de la tarjeta.
-				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
-				if($auxDT['tipo_tarjeta'] == 'P'){
-					
-					$listaPrincipales[$iP]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
-					$listaPrincipales[$iP]['nombre_proveedor'] = $nombreProv;
+	//en este array guardamos las cuentas y sus detalles
+	$respGetDetalle = array();
+	$arrayCuentas = array();
 
-					$iP++;
-				} else{
-			
-					$listaExtensiones[$iE]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
-					$auxEXT = $t->getDetalleExtension($tu['id_tarjeta']);
-					$listaExtensiones[$iE]['nombre_ext'] = $auxEXT['nombre_ext'];
-					$listaExtensiones[$iE]['apellido_ext'] = $auxEXT['apellido_ext'];
-					$listaExtensiones[$iE]['nombre_proveedor'] = $nombreProv;
+	$i = 0;
 
-					$iE++;
-				}
+	foreach($cuentasUsua as $cu){
 				
-			}
-		}
+		$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
+
+		
+		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
+		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
+		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo'];
+		$arrayCuentas[$i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle[0]['cod_moneda']);
+	
+
+		$i++;
+
 	}
 
-	var_dump("principales: ");
-	var_dump($listaPrincipales);
-
-	var_dump("extensiones: ");
-	var_dump($listaExtensiones);
-	/*
-
-	$v = new ListadoCuentas();
+	$v = new FormTransferencias();
 	$v->cuentas = $arrayCuentas;
 
 	//render sería como decirle "dibujate"
 	$v->render();	
-*/
+
 
 ?>

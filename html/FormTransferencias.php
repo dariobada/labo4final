@@ -1,3 +1,5 @@
+<!-- html/FormTransferencias.php-->
+
 <!DOCTYPE html>
 
 <html>
@@ -134,13 +136,13 @@
 		</style>
 	</head>
 
-	<body background="fondo.jpg">
+	<body background="../fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="logo.png"></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
-				<div class="headerOpcionImpar">Tarjetas</div>
-				<div class="headerOpcionPar">Transferencias</div>
+				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
+				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
@@ -174,7 +176,7 @@
 			</div>
 		</div>
 
-	<script src="./jquery.js"></script>
+	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
@@ -194,22 +196,49 @@
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
 			}
 
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
+			document.getElementById("divTransferencias").onmouseover = function(){			
+				document.getElementById("divTransferencias").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTransferencias").onmouseout = function(){			
+				document.getElementById("divTransferencias").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
 				$("#divConsultaSaldos").click(function(){
 					
-					window.location.href="consultaSaldos.php";
+					window.location.href="PantallaSaldos.php";
 
 				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaTarjetas.php";
+
+				});
+
+				$("#divTransferencias").click(function(){
+					
+					window.location.href="PantallaTransferencias.php";
+
 
 				$("#divCerrarSesion").click(function(){
 					
 					$.ajax({
 						type:"post",
-						url:"./cerrarSesion.php",
+						url:"./CerrarSesion.php",
 						data:{},
 						success:function(respuestaDelServer,estado){
-							window.location.href="index.php";	
+							window.location.href="PantallaLogin.php";	
 						}
 					});
 
