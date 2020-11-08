@@ -239,6 +239,8 @@
 					
 					window.location.href="PantallaTransferencias.php";
 
+				});
+
 
 				$("#divCerrarSesion").click(function(){
 					

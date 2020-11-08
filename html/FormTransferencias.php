@@ -175,7 +175,7 @@
 
 						<button class="enviar" type="submit">Realizar Transferencia</button>
 
-						<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>-->
+						
 					</form>
 
 				
@@ -189,6 +189,79 @@
 	<script type="text/javascript">
 			alert("entra");
 			
+			document.getElementById("divConsultaSaldos").onmouseover = function(){			
+		
+				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+				
+			}
+
+			document.getElementById("divConsultaSaldos").onmouseout = function(){			
+			
+				document.getElementById("divConsultaSaldos").style.cursor = "auto";
+
+			}
+
+
+			document.getElementById("divCerrarSesion").onmouseover = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCerrarSesion").onmouseout = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "auto";
+			}
+
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
+			document.getElementById("divTransferencias").onmouseover = function(){			
+				document.getElementById("divTransferencias").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTransferencias").onmouseout = function(){			
+				document.getElementById("divTransferencias").style.cursor = "auto";
+			}
+
+			$(document).ready(function(){
+				
+				$("#divConsultaSaldos").click(function(){
+					
+					window.location.href="PantallaSaldos.php";
+
+				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaTarjetas.php";
+
+				});
+
+				$("#divTransferencias").click(function(){
+					
+					window.location.href="PantallaTransferencias.php";
+
+				});
+
+
+				$("#divCerrarSesion").click(function(){
+					
+					$.ajax({
+						type:"post",
+						url:"./CerrarSesion.php",
+						data:{},
+						success:function(respuestaDelServer,estado){
+							window.location.href="PantallaLogin.php";	
+						}
+					});
+
+
+
+				});
+			});
 			
 	</script>
 
