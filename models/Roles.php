@@ -8,13 +8,15 @@
 
 		public function getRolesPorUsuario($idUsua){
 
+			$cons = "'" . $idUsua . "'";
+
 			$sentencia = 'SELECT "id_usuario", "desc_rol" FROM public."ROLES_USUARIOS" a
 						  join public."ROLES" b on a."id_rol" = b."id_rol"
 						  WHERE "id_usuario" = ';
 
 			//$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" WHERE "id_usuario" = ';
 
-			$this->db->query($sentencia . $idUsua);
+			$this->db->query($sentencia . $cons);
 			return $this->db->fetchAll();
 
 		}
