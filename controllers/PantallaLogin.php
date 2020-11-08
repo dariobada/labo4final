@@ -58,7 +58,7 @@
 			$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 
 			$r = new Roles();
-			$roles = $r->getRolesPorUsuario($_POST['usuario']);
+			$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
 
 			if($roles['desc_rol'] = 'Administrador'){
 				header("Location: PantallaAdministracionProductos.php");
