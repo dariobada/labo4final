@@ -59,8 +59,9 @@
 
 			$r = new Roles();
 			$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
+			
 
-			if($roles['desc_rol'] = 'Administrador'){
+			if($roles['desc_rol'] == 'Administrador'){
 				header("Location: PantallaAdministracionProductos.php");
 				
 

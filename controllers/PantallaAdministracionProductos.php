@@ -7,7 +7,7 @@
 	require '../models/Roles.php';
 	require '../models/Monedas.php';
 	require '../models/TipoCuentas.php';
-	require '../views/FormAdministracionProductos.php';
+	//require '../views/FormAdministracionProductos.php';
 
 	session_start();
 
