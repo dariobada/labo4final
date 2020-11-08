@@ -59,6 +59,7 @@
 
 			$r = new Roles();
 			$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
+			var_dump($roles);
 			
 
 			if($roles['desc_rol'] == 'Administrador'){

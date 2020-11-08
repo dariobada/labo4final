@@ -25,6 +25,7 @@
 	foreach($aux as $us){
 		// obtengo los roles para validar que no sea administrador
 		$roles = $r->getRolesPorUsuario($us);
+		
 		if($roles[0]['desc_rol'] != 'Administrador'){
 			$listaUsuarios[] = $us;
 		}
