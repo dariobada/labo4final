@@ -16,6 +16,14 @@
 
 		}
 
+		public function getTodosLosUsuarios(){
+
+			$sentencia = 'SELECT * FROM public."USUARIOS"';
+
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+		}
+
 
 
 	}

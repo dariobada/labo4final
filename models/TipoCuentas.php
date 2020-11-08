@@ -18,6 +18,15 @@
 
 		}
 
+		public function getTodosLosTiposCuenta(){
+
+			$sentencia = 'SELECT * FROM public."TIPO_CUENTAS"  ';
+
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+
+		}
+
 
 
 	}

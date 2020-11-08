@@ -17,6 +17,17 @@
 			return $ret['nombre_moneda'];
 
 		}
+
+		public function getTodasLasMonedas(){
+
+			$sentencia = 'SELECT * FROM public."MONEDAS" ';
+			
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+
+			
+		}
+
 		
 
 	}

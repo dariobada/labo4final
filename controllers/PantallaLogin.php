@@ -4,6 +4,7 @@
 
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
+	require '../models/Roles.php';
 	require '../views/FormLogin.php';
 	require '../views/FormLoginError.php';
 
@@ -18,9 +19,8 @@
 		/////////////!!!!!!!!!!!!!!!!!!!! VALIDAR $_POST['usuario'] !!!!!!!!!!!!!!!!!!///////////////
 
 		$u = new Usuarios();
-		
+				
 		$usuario = $u->GetUsuario($_POST['usuario']);
-	
 
 		if (!$usuario) {
 		
@@ -54,12 +54,23 @@
 
 			}
 
-			
 			$_SESSION['logueado'] = true;
 			$_SESSION['IdUsuario'] = $usuario['id_usuario'];
-			header("Location: PantallaSaldos.php");
-			exit();
+
+			$r = new Roles();
+			$roles = $r->getRolesPorUsuario($_POST['usuario']);
+
+			if($roles['desc_rol'] = 'Administrador'){
+				header("Location: PantallaAdministracionProductos.php");
+				
+
+			} else {
+				header("Location: PantallaSaldos.php");
 	
+			}
+
+			exit();
+
 		}
 
 
