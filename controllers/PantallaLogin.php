@@ -63,11 +63,12 @@
 			
 
 			if($roles['desc_rol'] == 'Administrador'){
-				header("Location: PantallaAdministracionProductos.php");
+				//header("Location: PantallaAdministracionProductos.php");
 				
 
 			} else {
-				header("Location: PantallaSaldos.php");
+				
+				//header("Location: PantallaSaldos.php");
 	
 			}
 
