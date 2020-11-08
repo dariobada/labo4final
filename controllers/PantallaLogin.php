@@ -59,15 +59,18 @@
 
 			$r = new Roles();
 			$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
-			var_dump($roles);
+			var_dump($roles['desc_rol']);
 			
 
 			if($roles['desc_rol'] == 'Administrador'){
+
+				var_dump("entra al if");
+
 				//header("Location: PantallaAdministracionProductos.php");
 				
 
 			} else {
-				
+				var_dump("entra al else")
 				//header("Location: PantallaSaldos.php");
 	
 			}
