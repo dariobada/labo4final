@@ -35,7 +35,7 @@
 		
 		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
 		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
-		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo'];
+		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
 		$arrayCuentas[$i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle[0]['cod_moneda']);
 	
 

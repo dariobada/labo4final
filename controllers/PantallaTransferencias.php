@@ -24,9 +24,6 @@
 		$respGetDetalle = $c->getDetalleDeCuenta($_POST['cuenta']);
 
 		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
-			var_dump($_POST['monto']);
-			var_dump($respGetDetalle[0]['saldo']);
-
 			//no posee saldo suficiente para realizar la transferencia
 			
 			$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
@@ -61,7 +58,7 @@
 		$arrayCuentas[$i]['id_cuenta'] = $cu['id_cuenta'];
 		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
 		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
-		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo'];
+		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
 		$arrayCuentas[$i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle[0]['cod_moneda']);
 	
 

@@ -17,7 +17,7 @@
 
 		public function getDetalleDeCuenta($idCuen){
 
-			$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "id_cuenta" = ';
+			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" WHERE "id_cuenta" = ';
 
 			$this->db->query($sentencia . $idCuen);
 			return $this->db->fetchAll();
