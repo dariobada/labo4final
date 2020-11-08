@@ -12,6 +12,11 @@
 
 	session_start();
 
+	if(!isset($_SESSION['logueado'])){
+		header("Location: PantallaLogin.php");
+		exit;
+	}
+
 	$t = new Tarjetas();
 	$p = new Proveedores();
 

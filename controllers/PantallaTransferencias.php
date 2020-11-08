@@ -11,6 +11,11 @@
 
 	session_start();
 
+	if(!isset($_SESSION['logueado'])){
+		header("Location: PantallaLogin.php");
+		exit;
+	}
+
 	if(count($_POST)>0){
 
 		//obtenemos el saldo de la cuenta
@@ -19,8 +24,8 @@
 		$respGetDetalle = $c->getDetalleDeCuenta($_POST['cuenta']);
 
 		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
-			alert($_POST['monto']);
-			alert($respGetDetalle[0]['saldo']);
+			var_dump($_POST['monto']);
+			var_dump($respGetDetalle[0]['saldo']);
 
 			//no posee saldo suficiente para realizar la transferencia
 			

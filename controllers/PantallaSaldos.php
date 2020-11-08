@@ -10,6 +10,11 @@
 
 	session_start();
 
+	if(!isset($_SESSION['logueado'])){
+		header("Location: PantallaLogin.php");
+		exit;
+	}
+
 	$c = new Cuentas();
 	$m = new Monedas();
 	$tc = new TipoCuentas();

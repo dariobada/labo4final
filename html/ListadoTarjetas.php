@@ -229,7 +229,7 @@
 						foreach($this->tarjetasPrincipales as $tp){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
-							echo '<td campo-dato="c2"><a>' . $tp['nombre_proveedor'] . '</a><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+							echo '<td campo-dato="c2"><a>' . $tp['nombre_proveedor'] . '  </a><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
 						//	echo '<td campo-dato="c3"><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
 							echo '</tr>';								
 						}
