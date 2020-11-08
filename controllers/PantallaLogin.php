@@ -58,11 +58,13 @@
 			$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 
 			$r = new Roles();
-			$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
-			var_dump($roles[0]['desc_rol']);
+			//$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
+
+			//var_dump($roles[0]['desc_rol']);
 			
 
-			if($roles[0]['desc_rol'] == 'Administrador'){
+			//if($roles[0]['desc_rol'] == "Administrador"){
+			if($r->devolverMarcaAdministrador($usuario['id_usuario'])){
 
 				var_dump("entra al if");
 

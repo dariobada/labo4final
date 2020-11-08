@@ -67,7 +67,7 @@
 			}
 
 			div.interiorBody{
-				background-color:lightblue;
+				background-color:lightgreen;
 				width:58%;
 				height:30%;
 				left:20%;
@@ -187,7 +187,6 @@
 
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
-			alert("entra");
 			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
 		

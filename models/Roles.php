@@ -20,6 +20,23 @@
 
 		}
 
+		// este metodo devuelve un TRUE si el usuario tiene rol de administrador
+		public function devolverMarcaAdministrador($idUsua){
+
+			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
+						   WHERE "id_rol" = 3 and "id_usuario" = ';
+
+			$this->db->query($sentencia . $idUsua);
+
+			if($this->db->numRows() == 1){
+				return TRUE;
+			} else{
+				return FALSE;
+			}
+
+
+		}
+
 	
 
 

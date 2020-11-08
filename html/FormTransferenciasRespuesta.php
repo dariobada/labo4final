@@ -67,7 +67,7 @@
 			}
 
 			div.interiorBody{
-				background-color:lightblue;
+				background-color:lightgreen;
 				width:58%;
 				height:30%;
 				left:20%;
