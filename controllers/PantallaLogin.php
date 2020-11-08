@@ -70,7 +70,7 @@
 				
 
 			} else {
-				var_dump("entra al else")
+				var_dump("entra al else");
 				//header("Location: PantallaSaldos.php");
 	
 			}
