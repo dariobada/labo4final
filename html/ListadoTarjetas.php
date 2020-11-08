@@ -76,7 +76,7 @@
 			}
 
 			div.interiorBody{
-				background-color:lightblue;
+				background-color:lightgreen;
 				width:60%;
 				height:25%;
 				left:20%;
@@ -86,7 +86,7 @@
 			}
 
 			div.interiorBody2{
-				background-color:lightblue;
+				background-color:lightgreen;
 				width:60%;
 				height:25%;
 				left:20%;
@@ -206,13 +206,13 @@
 				<div class="contenedorMarca">
 					<h1>&nbsp; Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
-					<img class="logo" src="../visa.png">
+					<img class="logo" src="../VISA.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../master.png">
+					<img class="logo" src="../MASTERCARD.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../cabal.png">
+					<img class="logo" src="../CABAL.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../american.png">
+					<img class="logo" src="../AMERICAN.png">
 				</div>
 
 				<label class="mistarjetas">Mis Tarjetas</label>
@@ -224,13 +224,13 @@
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número de tarjeta</th>';
 						echo '<th campo-dato="c2">Proveedor</th>';
-						echo '<th campo-dato="c3">Imagen</th>';
+					//	echo '<th campo-dato="c3">Imagen</th>';
 						echo '</tr>';
 						foreach($this->tarjetasPrincipales as $tp){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
-							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '</td>';
-							echo '<td campo-dato="c3"><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+							echo '<td campo-dato="c2"><a>' . $tp['nombre_proveedor'] . '</a><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+						//	echo '<td campo-dato="c3"><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					

@@ -85,13 +85,18 @@
 				width: 80%;
 			}
 
-			select.form{
+			select{
 				height: 7%;
 				width: 50%;
 			}
-			input.form{
+			input.destino{
 				height: 6%;
-				width: 40%;
+				width: 25%;
+			}
+
+			input.monto{
+				height: 6%;
+				width: 20%;
 			}
 			button.enviar{
 				height: 20%;
@@ -150,7 +155,7 @@
 					<form action="" method="post">
 						
 						<label>Seleccionar cuenta remitente: </label>
-						<select class="form" name="cuenta" required="required"> 
+						<select name="cuenta" required="required"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
 									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
@@ -160,18 +165,17 @@
 
 
 						</select>
-						<br>
-						<br>
-						<br>
+						<br><br><br>
+
 						<label>Ingresar cuenta destino: </label>
 						<input class="form" type="number" name="destino" required="required">
-						<br>
-						<br>
-						<br>
-						<label>Ingresar monto: </label>
-						<input class="form" type="number" name="monto" required="required">
+						<br><br><br>
 
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>
+						<label>Ingresar monto: </label>
+						<input class="form" type="number" name="monto" required="required" step="any">
+						<br><br>
+
+						<button class="enviar" type="submit">Realizar Transferencia</button>
 					</form>
 					
 					<label style="color:red"><?= $this->mensaje ?></label>

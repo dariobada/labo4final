@@ -19,6 +19,9 @@
 		$respGetDetalle = $c->getDetalleDeCuenta($_POST['cuenta']);
 
 		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
+			alert($_POST['monto']);
+			alert($respGetDetalle[0]['saldo']);
+
 			//no posee saldo suficiente para realizar la transferencia
 			
 			$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
