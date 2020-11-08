@@ -85,13 +85,18 @@
 				width: 80%;
 			}
 
-			select.form{
+			select{
 				height: 7%;
 				width: 50%;
 			}
-			input.form{
+			input.destino{
 				height: 6%;
-				width: 40%;
+				width: 25%;
+			}
+
+			input.monto{
+				height: 6%;
+				width: 20%;
 			}
 			button.enviar{
 				height: 20%;
@@ -150,28 +155,27 @@
 					<form action="" method="post">
 						
 						<label>Seleccionar cuenta remitente: </label>
-						<select class="form" name="cuenta" required="required" id="cuenta"> 
+						<select name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
 									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
 								}
 
 							 ?>
-
-
 						</select>
-						<br>
-						<br>
-						<br>
-						<label>Ingresar cuenta destino: </label>
-						<input class="form" type="number" name="destino" required="required" >
-						<br>
-						<br>
-						<br>
-						<label>Ingresar monto: </label>
-						<input class="form" type="number" name="monto" id="monto" required="required">
+						<br><br><br>
 
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>
+						<label>Ingresar cuenta destino: </label>
+						<input class="destino" type="number" name="destino" required="required" >
+						<br><br><br>
+
+						<label>Ingresar monto: </label>
+						<input class="monto" type="number" name="monto" id="monto" required="required" step="any">
+						<br><br>
+
+						<button class="enviar" type="submit">Realizar Transferencia</button>
+
+						<!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="enviar" type="submit">Realizar Transferencia</button>-->
 					</form>
 
 				
@@ -186,13 +190,13 @@
 			alert("entra");
 			
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
-				alert("entra2");
+		
 				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
 				
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseout = function(){			
-				alert("entra3");
+			
 				document.getElementById("divConsultaSaldos").style.cursor = "auto";
 
 			}
