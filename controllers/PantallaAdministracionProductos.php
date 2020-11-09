@@ -24,9 +24,10 @@
 	// se recorren todos los usuarios para quedarse con los no administradores
 	foreach($aux as $us){
 		// obtengo los roles para validar que no sea administrador
-		$roles = $r->getRolesPorUsuario($us);
-		
-		if($roles[0]['desc_rol'] != 'Administrador'){
+		//$roles = $r->getRolesPorUsuario($us);
+
+
+		if($r->devolverMarcaAdministrador($us['id_usuario'])){
 			$listaUsuarios[] = $us;
 		}
 	}
