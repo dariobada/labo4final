@@ -27,7 +27,7 @@
 		//$roles = $r->getRolesPorUsuario($us);
 
 
-		if($r->devolverMarcaAdministrador($us['id_usuario'])){
+		if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
 			$listaUsuarios[] = $us;
 		}
 	}
