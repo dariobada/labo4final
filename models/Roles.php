@@ -28,9 +28,12 @@
 
 			$this->db->query($sentencia . $idUsua);
 
+			var_dump($sentencia . $idUsua);
 			if($this->db->numRows() == 1){
+				var_dump("entra al true");
 				return TRUE;
 			} else{
+				var_dump("entra al false");
 				return FALSE;
 			}
 
