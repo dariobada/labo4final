@@ -33,7 +33,7 @@ class Database {
 	}
 
 	public function numRows(){
-		return mysqli_num_rows($this->res);
+		return pg_num_rows($this->res);
 	}
 
 	public function fetch(){
