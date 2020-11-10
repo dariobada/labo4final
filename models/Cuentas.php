@@ -26,7 +26,6 @@
 
 		public function actualizarSaldo($idCuen, $saldo){
 
-			//$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "id_cuenta" = ';
 			$sentencia = 'UPDATE public."CUENTAS" SET "saldo" = ' . $saldo . ' WHERE "id_cuenta" = ' . $idCuen; 
 
 			$this->db->query($sentencia);
