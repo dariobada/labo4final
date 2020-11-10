@@ -119,22 +119,22 @@
 
 				input.saldo{
 					position: absolute;
-					left:37%;
+					left:40%;
 				}
 
 				select.usuario{
 					position: absolute;
-					left:37%;
+					left:40%;
 				}
 
 				select.cuenta{
 					position: absolute;
-					left:37%;
+					left:40%;
 				}
 				
 				select.tipo_cuenta{
 					position: absolute;
-					left:37%;
+					left:40%;
 				}
 
 				
@@ -234,7 +234,7 @@
 					<form action="" method="post">
 						<h2>Baja</h2>
 						<label>Seleccionar cuenta: </label>
-							<select name="cuenta" required="required" id="cuenta"> 
+							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
 									foreach ($this->cuentas as $cu){
 										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';

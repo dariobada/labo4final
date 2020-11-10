@@ -88,15 +88,21 @@
 			select{
 				height: 7%;
 				width: 50%;
+				position: absolute;
+				left:40%;
 			}
 			input.destino{
 				height: 6%;
 				width: 25%;
+				position: absolute;
+				left:40%;
 			}
 
 			input.monto{
 				height: 6%;
 				width: 20%;
+				position: absolute;
+				left:40%;
 			}
 			button.enviar{
 				height: 20%;
@@ -163,11 +169,11 @@
 
 							 ?>
 						</select>
-						<br><br><br>
+						<br><br>
 
 						<label>Ingresar cuenta destino: </label>
 						<input class="destino" type="number" name="destino" required="required" >
-						<br><br><br>
+						<br><br>
 
 						<label>Ingresar monto: </label>
 						<input class="monto" type="number" name="monto" id="monto" required="required" step="any">
@@ -176,9 +182,7 @@
 						<button class="enviar" type="submit">Realizar Transferencia</button>
 
 						
-					</form>
-
-				
+					</form>				
 
 
 				</div>
