@@ -6,8 +6,9 @@
 	require '../models/Usuarios.php';
 	require '../models/Roles.php';
 	require '../models/Monedas.php';
+	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
-	//require '../views/FormAdministracionProductos.php';
+	require '../views/FormAdministracionProductos.php';
 
 	session_start();
 
@@ -40,16 +41,19 @@
 	$tc = new TipoCuentas();
 	$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
 
-	var_dump($listaUsuarios);
-	var_dump($listaMonedas);
-	var_dump($listaTipoCuentas);
-	
+	//------ se obtienen las cuentas --------
+	$c = new Cuentas();
+	$listaCuentas = $c->getTodasLasCuentas();
 
-	//$v = new FormAdministracionProductos();
-	//$v->cuentas = $arrayCuentas;
+
+	$v = new FormAdministracionProductos();
+	$v->usuarios = $listaUsuarios;
+	$v->monedas = $listaMonedas;
+	$v->tipoCuentas = $listaTipoCuentas;
+	$v->cuentas = $listaCuentas;
 
 	//render sería como decirle "dibujate"
-	//$v->render();	
+	$v->render();	
 
 
 ?>

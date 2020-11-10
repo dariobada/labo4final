@@ -32,6 +32,17 @@
 			$this->db->query($sentencia);
 		}
 
+		public function getTodasLasCuentas(){
+
+			$sentencia = 'SELECT * FROM public."CUENTAS" ';
+
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+
+		}
+
+
+
 
 
 
