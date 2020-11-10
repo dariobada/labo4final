@@ -126,7 +126,7 @@
 <body>
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="./logo.png"></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divAltaProductos">Alta de Productos</div>
 				<div class="headerOpcionImpar" id="divUsuarios">Administración de Usuarios</div>
 				<div class="headerOpcionPar" id="divCerrarSesion">Cerrar sesión</div>
@@ -136,12 +136,12 @@
 
 			<div class="contenedorBody">
 
-				<form class="radio" action="" method="post">
+				<!--<form class="radio" action="" method="post">-->
 				<label>Cuentas</label>
 				<input type="radio" id="cuentas" name="opcion" value="c" checked="checked">
           	 	<label>Tarjetas</label>
            	 	<input type="radio" id="tarjetas" name="opcion" value="t">
-				</form>
+				<!--</form>-->
 				
 				<div class="Alta">
 					<form action="" method="post">
@@ -153,7 +153,7 @@
 						<select name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->usuarios as $us){
-									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuairo'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
+									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
 								}
 
 							 ?>
@@ -162,16 +162,16 @@
 
 						<label>Seleccionar tipo de cuenta: </label>
 						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
+							<?php 
+								foreach ($this->tipoCuentas as $tc){
+									echo '<option value="' . $tc['id_tipo_cuenta'] . '">' . $tc['desc_tipo_cuenta'] . '</option>';
+								}
+
+							 ?>
 
 
 						</select>
-						<br><br><br>
-
-						<label>Seleccionar moneda: </label>
-						<select class="moneda" name="moneda" required="required">
-							
-
-						</select>
+						
 						<br><br><br>
 
 						<label>Ingresar saldo: </label>
