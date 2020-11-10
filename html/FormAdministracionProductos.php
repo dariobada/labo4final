@@ -117,12 +117,7 @@
 					top: 13%;
 				}
 
-				input.saldo1{
-					position: absolute;
-					left:60%;
-				}
-
-				select.tipo_cuenta{
+				input.saldo{
 					position: absolute;
 					left:60%;
 				}
@@ -131,6 +126,17 @@
 					position: absolute;
 					left:60%;
 				}
+
+				select.cuenta{
+					position: absolute;
+					left:60%;
+				}
+				
+				select.tipo_cuenta{
+					position: absolute;
+					left:60%;
+				}
+
 				
 				
 				
@@ -165,7 +171,7 @@
 
 						
 						<label>Seleccionar usuario: </label>
-						<select name="usuario" required="required" id="usuario"> 
+						<select class="usuario" name="usuario" required="required" id="usuario"> 
 							<?php 
 								foreach ($this->usuarios as $us){
 									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
@@ -202,7 +208,7 @@
 				<div class="Modi">
 					<h2>Modificar</h2>
 					<label>Seleccionar cuenta: </label>
-						<select name="cuenta" required="required" id="cuenta"> 
+						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
 									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
@@ -214,7 +220,7 @@
 					<br><br>
 
 						<label>Ingresar saldo: </label>
-						<input class="saldo2" type="number" name="saldo" id="saldo" required="required" step="any">
+						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
