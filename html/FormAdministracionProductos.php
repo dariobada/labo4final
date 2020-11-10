@@ -119,22 +119,22 @@
 
 				input.saldo{
 					position: absolute;
-					left:60%;
+					left:37%;
 				}
 
 				select.usuario{
 					position: absolute;
-					left:60%;
+					left:37%;
 				}
 
 				select.cuenta{
 					position: absolute;
-					left:60%;
+					left:37%;
 				}
 				
 				select.tipo_cuenta{
 					position: absolute;
-					left:60%;
+					left:37%;
 				}
 
 				
@@ -196,7 +196,7 @@
 						<br><br>
 
 						<label>Ingresar saldo: </label>
-						<input class="saldo1" type="number" name="saldo" id="saldo" required="required" step="any">
+						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br><br><br><br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
@@ -206,8 +206,9 @@
 				</div>
 
 				<div class="Modi">
-					<h2>Modificar</h2>
-					<label>Seleccionar cuenta: </label>
+					<form action="" method="post">
+						<h2>Modificar</h2>
+						<label>Seleccionar cuenta: </label>
 						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
@@ -217,31 +218,34 @@
 							 ?>
 						</select>
 
-					<br><br>
+						<br><br>
 
 						<label>Ingresar saldo: </label>
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
+					</form>
 
 
 				</div>
 
 				<div class="Baja">
-					<h2>Baja</h2>
-					<label>Seleccionar cuenta: </label>
-						<select name="cuenta" required="required" id="cuenta"> 
-							<?php 
-								foreach ($this->cuentas as $cu){
-									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
-								}
+					<form action="" method="post">
+						<h2>Baja</h2>
+						<label>Seleccionar cuenta: </label>
+							<select name="cuenta" required="required" id="cuenta"> 
+								<?php 
+									foreach ($this->cuentas as $cu){
+										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
+									}
 
-							 ?>
-						</select>
-					<br><br>
+								 ?>
+							</select>
+						<br><br>
 
-					<button class="enviar" type="submit">Eliminar</button>
+						<button class="enviar" type="submit">Eliminar</button>
+					</form>
 
 				</div>
 
