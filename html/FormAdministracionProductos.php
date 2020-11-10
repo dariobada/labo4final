@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Administracion Productos</title>
+	<title>Administracion productos</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<style>
 		html, body{
@@ -127,8 +127,8 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Alta de Productos</div>
-				<div class="headerOpcionImpar" id="divUsuarios">Administración de Usuarios</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Alta de productos</div>
+				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionPar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 
@@ -146,10 +146,10 @@
 				<div class="Alta">
 					<form action="" method="post">
 
-						<h2>Dar de Alta</h2>
+						<h2>Dar de alta</h2>
 
 						
-						<label>Seleccionar Usuario: </label>
+						<label>Seleccionar usuario: </label>
 						<select name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->usuarios as $us){
@@ -158,7 +158,7 @@
 
 							 ?>
 						</select>
-						<br><br><br>
+						<br><br>
 
 						<label>Seleccionar tipo de cuenta: </label>
 						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
@@ -176,7 +176,7 @@
 
 						<label>Ingresar saldo: </label>
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
-						<br><br><br><br><br><br>
+						<br><br><br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
 
@@ -186,7 +186,7 @@
 
 				<div class="Modi">
 					<h2>Modificar</h2>
-					<label>Seleccionar Cuenta: </label>
+					<label>Seleccionar cuenta: </label>
 						<select name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
@@ -196,7 +196,7 @@
 							 ?>
 						</select>
 
-					<br><br><br>
+					<br>
 
 						<label>Ingresar saldo: </label>
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
@@ -209,7 +209,7 @@
 
 				<div class="Baja">
 					<h2>Baja</h2>
-					<label>Seleccionar Cuenta: </label>
+					<label>Seleccionar cuenta: </label>
 						<select name="cuenta" required="required" id="cuenta"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
@@ -218,7 +218,7 @@
 
 							 ?>
 						</select>
-					<br><br><br>
+					<br><br>
 
 					<button class="enviar" type="submit">Eliminar</button>
 
