@@ -137,14 +137,12 @@
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número cuenta</th>';
 						echo '<th campo-dato="c2">Tipo</th>';
-						//echo '<th campo-dato="c3">Moneda</th>';
 						echo '<th campo-dato="c4">Saldo</th>';
 						echo '</tr>';
 						foreach($this->cuentas as $cu){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $cu['nro_cuenta'] . '</td>';
 							echo '<td campo-dato="c2">' . $cu['tipo_cuenta'] . '</td>';
-						//	echo '<td campo-dato="c3">' . $cu['moneda'] . '</td>';
 							echo '<td campo-dato="c4">' . $cu['saldo'] . '</td>';
 							echo '</tr>';								
 						}

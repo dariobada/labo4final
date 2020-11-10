@@ -5,7 +5,6 @@
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
 	require '../models/Roles.php';
-	require '../models/Monedas.php';
 	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
 	require '../views/FormAdministracionProductos.php';
@@ -24,18 +23,13 @@
 	$aux = $u->getTodosLosUsuarios();
 	// se recorren todos los usuarios para quedarse con los no administradores
 	foreach($aux as $us){
-		// obtengo los roles para validar que no sea administrador
-		//$roles = $r->getRolesPorUsuario($us);
-
-
+		// obtengo la marca que indica si el usuario es administrador
+	
 		if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
 			$listaUsuarios[] = $us;
 		}
 	}
 
-	//------ se obtienen las monedas --------
-	$m = new Monedas();
-	$listaMonedas = $m->getTodasLasMonedas();
 
 	//------ se obtienen los tipos de cuenta --------
 	$tc = new TipoCuentas();
@@ -48,7 +42,6 @@
 
 	$v = new FormAdministracionProductos();
 	$v->usuarios = $listaUsuarios;
-	$v->monedas = $listaMonedas;
 	$v->tipoCuentas = $listaTipoCuentas;
 	$v->cuentas = $listaCuentas;
 

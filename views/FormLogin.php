@@ -5,7 +5,7 @@
 
 	class FormLogin extends View {
 
-		//public $empleados;
+		
 
 		
 

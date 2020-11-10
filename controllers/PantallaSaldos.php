@@ -4,7 +4,6 @@
 	
 	require '../fw/fw.php';
 	require '../models/Cuentas.php';
-	require '../models/Monedas.php';
 	require '../models/TipoCuentas.php';
 	require '../views/ListadoCuentas.php';
 
@@ -16,7 +15,6 @@
 	}
 
 	$c = new Cuentas();
-	$m = new Monedas();
 	$tc = new TipoCuentas();
 	
 	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
@@ -36,7 +34,6 @@
 		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
 		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
 		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
-		$arrayCuentas[$i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle[0]['cod_moneda']);
 	
 
 		$i++;

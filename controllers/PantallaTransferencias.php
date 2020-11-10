@@ -4,7 +4,6 @@
 	
 	require '../fw/fw.php';
 	require '../models/Cuentas.php';
-	require '../models/Monedas.php';
 	require '../models/TipoCuentas.php';
 	require '../views/FormTransferencias.php';
 	require '../views/FormTransferenciasRespuesta.php';
@@ -26,9 +25,7 @@
 		if($_POST['monto'] > $respGetDetalle[0]['saldo']){
 			//no posee saldo suficiente para realizar la transferencia
 			
-			$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';
-			//setlocale(LC_MONETARY, "en_US"); 
-			//$mensaje = money_format("The output in locales" . " national format is %n", $respGetDetalle[0]['saldo']); 
+			$mensaje = 'No posee saldo suficiente para realizar esta transferencia.';	
 			
 		} else{
 			$nuevoSaldo = $respGetDetalle[0]['saldo'] - $_POST['monto'];
@@ -39,7 +36,6 @@
 	}
 
 	$c = new Cuentas();
-	$m = new Monedas();
 	$tc = new TipoCuentas();
 	
 	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
@@ -59,7 +55,6 @@
 		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
 		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
 		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
-		$arrayCuentas[$i]['moneda'] = $m->getDescripcionMoneda($respGetDetalle[0]['cod_moneda']);
 	
 
 		$i++;

@@ -8,8 +8,6 @@
 	require '../views/FormLogin.php';
 	require '../views/FormLoginError.php';
 
-	//$e = new Empleados();
-	//$todos = $e->getTodos();
 
 	session_start();
 
@@ -33,8 +31,6 @@
 		} else{
 
 		
-			//$fila = pg_fetch_assoc($resultado);
-
 			if ($usuario['pass'] != sha1($_POST['pass'])){
 
 				$v = new FormLoginError();

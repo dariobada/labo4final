@@ -3,11 +3,8 @@
 // controllers/PantallaTarjetas.php
 	
 	require '../fw/fw.php';
-	//require '../models/Cuentas.php';
-	//require '../models/Monedas.php';
 	require '../models/Tarjetas.php';
 	require '../models/Proveedores.php';
-	//require '../views/ListadoCuentas.php';
 	require '../views/ListadoTarjetas.php';
 
 	session_start();
@@ -33,8 +30,7 @@
 	
 	//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
 	$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
-	//var_dump($tarjetasUsuario);
-	
+		
 	//obtengo los datos necesarios para armar la lista de tarjetas principales
 	foreach($tarjetasUsuario as $tu){
 		//si el estado de la relacion tarjeta-usuario es activo, busco el detalle

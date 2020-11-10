@@ -28,8 +28,7 @@ class Database {
 		
 		$this->res = pg_query($this->cn, $q);
 		if(!$this->res) die(pg_last_error($this->cn) . " -- Consulta: " . $q);
-		//$this->res = mysqli_query($this->cn, $q);
-		//if(!$this->res) die(mysqli_error($this->cn) . " -- Consulta: " . $q);
+		
 	}
 
 	public function numRows(){
@@ -48,7 +47,7 @@ class Database {
 
 	public function escape($str){
 		if(!$this->cn) $this->connect();
-		return mysqli_escape_string($this->cn, $str);
+		return pg_escape_string($this->cn, $str);
 	}
 
 	public function escapeWildcards($str){
