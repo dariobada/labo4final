@@ -116,6 +116,11 @@
 					left: 20%;
 					top: 13%;
 				}
+
+				input.saldo{
+					position: absolute;
+					left:30%;
+				}
 				
 				
 				
@@ -136,12 +141,12 @@
 
 			<div class="contenedorBody">
 
-				<!--<form class="radio" action="" method="post">-->
+				
 				<label>Cuentas</label>
 				<input type="radio" id="cuentas" name="opcion" value="c" checked="checked">
           	 	<label>Tarjetas</label>
            	 	<input type="radio" id="tarjetas" name="opcion" value="t">
-				<!--</form>-->
+				
 				
 				<div class="Alta">
 					<form action="" method="post">
@@ -172,11 +177,11 @@
 
 						</select>
 						
-						<br><br><br>
+						<br><br>
 
 						<label>Ingresar saldo: </label>
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
-						<br><br><br><br>
+						<br><br><br><br><br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
 
@@ -196,7 +201,7 @@
 							 ?>
 						</select>
 
-					<br>
+					<br><br>
 
 						<label>Ingresar saldo: </label>
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
