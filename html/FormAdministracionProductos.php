@@ -117,9 +117,19 @@
 					top: 13%;
 				}
 
-				input.saldo{
+				input.saldo1{
 					position: absolute;
-					left:30%;
+					left:60%;
+				}
+
+				select.tipo_cuenta{
+					position: absolute;
+					left:60%;
+				}
+
+				select.usuario{
+					position: absolute;
+					left:60%;
 				}
 				
 				
@@ -155,7 +165,7 @@
 
 						
 						<label>Seleccionar usuario: </label>
-						<select name="cuenta" required="required" id="cuenta"> 
+						<select name="usuario" required="required" id="usuario"> 
 							<?php 
 								foreach ($this->usuarios as $us){
 									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
@@ -180,7 +190,7 @@
 						<br><br>
 
 						<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
+						<input class="saldo1" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br><br><br><br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
@@ -204,7 +214,7 @@
 					<br><br>
 
 						<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
+						<input class="saldo2" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
@@ -231,6 +241,38 @@
 
 			</div>
 		</div>
+
+		<script src="../jquery.js"></script>
+		<script type="text/javascript">
+
+			document.getElementById("divCerrarSesion").onmouseover = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCerrarSesion").onmouseout = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "auto";
+			}
+
+			$(document).ready(function(){
+				
+				
+
+				$("#divCerrarSesion").click(function(){
+					
+					$.ajax({
+						type:"post",
+						url:"./CerrarSesion.php",
+						data:{},
+						success:function(respuestaDelServer,estado){
+							window.location.href="PantallaLogin.php";	
+						}
+					});
+
+
+
+				});
+			});
+		</script>
 
 </body>
 </html>
