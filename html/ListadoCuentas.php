@@ -77,12 +77,14 @@
 
 			}
 			div.interiorTitulo{
-				background-color:lightblue;
+				background-color:green;
 				width:60%;
 				height:11%;
 				left:20%;
 				position:absolute;
 				top:25%;
+				font-size:20px;
+				font-weight:bold;
 
 
 			}
@@ -90,6 +92,8 @@
 			a{
 
 				color:white;
+				font-size:20px;
+				font-weight:bold;
 
 			}
 
@@ -146,7 +150,7 @@
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
-				<a>Hola <?= $this->usuario?></a>
+				<a>Bienvenido,  <?= $this->usuario?></a>
 			
 				<div class="interiorTitulo">
 					<a>Cuentas</a>
