@@ -5,7 +5,8 @@
 
 	class FormTransferencias extends View {
 
-		public $cuentas;	
+		public $cuentas;
+		public $usuario;	
 
 
 	}

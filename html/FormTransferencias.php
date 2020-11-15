@@ -109,6 +109,28 @@
 				width: 30%;
 			}
 
+			a{
+
+				color:white;
+				font-size:20px;
+				font-weight:bold;
+
+			}
+
+			div.interiorTitulo{
+				background-color:green;
+				width:10%;
+				height:11%;
+				left:20%;
+				position:absolute;
+				top:20%;
+				font-size:20px;
+				font-weight:bold;
+				border: 1px solid #ddd;
+
+
+			}
+
 			[campo-dato='c1']{
 			width:25%; 
 			}
@@ -151,12 +173,16 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
+				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
+				<a>Usuario operando: <?= $this->usuario?></a>
+				<div class="interiorTitulo">
+					<a>Transferencia</a>
+				</div>
 				<div class="interiorBody">
 					<form action="" method="post">
 						

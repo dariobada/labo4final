@@ -7,6 +7,7 @@
 
 		public $mensaje;
 		public $cuentas;
+		public $usuario;
 
 
 	}

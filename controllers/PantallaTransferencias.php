@@ -67,12 +67,14 @@
 		$v = new FormTransferenciasRespuesta();
 		$v->cuentas = $arrayCuentas;
 		$v->mensaje = $mensaje;
+		$v->usuario = $_SESSION['nombre'];
 
 		//render sería como decirle "dibujate"
 		$v->render();	
 	} else{
 		$v = new FormTransferencias();
 		$v->cuentas = $arrayCuentas;
+		$v->usuario = $_SESSION['nombre'];
 
 		//render sería como decirle "dibujate"
 		$v->render();	

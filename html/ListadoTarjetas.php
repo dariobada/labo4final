@@ -72,6 +72,7 @@
 		    justify-content:center;
 				align-items:center;
 				display:flex;
+			float: left;  
 	
 			}
 
@@ -139,7 +140,7 @@
 
             div.interiorTitulo1{
 				background-color:green;
-				width:60%;
+				width:10%;
 				height:11%;
 				left:20%;
 				position:absolute;
@@ -153,7 +154,7 @@
 
 			div.interiorTitulo2{
 				background-color:green;
-				width:60%;
+				width:15%;
 				height:11%;
 				left:20%;
 				position:absolute;
@@ -245,7 +246,7 @@
 			<div class="contenedorBody">
 				<a>Usuario operando: <?= $this->usuario?></a>
 				<div class="contenedorMarca">
-					<h1>&nbsp; Nuestros Proveedores</h1>
+					<h1>Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
 					<img class="logo" src="../VISA.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
@@ -268,11 +269,13 @@
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número de tarjeta</th>';
 						echo '<th campo-dato="c2">Proveedor</th>';
+						echo '<th campo-dato="c3">Solicitar extensión</th>';
 						echo '</tr>';
 						foreach($this->tarjetasPrincipales as $tp){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
-							echo '<td campo-dato="c2"><a>' . $tp['nombre_proveedor'] . '  </a><img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '  <img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+							echo '<td campo-dato="c3"><button>Solicitar</button></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
