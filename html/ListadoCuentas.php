@@ -76,6 +76,23 @@
 
 
 			}
+			div.interiorTitulo{
+				background-color:lightblue;
+				width:60%;
+				height:15%;
+				left:20%;
+				position:absolute;
+				top:30%;
+
+
+			}
+
+			a{
+
+				color:white;
+
+			}
+
 			img{
 				height: 50%;
 				width: 80%;
@@ -122,15 +139,17 @@
 	<body background="../fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="../logo.png"></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"><a>Hola <?= $this->usuario?></a></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
-				<h4>Hola, <?= $this->usuario?></h4>
-				<h2>Cuentas</h2>
+			
+				<div class="interiorTitulo">
+					<a>Cuentas</a>
+				</div>
 				<div class="interiorBody">
 					
 					<?php
