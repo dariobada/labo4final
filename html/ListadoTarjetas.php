@@ -69,6 +69,10 @@
 		    height: 80%;
 		    font-size: 6.5px;
 		    background: linear-gradient(0deg, darkblue, darkcyan); 
+		    justify-content:center;
+				align-items:center;
+				display:flex;
+	
 			}
 
 			div.contenedorBody{
@@ -133,6 +137,42 @@
 
             }
 
+            div.interiorTitulo1{
+				background-color:green;
+				width:60%;
+				height:11%;
+				left:20%;
+				position:absolute;
+				top:15%;
+				font-size:20px;
+				font-weight:bold;
+				border: 1px solid #ddd;
+
+
+			}
+
+			div.interiorTitulo2{
+				background-color:green;
+				width:60%;
+				height:11%;
+				left:20%;
+				position:absolute;
+				top:55%;
+				font-size:20px;
+				font-weight:bold;
+				border: 1px solid #ddd;
+
+
+			}
+
+			a{
+
+				color:white;
+				font-size:20px;
+				font-weight:bold;
+
+			}
+
 			[campo-dato='c1']{
 			width:25%; 
 			}
@@ -196,13 +236,14 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
+				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			
 			<div class="contenedorBody">
+				<a>Usuario operando: <?= $this->usuario?></a>
 				<div class="contenedorMarca">
 					<h1>&nbsp; Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
@@ -215,7 +256,10 @@
 					<img class="logo" src="../AMERICAN.png">
 				</div>
 
-				<label class="mistarjetas">Mis Tarjetas</label>
+				<!--<label class="mistarjetas">Mis Tarjetas</label>-->
+				<div class="interiorTitulo1">
+					<a>Mis tarjetas</a>
+				</div>
 				<div class="interiorBody">
 					
 					<?php
@@ -236,7 +280,9 @@
 
 				</div>	
 				
-
+				<div class="interiorTitulo2">
+					<a>Mis extensiones</a>
+				</div>
 				<div class="interiorBody2">
 					
 					<?php

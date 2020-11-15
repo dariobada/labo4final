@@ -70,6 +70,7 @@
 	$v = new ListadoTarjetas();
 	$v->tarjetasPrincipales = $listaPrincipales;
 	$v->tarjetasExtensiones = $listaExtensiones;
+	$v->usuario = $_SESSION['nombre'];
 
 	//render sería como decirle "dibujate"
 	$v->render();	

@@ -85,6 +85,7 @@
 				top:25%;
 				font-size:20px;
 				font-weight:bold;
+				border: 1px solid #ddd;
 
 
 			}
@@ -150,7 +151,7 @@
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
-				<a>Bienvenido,  <?= $this->usuario?></a>
+				<a>Usuario operando: <?= $this->usuario?></a>
 			
 				<div class="interiorTitulo">
 					<a>Cuentas</a>
