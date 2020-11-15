@@ -82,7 +82,7 @@
 				height:15%;
 				left:20%;
 				position:absolute;
-				top:30%;
+				top:25%;
 
 
 			}
@@ -139,7 +139,7 @@
 	<body background="../fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="../logo.png"><a>Hola <?= $this->usuario?></a></div>
+				<div class="headerOpcionImpar"><img src="../logo.png"><br/><a>Hola <?= $this->usuario?></a></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
