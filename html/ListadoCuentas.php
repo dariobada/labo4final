@@ -78,7 +78,7 @@
 			}
 			div.interiorTitulo{
 				background-color:green;
-				width:60%;
+				width:12%;
 				height:11%;
 				left:20%;
 				position:absolute;

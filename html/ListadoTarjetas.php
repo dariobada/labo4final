@@ -69,10 +69,7 @@
 		    height: 80%;
 		    font-size: 6.5px;
 		    background: linear-gradient(0deg, darkblue, darkcyan); 
-		    justify-content:center;
-				align-items:center;
-				display:flex;
-			float: left;  
+		   
 	
 			}
 
@@ -117,7 +114,7 @@
 				
 
 			}
-
+/*
 			button{
                 width: 13%;
                 height: 30%;   
@@ -126,7 +123,7 @@
                 left: 110%;
                 top: 30%;
          
-            }
+            }*/
             label.mistarjetas{
 
             	margin-left: 20%;
@@ -140,7 +137,7 @@
 
             div.interiorTitulo1{
 				background-color:green;
-				width:10%;
+				width:12%;
 				height:11%;
 				left:20%;
 				position:absolute;
@@ -154,7 +151,7 @@
 
 			div.interiorTitulo2{
 				background-color:green;
-				width:15%;
+				width:12%;
 				height:11%;
 				left:20%;
 				position:absolute;
