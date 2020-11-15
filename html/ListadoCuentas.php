@@ -123,12 +123,14 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divConsultaSaldos">Consulta de saldos</div>
+				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
+				<h4>Hola, <?= echo $this->usuario?></h4>
+				<h2>Cuentas</h2>
 				<div class="interiorBody">
 					
 					<?php

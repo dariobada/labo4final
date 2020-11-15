@@ -42,6 +42,7 @@
 
 	$v = new ListadoCuentas();
 	$v->cuentas = $arrayCuentas;
+	$v->usuario = $_SESSION['nombre'];
 
 	//render sería como decirle "dibujate"
 	$v->render();	
