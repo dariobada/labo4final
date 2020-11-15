@@ -129,7 +129,7 @@
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
-				<h4>Hola, <?= echo $this->usuario?></h4>
+				<h4>Hola, <?= $this->usuario?></h4>
 				<h2>Cuentas</h2>
 				<div class="interiorBody">
 					
