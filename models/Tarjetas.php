@@ -57,7 +57,7 @@
 			$maximo = $this->db->fetch();
 			var_dump($maximo);
 			var_dump("separador");
-			var_dump($maximo[0]);
+			var_dump($maximo["max"]);
 			
 		}
 
