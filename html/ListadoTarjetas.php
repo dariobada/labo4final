@@ -479,7 +479,9 @@
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
-				$("#formIdTarjeta").html(id);
+				//$("#formIdTarjeta").html(id);
+				document.getElementById("formIdTarjeta").value = id;
+				alert(id);
 			}
 
 			document.getElementById("cerrarModi").onclick=function(){
