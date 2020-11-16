@@ -33,6 +33,22 @@
 
 		}
 
+		public function validarExtension($idTarj, $nroDocumento){
+
+			$estado = "'" . 'A' . "'";
+			$sentencia = 'SELECT * FROM public."EXTENSIONES_TARJETA" WHERE "id_tarjeta_principal" = ' . $idTarj . ' and "documento_ext" = ' . $nroDocumento . ' and cod_estado = ';
+
+			$this->db->query($sentencia . $estado);
+
+			if($this->db->numRows() == 1){
+				
+				return FALSE;
+			} else{
+				
+				return TRUE;
+			}
+		}
+
 
 
 	}

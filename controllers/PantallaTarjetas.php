@@ -14,14 +14,21 @@
 		exit;
 	}
 
+	$t = new Tarjetas();
+	$p = new Proveedores();
+
 	if(count($_POST)>0){
 		//circuito de alta de extensión
 		//debemos validar que la persona a la que se le solicita la extensión no posea otra extensión de esa misma tarjeta
 		var_dump("id original: " . $_POST['formIdTarjeta']);
+		if($t->validarExtension($_POST['formIdTarjeta'], $_POST['formDocumento'])){
+			var_dump("permitir alta de extension");
+		} else
+		{
+			var_dump("no permitir");
+		}
 	}
-
-	$t = new Tarjetas();
-	$p = new Proveedores();
+	
 
 	$tarjetasUsuario = array();
 
