@@ -461,7 +461,7 @@
 					<a class="col1">Número de documento: </a><br/><br/>
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
-					<input id="formIdTarjeta" type="hidden"></input>
+					<input name ="formIdTarjeta" id="formIdTarjeta" type="hidden"></input>
 
 					<button type="submit"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
 
