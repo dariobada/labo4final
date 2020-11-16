@@ -257,14 +257,14 @@
 				position:fixed;
 				margin-left:2%;
 				width:15%;
-				height:7%;
+				height:5%;
 			}
 
 			input.col2{
 				position:fixed;
 				margin-left:30%;
 				width:15%;
-				height:7%;
+				height:5%;
 			}
 
 			select.col1{
@@ -276,10 +276,10 @@
 
 			button.AltaFormulario{
 				position:fixed;
-				margin-left:15%;
+				margin-left:19%;
 				margin-top:1.5%;
-				width: 300px;
-				height: 60px;
+				width: 200px;
+				height: 50px;
 
 			}
 
@@ -450,15 +450,15 @@
 					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Enviar modificación</button> <br/><br/>	
 				-->
 
-					<a class="col1">Ingrese los datos del destinatario de la extensión a solicitar</a><br/><br/>
+					<a class="col1">Ingrese los datos del destinatario de la extensión a solicitar</a><br/><br/><br/>
 					
 					<a class="col1">Nombre: </a>
-					<a class="col2">Apellido: </a><br/><br/>
+					<a class="col2">Apellido: </a><br/>
 
 					<input class="col1" type="text" id="formNombre" name="formNombre" required="required" ></input>				
 					<input class="col2" type="text" id="formApellido" name="formApellido" required="required" ></input><br/><br/>	<br/><br/>
 
-					<a class="col1">Número de documento: </a><br/><br/>
+					<a class="col1">Número de documento: </a><br/>
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
 
