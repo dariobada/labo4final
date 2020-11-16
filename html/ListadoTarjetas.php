@@ -276,7 +276,7 @@
 
 			button.AltaFormulario{
 				position:fixed;
-				margin-left:19%;
+				margin-left:25%;
 				margin-top:1.5%;
 				width: 200px;
 				height: 50px;
@@ -453,12 +453,12 @@
 					<a class="col1">Ingrese los datos del destinatario de la extensión a solicitar</a><br/><br/><br/>
 					
 					<a class="col1">Nombre: </a>
-					<a class="col2">Apellido: </a><br/>
+					<a class="col2">Apellido: </a><br/><br/>
 
 					<input class="col1" type="text" id="formNombre" name="formNombre" required="required" ></input>				
 					<input class="col2" type="text" id="formApellido" name="formApellido" required="required" ></input><br/><br/>	<br/><br/>
 
-					<a class="col1">Número de documento: </a><br/>
+					<a class="col1">Número de documento: </a><br/><br/>
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
 
