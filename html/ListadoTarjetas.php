@@ -17,9 +17,19 @@
 				
 			}
 
-			div.contenedorPrincipal{
+			div.contenedorPrincipalActivo{
 				height:100%;
 				width:100%;
+				opacity:1;
+				pointer-events:auto;
+			
+			}
+
+			div.contenedorPrincipalInactivo{
+				height:100%;
+				width:100%;
+				pointer-events:none;
+				opacity:0.3;
 			
 			}
 
@@ -163,11 +173,113 @@
 
 			}
 
-			a{
+			a.usuario{
 
 				color:white;
 				font-size:20px;
 				font-weight:bold;
+
+			}
+
+			div.ventanaModal{
+				
+				width:70%;
+				height:70%;		
+				position:fixed;
+				top:20%;
+				left:25%;
+				
+			}
+
+			div.divHeader{
+				background-color: red;
+				height: 5%;
+				width:80%;
+				float:left;
+				justify-content:center;
+				align-items:center;
+
+			}
+
+			div.divHeaderTexto{
+				background-color: lightblue;
+				height:100%;
+				width:95%;
+				display:flex;
+				float:left;
+				justify-content:center;
+				align-items:center;
+				
+
+			}
+
+			div.divHeaderCerrar{
+				background-color: lightpink;
+				height:100%;
+				width:5%;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				float:left;	
+			}
+			div.divHeaderCerrarOver{
+				background-color: grey;
+				height:100%;
+				width:5%;
+				display:flex;
+				justify-content:center;
+				align-items:center;
+				float:left;	
+			}
+
+			div.centroModal{
+				
+				float:left;
+				background-color:lightgrey;
+				width:80%;
+				height: 65%;
+				
+			}
+
+			a.col1{
+				position:fixed;
+				margin-left:2%;
+				font-size:20px;
+			}
+
+			a.col2{
+				position:fixed;
+				margin-left:30%;
+				font-size:20px;
+			}
+
+			input.col1{
+				position:fixed;
+				margin-left:2%;
+				width:15%;
+				height:7%;
+			}
+
+			input.col2{
+				position:fixed;
+				margin-left:30%;
+				width:15%;
+				height:7%;
+			}
+
+			select.col1{
+				position:fixed;
+				margin-left:30%;
+				width:15%;
+				height:7%;
+			}
+
+			button.AltaFormulario{
+				position:fixed;
+				margin-left:15%;
+				margin-top:1.5%;
+				width: 300px;
+				height: 60px;
 
 			}
 
@@ -231,7 +343,7 @@
 	</head>
 
 	<body background="../fondo.jpg">
-		<div class="contenedorPrincipal" >
+		<div class="contenedorPrincipalActivo" id="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
@@ -241,7 +353,7 @@
 			</div>
 			
 			<div class="contenedorBody">
-				<a>Usuario operando: <?= $this->usuario?></a>
+				<a class="usuario">Usuario operando: <?= $this->usuario?></a>
 				<div class="contenedorMarca">
 					<h1>Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
@@ -256,7 +368,7 @@
 
 				<!--<label class="mistarjetas">Mis Tarjetas</label>-->
 				<div class="interiorTitulo1">
-					<a>Mis tarjetas</a>
+					<a class="usuario">Mis tarjetas</a>
 				</div>
 				<div class="interiorBody">
 					
@@ -272,7 +384,7 @@
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '  <img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
-							echo '<td campo-dato="c3"><button onclick="myFunction(2)" id="btnSolicitar" value="' . $tp['id_tarjeta'] . '">Solicitar</button></td>';
+							echo '<td campo-dato="c3"><button onclick="mostrarAltaExtension(' . $tp['id_tarjeta'] . ')">Solicitar</button></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -281,7 +393,7 @@
 				</div>	
 				
 				<div class="interiorTitulo2">
-					<a>Mis extensiones</a>
+					<a class="usuario">Mis extensiones</a>
 				</div>
 				<div class="interiorBody2">
 					
@@ -311,14 +423,49 @@
 			</div>	
 		</div>
 
+		<!--Ventana modal de Modificación-->
+		<div class="ventanaModal" id="modalModificacion">
+			<div class="divHeader">
+				<div class="divHeaderTexto" id="headerTextoMod"><a>Encabezado modal Formulario de modificación</a></div>
+				<div class="divHeaderCerrar" id="cerrarModi"><a>X</a></div>
+			</div>
+
+			<div class="centroModal" id="cuerpoModalModi">
+				<form id="formularioModi">
+					<a class="col1">Nombre cliente: </a>
+					<a class="col2">Nacionalidad: </a><br/><br/>				
+					
+					<input class="col1" type="text" id="formNombreModi" name="formNombreModi" required="required" ></input>
+					<select class="col1" id="formNacionalidadesModi" name="formNacionalidadesModi" required="required"></select><br/><br/>	<br/><br/>	
+					
+					<a class="col1">Estado: </a>
+					<a class="col2">Fecha alta: </a><br/><br/>		
+
+					<input class="col1" type="text" id="formEstadoModi" name="formEstadoModi" required="required" ></input>
+					<input class="col2" type="date" id="formFechaModi" name="formFechaModi" required="required"> <br/><br/>	<br/><br/>
+					<input id="formIdClienteModi" type="hidden"></input>
+
+					
+					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Enviar modificación</button> <br/><br/>	
+
+
+				</form>
+
+			</div>
+		</div>
+
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
 
-			function myFunction($id) {
+			function mostrarAltaExtension($id) {
   				alert("entra a funcion");
   				alert("id: " );
   				alert($id);
+
+  				$('#modalModificacion').css('visibility','visible');
+  				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
+				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
@@ -355,6 +502,8 @@
 			}
 
 			$(document).ready(function(){
+
+				$("#modalModificacion").css("visibility","hidden");
 				
 				$("#divConsultaSaldos").click(function(){
 					
