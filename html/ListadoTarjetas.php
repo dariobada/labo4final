@@ -476,12 +476,14 @@
 
 			function mostrarAltaExtension(id) {
   				
+  				alert(document.getElementById("formNombre").value);
+  				alert(document.getElementById("formIdTarjeta").value);
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
 				//$("#formIdTarjeta").html(id);
 				document.getElementById("formIdTarjeta").value = id;
-				alert(id);
+				
 			}
 
 			document.getElementById("cerrarModi").onclick=function(){
