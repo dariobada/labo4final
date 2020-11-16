@@ -28,8 +28,8 @@
 			
 				div.headerOpcionImpar{
 					background-color:rgb(220, 94, 200);
-					height:100%;
-					width:25%;
+					height:90%;
+					width:20%;
 					font-family: Helvetica;
 					float:left;
 					color:white;
@@ -43,8 +43,8 @@
 
 				div.headerOpcionPar{
 					background-color:rgb(219, 109, 202 );
-					width:25%;
-					height:100%;
+					width:20%;
+					height:90%;
 					float:left;
 					color:white;
 					font-family: Helvetica;
