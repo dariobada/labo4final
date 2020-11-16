@@ -432,6 +432,7 @@
 
 			<div class="centroModal" id="cuerpoModalModi">
 				<form id="formularioModi">
+					<!--
 					<a class="col1">Nombre cliente: </a>
 					<a class="col2">Nacionalidad: </a><br/><br/>				
 					
@@ -447,7 +448,21 @@
 
 					
 					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Enviar modificación</button> <br/><br/>	
+				-->
 
+					<a class="col1">Ingrese los datos del destinatario de la extensión a solicitar</a><br/><br/>
+					
+					<a class="col1">Nombre: </a>
+					<a class="col2">Apellido: </a><br/><br/>
+
+					<input class="col1" type="text" id="formNombre" name="formNombre" required="required" ></input>				
+					<input class="col2" type="text" id="formApellido" name="formApellido" required="required" ></input><br/><br/>	<br/><br/>
+
+					<a class="col1">Número de documento: </a><br/><br/>
+
+					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
+
+					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Solicitar extensión</button> <br/><br/>
 
 				</form>
 
@@ -459,10 +474,7 @@
 			
 
 			function mostrarAltaExtension($id) {
-  				alert("entra a funcion");
-  				alert("id: " );
-  				alert($id);
-
+  				
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
