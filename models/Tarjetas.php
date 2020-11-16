@@ -56,7 +56,8 @@
 
 			$maximo = $this->db->fetch();
 			var_dump($maximo);
-			var_dump("Ultima tarjeta: " . $maximo['ultimaTarjeta']);
+			var_dump("Ultima tarjeta: " . $maximo[0]['ultimaTarjeta']);
+			var_dump("Ultima tarjeta: " . $maximo[0]['ultimaTarjeta'] + 1);
 		}
 
 
