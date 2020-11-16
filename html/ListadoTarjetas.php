@@ -188,6 +188,7 @@
 				position:fixed;
 				top:20%;
 				left:25%;
+				visibility:hidden;
 				
 			}
 
