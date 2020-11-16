@@ -354,7 +354,7 @@
 			
 			<div class="contenedorBody">
 				<a class="usuario">Usuario operando: <?= $this->usuario?></a>
-				<div class="contenedorMarca">
+				<!--<div class="contenedorMarca">
 					<h1>Nuestros Proveedores</h1>
 					<br><br><br><br><br><br>
 					<img class="logo" src="../VISA.png">
@@ -364,7 +364,7 @@
 					<img class="logo" src="../CABAL.png">
 					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 					<img class="logo" src="../AMERICAN.png">
-				</div>
+				</div>-->
 
 				<!--<label class="mistarjetas">Mis Tarjetas</label>-->
 				<div class="interiorTitulo1">
@@ -462,7 +462,7 @@
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
 
-					<button type="button"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
+					<button type="submit"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
 
 				</form>
 
