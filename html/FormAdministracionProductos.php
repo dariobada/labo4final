@@ -163,7 +163,7 @@
 				<div class="Alta">
 					<form action="" method="post">
 
-						<h2>Dar de alta</h2>
+						<h2>Dar de alta producto</h2>
 
 						
 						<label>Seleccionar usuario: </label>
@@ -203,7 +203,7 @@
 
 				<div class="Modi">
 					<form action="" method="post">
-						<h2>Modificar</h2>
+						<h2>Modificar producto</h2>
 						<label>Seleccionar cuenta: </label>
 						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 							<?php 
@@ -228,7 +228,7 @@
 
 				<div class="Baja">
 					<form action="" method="post">
-						<h2>Baja</h2>
+						<h2>Baja producto</h2>
 						<label>Seleccionar cuenta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
@@ -251,7 +251,7 @@
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
 
-			
+
 			document.getElementById("divAltaProductos").onmouseover = function(){			
 		
 				document.getElementById("divAltaProductos").style.cursor = "pointer";
