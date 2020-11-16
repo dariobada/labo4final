@@ -55,9 +55,9 @@
 			$this->db->query($sentencia);
 
 			$maximo = $this->db->fetch();
-			var_dump($maximo);
-			var_dump("separador");
-			var_dump($maximo["max"]);
+			
+			var_dump($maximo["max"] + "1");
+			var_dump($maximo["max"] + 1);
 			
 		}
 
