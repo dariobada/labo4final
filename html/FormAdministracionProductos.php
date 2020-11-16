@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Administracion productos</title>
+	<title>Administracion de cuentas</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<style>
 		html, body{
@@ -148,7 +148,7 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Administración de cuentas</div>
 				<div class="headorOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
