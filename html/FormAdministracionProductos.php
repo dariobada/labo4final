@@ -160,12 +160,6 @@
 			<div class="contenedorBody">
 
 				
-				<label>Cuentas</label>
-				<input type="radio" id="cuentas" name="opcion" value="c" checked="checked">
-          	 	<label>Tarjetas</label>
-           	 	<input type="radio" id="tarjetas" name="opcion" value="t">
-				
-				
 				<div class="Alta">
 					<form action="" method="post">
 
