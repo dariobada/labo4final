@@ -423,10 +423,10 @@
 			</div>	
 		</div>
 
-		<!--Ventana modal de Modificación-->
+		<!--Ventana modal de alta de extensión-->
 		<div class="ventanaModal" id="modalModificacion">
 			<div class="divHeader">
-				<div class="divHeaderTexto" id="headerTextoMod"><a>Encabezado modal Formulario de modificación</a></div>
+				<div class="divHeaderTexto" id="headerTextoMod"><a>Solicitud de alta de extensión de tarjeta</a></div>
 				<div class="divHeaderCerrar" id="cerrarModi"><a>X</a></div>
 			</div>
 
@@ -466,6 +466,21 @@
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
+			}
+
+			document.getElementById("cerrarModi").onclick=function(){
+
+				$('#contenedorPrincipal').removeClass("contenedorPrincipalInactivo");
+				$('#contenedorPrincipal').addClass("contenedorPrincipalActivo");	
+				$('#modalModificacion').css('visibility','hidden');
+			}
+
+			document.getElementById("cerrarModi").onmouseover=function(){
+				document.getElementById("cerrarModi").className="divHeaderCerrarOver";
+			}
+			
+			document.getElementById("cerrarModi").onmouseout=function(){
+				document.getElementById("cerrarModi").className="divHeaderCerrar";
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
