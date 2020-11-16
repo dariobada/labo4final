@@ -148,7 +148,7 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Alta de productos</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
 				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionPar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
