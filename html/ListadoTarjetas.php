@@ -474,12 +474,12 @@
 	<script type="text/javascript">
 			
 
-			function mostrarAltaExtension($id) {
+			function mostrarAltaExtension(id) {
   				
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
-				$("#formIdTarjeta").html($id);
+				$("#formIdTarjeta").html(id);
 			}
 
 			document.getElementById("cerrarModi").onclick=function(){
