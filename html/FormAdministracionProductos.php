@@ -28,7 +28,7 @@
 			
 				div.headerOpcionImpar{
 					background-color:rgb(220, 94, 200);
-					height:90%;
+					height:100%;
 					width:20%;
 					font-family: Helvetica;
 					float:left;
@@ -44,7 +44,7 @@
 				div.headerOpcionPar{
 					background-color:rgb(219, 109, 202 );
 					width:20%;
-					height:90%;
+					height:100%;
 					float:left;
 					color:white;
 					font-family: Helvetica;
@@ -148,10 +148,10 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
-				<div class="headorOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
-				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
-				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Alta de productos</div>
+				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
+				<div class="headerOpcionPar" id="divCerrarSesion">Cerrar sesión</div>
+				<div class="headerOpcionImpar" id="divCerrarSesion2">Cerrar sesión</div>
 			</div>
 
 
