@@ -461,6 +461,7 @@
 					<a class="col1">Número de documento: </a><br/><br/>
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
+					<input id="formIdTarjeta" type="hidden"></input>
 
 					<button type="submit"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
 
@@ -478,6 +479,7 @@
   				$('#modalModificacion').css('visibility','visible');
   				$('#contenedorPrincipal').addClass("contenedorPrincipalInactivo");
 				$('#contenedorPrincipal').removeClass("contenedorPrincipalActivo");
+				$("#formIdTarjeta").html($id);
 			}
 
 			document.getElementById("cerrarModi").onclick=function(){

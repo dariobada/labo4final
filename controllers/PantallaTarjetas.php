@@ -15,7 +15,9 @@
 	}
 
 	if(count($_POST)>0){
-		var_dump('nombre: ' . $_POST['formNombre']);
+		//circuito de alta de extensión
+		//debemos validar que la persona a la que se le solicita la extensión no posea otra extensión de esa misma tarjeta
+		alert("id original: " . $_POST['formIdTarjeta']);
 	}
 
 	$t = new Tarjetas();
