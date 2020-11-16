@@ -149,21 +149,21 @@
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
-				<div class="headorOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
-				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
+				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
+				<div class="headerOpcionPar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
+				
 			</div>
 
 
 
 			<div class="contenedorBody">
 
-
 				
 				<div class="Alta">
 					<form action="" method="post">
 
-						<h2>Dar de alta</h2>
+						<h2>Dar de alta tarjeta</h2>
 
 						
 						<label>Seleccionar usuario: </label>
@@ -177,7 +177,7 @@
 						</select>
 						<br><br>
 
-						<label>Seleccionar tipo de cuenta: </label>
+						<label>Seleccionar Proveedor: </label>
 						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
 							<?php 
 								foreach ($this->tipoCuentas as $tc){
@@ -189,11 +189,7 @@
 
 						</select>
 						
-						<br><br>
-
-						<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
-						<br><br><br><br><br><br>
+						<br><br><br><br><br><br><br><br><br><br><br>
 
 						<button class="enviar" type="submit">Confirmar</button>
 
@@ -201,35 +197,11 @@
 					</form>
 				</div>
 
-				<div class="Modi">
-					<form action="" method="post">
-						<h2>Modificar</h2>
-						<label>Seleccionar cuenta: </label>
-						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
-							<?php 
-								foreach ($this->cuentas as $cu){
-									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
-								}
-
-							 ?>
-						</select>
-
-						<br><br>
-
-						<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
-						<br><br>
-
-						<button class="enviar" type="submit">Confirmar</button>
-					</form>
-
-
-				</div>
 
 				<div class="Baja">
 					<form action="" method="post">
-						<h2>Baja</h2>
-						<label>Seleccionar cuenta: </label>
+						<h2>Baja de tarjeta</h2>
+						<label>Seleccionar tarjeta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
 									foreach ($this->cuentas as $cu){
@@ -250,68 +222,6 @@
 
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
-
-			
-			document.getElementById("divAltaProductos").onmouseover = function(){			
-		
-				document.getElementById("divAltaProductos").style.cursor = "pointer";
-				
-			}
-
-			document.getElementById("divAltaProductos").onmouseout = function(){			
-			
-				document.getElementById("divAltaProductos").style.cursor = "auto";
-
-			}
-
-
-			document.getElementById("divAltaTarjetas").onmouseover = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "pointer";
-			}
-
-			document.getElementById("divAltaTarjetas").onmouseout = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "auto";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseover = function(){			
-				document.getElementById("divTarjetas").style.cursor = "pointer";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseout = function(){			
-				document.getElementById("divTarjetas").style.cursor = "auto";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseover = function(){			
-				document.getElementById("divAltaUsuarios").style.cursor = "pointer";
-			}
-
-			document.getElementById("divCerrarSesion").onmouseover = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "pointer";
-			}
-
-			document.getElementById("divCerrarSesion").onmouseout = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "auto";
-			}
-
-			$(document).ready(function(){
-				
-				$("#divAltaUsuarios").click(function(){
-					
-					window.location.href="PantallaAdministrarUsuarios.php";
-
-				});
-
-				$("#divAltaTarjetas").click(function(){
-					
-					window.location.href="PantallaAdministrarTarjetas.php";
-
-				});
-
-				$("#divAltaProductos").click(function(){
-					
-					window.location.href="PantallaAdministrarProductos.php";
-
-				});
 
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
