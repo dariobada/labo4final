@@ -55,6 +55,7 @@
 			$this->db->query($sentencia);
 
 			$maximo = $this->db->fetch();
+			var_dump($maximo);
 			var_dump("Ultima tarjeta: " . $maximo['ultimaTarjeta']);
 		}
 
