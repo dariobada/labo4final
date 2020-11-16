@@ -49,6 +49,15 @@
 			}
 		}
 
+		public function realizarAltaExtension($idTarj, $nombre, $apellido, $nroDocumento){
+			//primero obtengo el mayor numero de tarjeta
+			$sentencia = 'SELECT max("nro_tarjeta") as ultimaTarjeta from public."tarjetas"';
+			$this->db->query($sentencia);
+
+			$maximo = $this->db->fetch();
+			var_dump("Ultima tarjeta: " . $maximo['ultimaTarjeta']);
+		}
+
 
 
 	}
