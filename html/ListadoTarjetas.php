@@ -272,7 +272,7 @@
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '  <img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
-							echo '<td campo-dato="c3"><button id="btnSolicitar" value="' . $tp['id_tarjeta'] . '">Solicitar</button></td>';
+							echo '<td campo-dato="c3"><button onclick="myFunction(2)" id="btnSolicitar" value="' . $tp['id_tarjeta'] . '">Solicitar</button></td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -314,6 +314,12 @@
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
+
+			function myFunction($id) {
+  				alert("entra a funcion");
+  				alert("id: " );
+  				alert($id);
+			}
 
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
 				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
