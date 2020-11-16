@@ -48,6 +48,7 @@
 				//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
 				if($auxDT['tipo_tarjeta'] == 'P'){
 					
+					$listaPrincipales[$iP]['id_tarjeta'] = $auxDT['id_tarjeta'];
 					$listaPrincipales[$iP]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
 					$listaPrincipales[$iP]['nombre_proveedor'] = $nombreProv;
 
