@@ -57,7 +57,7 @@
 			$maximo = $this->db->fetch();
 
 			//obtengo los datos que faltan para dar de alta la nueva tarjeta
-			$datosFaltantes = getDetalleTarjeta($idTarj);
+			$datosFaltantes = $this->getDetalleTarjeta($idTarj);
 			//$sentencia = 'INSERT into public."TARJETAS" ('
 			var_dump($datosFaltantes);
 			//var_dump($maximo["max"] + "1");
