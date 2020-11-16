@@ -14,6 +14,10 @@
 		exit;
 	}
 
+	if(count($_POST)>0){
+		var_dump('nombre: ' . $_POST['formNombre']);
+	}
+
 	$t = new Tarjetas();
 	$p = new Proveedores();
 

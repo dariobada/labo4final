@@ -276,7 +276,7 @@
 
 			button.AltaFormulario{
 				position:fixed;
-				margin-left:25%;
+				margin-left:35%;
 				margin-top:1.5%;
 				width: 200px;
 				height: 50px;
@@ -431,7 +431,7 @@
 			</div>
 
 			<div class="centroModal" id="cuerpoModalModi">
-				<form id="formularioModi">
+				<form action="" method="post" id="formularioModi">
 					<!--
 					<a class="col1">Nombre cliente: </a>
 					<a class="col2">Nacionalidad: </a><br/><br/>				
@@ -462,7 +462,7 @@
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
 
-					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Solicitar extensión</button> <br/><br/>
+					<button type="button"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
 
 				</form>
 
