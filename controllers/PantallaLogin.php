@@ -85,7 +85,7 @@
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-					header("Location: PantallaSaldos.php");
+					//header("Location: PantallaSaldos.php");
 					exit();
 
 				}
@@ -95,7 +95,7 @@
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-					header("Location: PantallaTarjetas.php");
+					//header("Location: PantallaTarjetas.php");
 					exit();
 				}
 
