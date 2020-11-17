@@ -67,6 +67,7 @@
 				//busco rol de cuentas
 				var_dump("roles: " . $roles);
 				foreach($roles as $ro){
+					var_dump("ro: " . $ro);
 					if($ro['desc_rol'] = 'Cuentas'){
 						var_dump("entra cuentas");
 						$tieneCuentas = TRUE;

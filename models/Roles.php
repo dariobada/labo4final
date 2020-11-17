@@ -13,6 +13,8 @@
 						  join public."ROLES" b on a."id_rol" = b."id_rol"
 						  WHERE "id_usuario" = ';
 
+			var_dump("sentencia: " . $sentencia);
+
 
 			$this->db->query($sentencia . $idUsua);
 			return $this->db->fetchAll();
