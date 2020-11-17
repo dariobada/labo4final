@@ -172,10 +172,11 @@
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<?php
 					if($this->operaCuentas){
-				?>
-					<h2><?=  $this->operaCuentas?></h2>
-						<?= echo '<div class="headerOpcionPar" id="divConsultaSaldos2" title="No habilitado.">Cuentas</div>'?>
-				<?php
+						var_dump("entra: " . $this->operaCuentas);
+				
+				
+						echo '<div class="headerOpcionPar" id="divConsultaSaldos2" title="No habilitado.">Cuentas</div>';
+				
 					}
 				?>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
