@@ -58,8 +58,18 @@
 
 			//obtengo los datos que faltan para dar de alta la nueva tarjeta
 			$datosFaltantes = $this->getDetalleTarjeta($idTarj);
-			//$sentencia = 'INSERT into public."TARJETAS" ('
-			var_dump($datosFaltantes);
+
+			//realizo el insert de la nueva tarjeta
+			$nroTarjeta = "'" . ($maximo["max"] + "1") . "'";
+			$tipoTarjeta = "'" . "E" . "'";
+			$codProveedor =  "'" . $datosFaltantes['cod_proveedor'] . "'" ;
+			$codEstado = "'" . "A" . "'";
+			$sentencia = 'INSERT INTO public."TARJETAS"( nro_tarjeta, tipo_tarjeta, cod_proveedor, fecha_alta, cod_estado)
+	                           VALUES (' . $nroTarjeta . ', ' . $tipoTarjeta . ', ' . $codProveedor . ', CURRENT_DATE, ' . $codEstado . ')';
+
+	        $this->db->query($sentencia);
+			
+			//var_dump($datosFaltantes);
 			//var_dump($maximo["max"] + "1");
 			//var_dump($maximo["max"] + 1);
 			
