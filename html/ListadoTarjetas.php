@@ -94,6 +94,7 @@
 				left:20%;
 				position:absolute;
 				top:20%;
+				overflow-y:scroll;
 
 			}
 
@@ -104,6 +105,7 @@
 				left:20%;
 				position: absolute;
 				top:60%;
+				overflow-y:scroll;
 
 			}
 			img{
@@ -187,7 +189,7 @@
 				font-size:20px;
 				font-weight:bold;
 				position:absolute;
-				top:70%;
+				top:85%;
 
 			}
 
