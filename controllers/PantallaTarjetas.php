@@ -20,10 +20,10 @@
 	if(count($_POST)>0){
 		//circuito de alta de extensión
 		//debemos validar que la persona a la que se le solicita la extensión no posea otra extensión de esa misma tarjeta
-		var_dump("id original: " . $_POST['formIdTarjeta']);
+	
 		if($t->validarExtension($_POST['formIdTarjeta'], $_POST['formDocumento'])){
 			//si ingresa, significa que se debe realizar el alta de la extensión
-			$t->realizarAltaExtension($_POST['formIdTarjeta'], $_POST['formNombre'], $_POST['formApellido'], $_POST['formDocumento']);
+			$t->realizarAltaExtension($_POST['formIdTarjeta'], $_POST['formNombre'], $_POST['formApellido'], $_POST['formDocumento'], $_SESSION['IdUsuario']);
 		} else
 		{
 			var_dump("no permitir");

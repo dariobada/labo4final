@@ -59,7 +59,7 @@
 			}
 		}
 
-		public function realizarAltaExtension($idTarj, $nombre, $apellido, $nroDocumento){
+		public function realizarAltaExtension($idTarj, $nombre, $apellido, $nroDocumento, $idUsuario){
 			//primero obtengo el mayor numero de tarjeta
 			$sentencia = 'SELECT max("nro_tarjeta") from public."TARJETAS"';
 			$this->db->query($sentencia);
@@ -86,13 +86,14 @@
 	        $ape = "'" . $apellido . "'";
 	        $sentencia = 'INSERT INTO public."EXTENSIONES_TARJETA" 
 	        VALUES (' . $idTarj . ', ' . $idExtension['id_tarjeta'] . ', CURRENT_DATE, null, ' . $codEstado . ', ' . $nom . ', ' . $ape . ', ' . $nroDocumento . ')';
-	        var_dump("sentencia: " . $sentencia);
+	        
 	        $this->db->query($sentencia);
 
 	        //se vincula la nueva tarjeta a la persona
 
-	        
-			
+	        $sentencia = 'INSERT INTO public."TARJETAS_USUARIOS" VALUES (' . $idExtension['id_tarjeta'] . ', ' . $idUsuario . ', CURRENT_DATE, null, ' . $codEstado . ')';
+			$this->db->query($sentencia);
+
 			//var_dump($datosFaltantes);
 			//var_dump($maximo["max"] + "1");
 			//var_dump($maximo["max"] + 1);
