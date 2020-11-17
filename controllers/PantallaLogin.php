@@ -48,22 +48,35 @@
 				$v->render();
 				exit();
 
-			}
-
-			$_SESSION['logueado'] = true;
-			$_SESSION['IdUsuario'] = $usuario['id_usuario'];
-			$_SESSION['nombre'] = $_POST['usuario'];
+			}			
 
 			$r = new Roles();
 		
 			if($r->devolverMarcaAdministrador($usuario['id_usuario'])){
 
+				$_SESSION['logueado'] = true;
+				$_SESSION['IdUsuario'] = $usuario['id_usuario'];
+				$_SESSION['nombre'] = $_POST['usuario'];
 				header("Location: PantallaAdministracionProductos.php");
 				
 
 			} else {
+
+				$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
+				//busco rol de cuentas
+				foreach($roles as $ro){
+					if($ro['desc_rol'] = 'Cuentas'){
+						vardump("encuentra cuentas");
+					}
+
+					if($ro['desc_rol'] = 'Tarjetas'){
+						vardump("encuentra tarjetas");
+					}
+
+
+				}
 			
-				header("Location: PantallaSaldos.php");
+				//header("Location: PantallaSaldos.php");
 	
 			}
 
