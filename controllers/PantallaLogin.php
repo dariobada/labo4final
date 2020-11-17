@@ -67,11 +67,13 @@
 				//busco rol de cuentas
 				foreach($roles as $ro){
 					if($ro['desc_rol'] = 'Cuentas'){
+						var_dump("entra cuentas");
 						$tieneCuentas = TRUE;
 						$_SESSION['tieneCuentas'] = TRUE;
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
+						var_dump("entra tarjetas");
 						$tieneTarjetas = TRUE;
 						$_SESSION['tieneTarjetas'] = TRUE;
 					}
