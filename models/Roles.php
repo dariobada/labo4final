@@ -13,10 +13,13 @@
 						  join public."ROLES" b on a."id_rol" = b."id_rol"
 						  WHERE "id_usuario" = ';
 
-			var_dump("muestro uno: " . $this->db->fetch());
-			var_dump("muestro todos: " . $this->db->fetchAll());
+
 
 			$this->db->query($sentencia . $idUsua);
+
+			var_dump("muestro uno: " . $this->db->fetch());
+			var_dump("muestro todos: " . $this->db->fetchAll());
+			
 			return $this->db->fetchAll();
 
 		}
