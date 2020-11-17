@@ -68,14 +68,17 @@
 				foreach($roles as $ro){
 					if($ro['desc_rol'] = 'Cuentas'){
 						$tieneCuentas = TRUE;
-						$_SESSION['tieneCuentas'] = true;
+						$_SESSION['tieneCuentas'] = TRUE;
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
 						$tieneTarjetas = TRUE;
-						$_SESSION['tieneTarjetas'] = true;
+						$_SESSION['tieneTarjetas'] = TRUE;
 					}
 				}
+
+				var_dump("indicador cuentas: " . $_SESSION['tieneCuentas']);
+				var_dump("indicador tarjetas: " . $_SESSION['tieneTarjetas']);
 
 				if($tieneCuentas){
 					//si entra significa que opera con cuentas, entonces redirecciona a la consulta de cuentas
