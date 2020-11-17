@@ -58,6 +58,7 @@
 				$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 				$_SESSION['nombre'] = $_POST['usuario'];
 				header("Location: PantallaAdministracionProductos.php");
+				exit();
 				
 
 			} else {
@@ -66,21 +67,46 @@
 				//busco rol de cuentas
 				foreach($roles as $ro){
 					if($ro['desc_rol'] = 'Cuentas'){
-						var_dump("encuentra cuentas");
+						$tieneCuentas = TRUE;
+						$_SESSION['tieneCuentas'] = true;
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
-						var_dump("encuentra tarjetas");
+						$tieneTarjetas = TRUE;
+						$_SESSION['tieneTarjetas'] = true;
 					}
+				}
 
+				if($tieneCuentas){
+					//si entra significa que opera con cuentas, entonces redirecciona a la consulta de cuentas
+					$_SESSION['logueado'] = true;
+					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
+					$_SESSION['nombre'] = $_POST['usuario'];
+					header("Location: PantallaSaldos.php");
+					exit();
 
 				}
-			
-				//header("Location: PantallaSaldos.php");
+
+				if($tieneTarjetas){
+					//si entra significa que opera con tarjetas pero no con cuentas, por lo tanto redirecciona al listado de tarjetas
+					$_SESSION['logueado'] = true;
+					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
+					$_SESSION['nombre'] = $_POST['usuario'];
+					header("Location: PantallaTarjetas.php");
+					exit();
+				}
+
+				//si llega acá, singifica que el usuario no tiene vinculado ningún rol, por lo tanto se muestra error
+				$v = new FormLoginError();
+				$v->ErrorLogin = "El usuario no tiene vinculado ningún rol para operar";
+			    //render sería como decirle "dibujate"
+				$v->render();
+				exit();
+				
 	
 			}
 
-			exit();
+			
 
 		}
 
