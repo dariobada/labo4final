@@ -8,6 +8,7 @@
 		public $tarjetasPrincipales;
 		public $tarjetasExtensiones;
 		public $usuario;
+		public $error;
 
 		
 
