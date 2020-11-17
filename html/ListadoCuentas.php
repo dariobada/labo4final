@@ -138,6 +138,30 @@
 			  color: white;
 			}
 
+			.tooltip {
+			  position: relative;
+			  display: inline-block;
+			  border-bottom: 1px dotted black;
+			}
+
+			.tooltip .tooltiptext {
+			  visibility: hidden;
+			  width: 120px;
+			  background-color: black;
+			  color: #fff;
+			  text-align: center;
+			  border-radius: 6px;
+			  padding: 5px 0;
+
+			  /* Position the tooltip */
+			  position: absolute;
+			  z-index: 1;
+			}
+
+			.tooltip:hover .tooltiptext {
+			  visibility: visible;
+			}
+
 			
 		</style>
 	</head>
@@ -146,6 +170,11 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
+				<?php
+					if($this->operaCuentas){
+						echo '<div class="headerOpcionPar" id="divConsultaSaldos2 title="No habilitado.">Cuentas</div>';
+					}
+				?>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
 				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
@@ -218,7 +247,7 @@
 			}
 
 			$(document).ready(function(){
-				
+
 				
 				$("#divConsultaSaldos").click(function(){
 					
