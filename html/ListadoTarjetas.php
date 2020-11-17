@@ -181,6 +181,16 @@
 
 			}
 
+			a.mensaje{
+
+				color:red;
+				font-size:20px;
+				font-weight:bold;
+				position:absolute;
+				top:70%;
+
+			}
+
 			div.ventanaModal{
 				
 				width:70%;
@@ -421,7 +431,7 @@
 				</div>
 				<?php
 					if ($this->mensaje){
-						echo '<a>' . $this->mensaje . '</a>';
+						echo '<a class="mensaje">' . $this->mensaje . '</a>';
 					}
 				?>
 
