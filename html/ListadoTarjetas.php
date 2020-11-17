@@ -186,10 +186,10 @@
 			a.mensaje{
 
 				color:red;
-				font-size:20px;
+				font-size:25px;
 				font-weight:bold;
 				position:absolute;
-				top:85%;
+				top:90%;
 
 			}
 

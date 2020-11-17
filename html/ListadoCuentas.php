@@ -73,6 +73,7 @@
 				left:20%;
 				position:absolute;
 				top:30%;
+				overflow-y:scroll;
 
 
 			}
