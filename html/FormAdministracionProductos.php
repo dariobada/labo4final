@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Administracion de cuentas</title>
+	<title>Administracion productos</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<style>
 		html, body{
@@ -148,7 +148,7 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Administración de cuentas</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
 				<div class="headorOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
@@ -163,7 +163,7 @@
 				<div class="Alta">
 					<form action="" method="post">
 
-						<h2>Dar de alta producto</h2>
+						<h2>Dar de alta</h2>
 
 						
 						<label>Seleccionar usuario: </label>
@@ -203,7 +203,7 @@
 
 				<div class="Modi">
 					<form action="" method="post">
-						<h2>Modificar producto</h2>
+						<h2>Modificar</h2>
 						<label>Seleccionar cuenta: </label>
 						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 							<?php 
@@ -228,7 +228,7 @@
 
 				<div class="Baja">
 					<form action="" method="post">
-						<h2>Baja producto</h2>
+						<h2>Baja</h2>
 						<label>Seleccionar cuenta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
@@ -251,7 +251,7 @@
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
 
-
+			
 			document.getElementById("divAltaProductos").onmouseover = function(){			
 		
 				document.getElementById("divAltaProductos").style.cursor = "pointer";

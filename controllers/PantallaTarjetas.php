@@ -24,9 +24,11 @@
 		if($t->validarExtension($_POST['formIdTarjeta'], $_POST['formDocumento'])){
 			//si ingresa, significa que se debe realizar el alta de la extensión
 			$t->realizarAltaExtension($_POST['formIdTarjeta'], $_POST['formNombre'], $_POST['formApellido'], $_POST['formDocumento'], $_SESSION['IdUsuario']);
+			$mensaje = "Se ha aprobado la solicitud de alta de extensión";
 		} else
 		{
-			var_dump("no permitir");
+			//var_dump("no permitir");
+			$mensaje = "Se ha rechazado la solicitud de alta de extensión - Ya existe una extensión de la tarjeta principal para la persona ingresada";
 		}
 	}
 	
@@ -86,6 +88,7 @@
 	$v->tarjetasPrincipales = $listaPrincipales;
 	$v->tarjetasExtensiones = $listaExtensiones;
 	$v->usuario = $_SESSION['nombre'];
+	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
 	$v->render();	

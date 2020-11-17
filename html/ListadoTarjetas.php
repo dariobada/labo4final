@@ -463,6 +463,11 @@
 
 					<input class="col1" type="number" id="formDocumento" name="formDocumento" required="required" ></input>
 					<input name ="formIdTarjeta" id="formIdTarjeta" type="hidden"></input>
+					<?php
+						if ($this->mensaje){
+							echo '<h4>' . $this->mensaje . '</h4>';
+						}
+					?>
 
 					<button type="submit"  id="enviarModi" class="AltaFormulario" >Solicitar extensión</button> <br/><br/>
 
