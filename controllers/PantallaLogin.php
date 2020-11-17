@@ -66,11 +66,11 @@
 				//busco rol de cuentas
 				foreach($roles as $ro){
 					if($ro['desc_rol'] = 'Cuentas'){
-						vardump("encuentra cuentas");
+						var_dump("encuentra cuentas");
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
-						vardump("encuentra tarjetas");
+						var_dump("encuentra tarjetas");
 					}
 
 
