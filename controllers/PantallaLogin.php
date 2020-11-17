@@ -65,6 +65,7 @@
 
 				$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
 				//busco rol de cuentas
+				var_dump("roles: " . $roles);
 				foreach($roles as $ro){
 					if($ro['desc_rol'] = 'Cuentas'){
 						var_dump("entra cuentas");
