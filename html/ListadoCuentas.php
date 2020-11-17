@@ -172,7 +172,10 @@
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<?php
 					if($this->operaCuentas){
-						echo '<div class="headerOpcionPar" id="divConsultaSaldos2 title="No habilitado.">Cuentas</div>';
+				?>
+					<h2><?=  $this->operaCuentas?></h2>
+						<?= echo '<div class="headerOpcionPar" id="divConsultaSaldos2" title="No habilitado.">Cuentas</div>'?>
+				<?php
 					}
 				?>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
