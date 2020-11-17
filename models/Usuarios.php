@@ -12,7 +12,7 @@
 			$sentencia = 'SELECT * FROM public."USUARIOS" WHERE "id_login_usuario" = ';
 
 			$this->db->query($sentencia . $cons);
-			var_dump("usuario: " . $this->db->fetch());
+			
 			return $this->db->fetch();
 
 		}

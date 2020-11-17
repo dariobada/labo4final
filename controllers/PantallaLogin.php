@@ -65,24 +65,24 @@
 
 				$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
 				//busco rol de cuentas
-				var_dump("roles: " . $roles);
+				//var_dump("roles: " . $roles);
 				foreach($roles as $ro){
-					var_dump("ro: " . $ro);
+					//var_dump("ro: " . $ro);
 					if($ro['desc_rol'] = 'Cuentas'){
-						var_dump("entra cuentas");
+						//var_dump("entra cuentas");
 						$tieneCuentas = TRUE;
 						$_SESSION['tieneCuentas'] = TRUE;
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
-						var_dump("entra tarjetas");
+						//var_dump("entra tarjetas");
 						$tieneTarjetas = TRUE;
 						$_SESSION['tieneTarjetas'] = TRUE;
 					}
 				}
 
-				var_dump("indicador cuentas: " . $_SESSION['tieneCuentas']);
-				var_dump("indicador tarjetas: " . $_SESSION['tieneTarjetas']);
+				//var_dump("indicador cuentas: " . $_SESSION['tieneCuentas']);
+				//var_dump("indicador tarjetas: " . $_SESSION['tieneTarjetas']);
 
 				if($tieneCuentas){
 					//si entra significa que opera con cuentas, entonces redirecciona a la consulta de cuentas
