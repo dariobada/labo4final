@@ -17,7 +17,7 @@
 	}
 
 	//esto singifica que eligió Eliminar
-	if($_POST == 1){
+	if(count($_POST) == 1){
 		var_dump("entra1");
 
 		//se da de baja la cuenta
@@ -46,13 +46,13 @@
 	}
 
 	//esto singifica que eligió Modificación
-	if($_POST == 2){
+	if(count($_POST) == 2){
 		
 
 	}
 
 	//esto singifica que eligió Alta
-	if($_POST == 3){
+	if(count($_POST) == 3){
 		
 
 	}
