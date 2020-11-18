@@ -69,12 +69,18 @@
 					var_dump("entra cuentas");
 					$tieneCuentas = TRUE;
 					$_SESSION['tieneCuentas'] = TRUE;
+				} else{
+					$tieneCuentas = FALSE;
+					$_SESSION['tieneCuentas'] = FALSE;
 				}
 
 				if($r->validarRolTarjetas($usuario['id_usuario'])){
 					var_dump("entra tarjetas");
 					$tieneTarjetas = TRUE;
 					$_SESSION['tieneTarjetas'] = TRUE;
+				} else{
+					$tieneTarjetas = FALSE;
+					$_SESSION['tieneTarjetas'] = FALSE;
 				}				
 				var_dump("cuentas: " . $_SESSION['tieneCuentas']);
 				var_dump("tarjetas: " . $_SESSION['tieneTarjetas']);

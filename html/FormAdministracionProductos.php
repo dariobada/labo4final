@@ -158,17 +158,12 @@
 
 			<div class="contenedorBody">
 
-				
-				<label>Cuentas</label>
-				<input type="radio" id="cuentas" name="opcion" value="c" checked="checked">
-          	 	<label>Tarjetas</label>
-           	 	<input type="radio" id="tarjetas" name="opcion" value="t">
-				
+								
 				
 				<div class="Alta">
 					<form action="" method="post">
 
-						<h2>Dar de alta</h2>
+						<h2>Alta cuentas</h2>
 
 						
 						<label>Seleccionar usuario: </label>
@@ -208,7 +203,7 @@
 
 				<div class="Modi">
 					<form action="" method="post">
-						<h2>Modificar</h2>
+						<h2>Modificar cuentas</h2>
 						<label>Seleccionar cuenta: </label>
 						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 							<?php 
@@ -233,7 +228,7 @@
 
 				<div class="Baja">
 					<form action="" method="post">
-						<h2>Baja</h2>
+						<h2>Baja cuentas</h2>
 						<label>Seleccionar cuenta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
@@ -264,9 +259,21 @@
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
 			}
 
+			document.getElementById("divCuentas").onmouseover = function(){			
+				document.getElementById("divCuentas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCuentas").onmouseout = function(){			
+				document.getElementById("divCuentas").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
-				
+				$("#divCuentas").click(function(){
+					
+					window.location.href="PantallaAdministracionProductos.php";
+
+				});
 
 				$("#divCerrarSesion").click(function(){
 					
