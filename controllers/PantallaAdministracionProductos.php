@@ -16,6 +16,12 @@
 		exit;
 	}
 
+	if($_POST>0){
+		foreach($_POST as $aux){
+			var_dump($aux);
+		}
+	}
+
 	//------ se obtienen los usuarios --------
 	$u = new Usuarios();
 	$r = new Roles();

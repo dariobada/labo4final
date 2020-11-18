@@ -67,20 +67,20 @@
 				//busco rol de cuentas				
 				if($r->validarRolCuentas($usuario['id_usuario'])){
 					var_dump("entra cuentas");
-					$tieneCuentas = TRUE;
-					$_SESSION['tieneCuentas'] = TRUE;
+					$tieneCuentas = 1;
+					$_SESSION['tieneCuentas'] = 1;
 				} else{
-					$tieneCuentas = FALSE;
-					$_SESSION['tieneCuentas'] = FALSE;
+					$tieneCuentas = 0;
+					$_SESSION['tieneCuentas'] = 0;
 				}
 
 				if($r->validarRolTarjetas($usuario['id_usuario'])){
 					var_dump("entra tarjetas");
-					$tieneTarjetas = TRUE;
-					$_SESSION['tieneTarjetas'] = TRUE;
+					$tieneTarjetas = 1;
+					$_SESSION['tieneTarjetas'] = 1;
 				} else{
-					$tieneTarjetas = FALSE;
-					$_SESSION['tieneTarjetas'] = FALSE;
+					$tieneTarjetas = 0;
+					$_SESSION['tieneTarjetas'] = 0;
 				}				
 				var_dump("cuentas: " . $_SESSION['tieneCuentas']);
 				var_dump("tarjetas: " . $_SESSION['tieneTarjetas']);

@@ -161,7 +161,7 @@
 								
 				
 				<div class="Alta">
-					<form action="" method="post">
+					<form action="" method="post" id="formAlta">
 
 						<h2>Alta cuentas</h2>
 
@@ -195,14 +195,14 @@
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br><br><br><br><br>
 
-						<button class="enviar" type="submit">Confirmar</button>
+						<button class="enviar" type="submit" id="btnAlta">Alta</button>
 
 						
 					</form>
 				</div>
 
 				<div class="Modi">
-					<form action="" method="post">
+					<form action="" method="post" id="formModificar">
 						<h2>Modificar cuentas</h2>
 						<label>Seleccionar cuenta: </label>
 						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
@@ -220,14 +220,14 @@
 						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
 						<br><br>
 
-						<button class="enviar" type="submit">Confirmar</button>
+						<button class="enviar" type="submit" id="btnModificar" >Modificar</button>
 					</form>
 
 
 				</div>
 
 				<div class="Baja">
-					<form action="" method="post">
+					<form action="" method="post" id="formEliminar">
 						<h2>Baja cuentas</h2>
 						<label>Seleccionar cuenta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
@@ -240,7 +240,7 @@
 							</select>
 						<br><br>
 
-						<button class="enviar" type="submit">Eliminar</button>
+						<button class="enviar" type="submit" id="btnEliminar">Eliminar</button>
 					</form>
 
 				</div>
