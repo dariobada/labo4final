@@ -50,7 +50,7 @@
 	var_dump("saldos tarjetas: " . $_SESSION['tieneTarjetas']);
 
 	//render sería como decirle "dibujate"
-	//$v->render();	
+	$v->render();	
 
 
 ?>

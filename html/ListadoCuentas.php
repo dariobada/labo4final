@@ -171,14 +171,13 @@
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<?php
-					if($this->operaCuentas){									
+					if($this->operaCuentas = 1){									
 				?>
 						<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 						<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
 				<?php
 					} else {
-				?>
-						
+				?>			
 
 						<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>
 						<div class="headerOpcionImpar" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>
@@ -187,7 +186,7 @@
 				?>
 
 				<?php
-					if($this->operaTarjetas){									
+					if($this->operaTarjetas = 1){									
 				?>
 						<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>
 				<?php
