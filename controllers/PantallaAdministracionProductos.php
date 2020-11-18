@@ -17,9 +17,10 @@
 	}
 
 	if($_POST>0){
-		foreach($_POST as $aux){
-			var_dump($aux);
+		foreach($_SERVER as $key_name=>$key_value){
+			echo "$key_name: $key_value<br/>";
 		}
+
 	}
 
 	//------ se obtienen los usuarios --------

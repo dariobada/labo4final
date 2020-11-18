@@ -173,29 +173,27 @@
 				<?php
 				var_dump("html cuentas: " . $this->operaCuentas);
 					if($this->operaCuentas = 1){									
-				?>
-						<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
-						<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
-				<?php
+				
+						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
+						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';
+				
 					} else {
-				?>			
+							
 
-						<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>
-						<div class="headerOpcionImpar" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>
-				<?php
+						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
+						echo '<div class="headerOpcionImpar" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
+				
 					}
-				?>
-
-				<?php
+				
 				var_dump("html tarjetas: " . $this->operaTarjetas);
 					if($this->operaTarjetas = 1){									
-				?>
-						<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>
-				<?php
+				
+						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
+				
 					} else {
-				?>
-						<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>
-				<?php
+				
+						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
+				
 					}
 				?>
 				
