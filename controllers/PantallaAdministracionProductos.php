@@ -18,16 +18,20 @@
 
 	//esto singifica que eligió Eliminar
 	if($_POST == 1){
+		var_dump("entra1");
 
 		//se da de baja la cuenta
 		$c = new Cuentas();
 		$c->realizarBajaCuenta($_POST['cuenta']);
+		var_dump("entra2");
 
 		//se da de baja la relación cliente-cuenta
 		$c->realizarBajaRelacionClienteCuenta($_POST['cuenta']);
+		var_dump("entra3");
 
 		//se valida si el cliente conserva alguna cuenta activa, de lo contrario se debe quitar la relación persona-rol
 		if(!$c->validarCuentasActivasPorCuenta($_POST['cuenta'])){
+			var_dump("entra4");
 			//si ingresa acá significa que tenemos que quitar el rol de la persona
 			$r = new Roles();
 			$r->eliminarRolCuentas($_POST['cuenta']);
@@ -35,6 +39,8 @@
 		}
 		
 		$mensaje = "Baja realizada correctamente";
+		var_dump("entra5");
+		exit();
 		
 
 	}
