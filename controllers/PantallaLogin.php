@@ -62,20 +62,21 @@
 				
 
 			} else {
+				$aux = array();
 
-				$roles = $r->getRolesPorUsuario($usuario['id_usuario']);
+				$aux = $r->getRolesPorUsuario($usuario['id_usuario']);
 				//busco rol de cuentas
 				//var_dump("roles: " . $roles);
-				foreach($roles as $ro){
+				foreach($aux as $ro){
 					//var_dump("ro: " . $ro);
 					if($ro['desc_rol'] = 'Cuentas'){
-						//var_dump("entra cuentas");
+						var_dump("entra cuentas");
 						$tieneCuentas = TRUE;
 						$_SESSION['tieneCuentas'] = TRUE;
 					}
 
 					if($ro['desc_rol'] = 'Tarjetas'){
-						//var_dump("entra tarjetas");
+						var_dump("entra tarjetas");
 						$tieneTarjetas = TRUE;
 						$_SESSION['tieneTarjetas'] = TRUE;
 					}
