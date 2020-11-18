@@ -30,7 +30,7 @@
 		if(!$c->validarCuentasActivasPorCuenta($_POST['cuenta'])){
 			//si ingresa acá significa que tenemos que quitar el rol de la persona
 			$r = new Roles();
-			$r->eliminarRolCuentas(($_POST['cuenta']);
+			$r->eliminarRolCuentas($_POST['cuenta']);
 
 		}
 		
