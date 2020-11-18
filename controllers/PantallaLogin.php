@@ -62,38 +62,28 @@
 				
 
 			} else {
-				$aux = array();
-
-				$aux = $r->getRolesPorUsuario($usuario['id_usuario']);
-				var_dump("aux: " . $aux);
-				var_dump("cuentas: " . $r->validarRolCuentas($usuario['id_usuario']));
-				var_dump("tarjetas: " . $r->validarRolTarjetas($usuario['id_usuario']));
-				//busco rol de cuentas
-				//var_dump("roles: " . $roles);
-				foreach($aux as $ro){
-					//var_dump("ro: " . $ro);
-					if($ro['desc_rol'] = 'Cuentas'){
-						var_dump("entra cuentas");
-						$tieneCuentas = TRUE;
-						$_SESSION['tieneCuentas'] = TRUE;
-					}
-
-					if($ro['desc_rol'] = 'Tarjetas'){
-						var_dump("entra tarjetas");
-						$tieneTarjetas = TRUE;
-						$_SESSION['tieneTarjetas'] = TRUE;
-					}
+				
+				
+				//busco rol de cuentas				
+				if($r->validarRolCuentas($usuario['id_usuario'])){
+					
+					$tieneCuentas = TRUE;
+					$_SESSION['tieneCuentas'] = TRUE;
 				}
 
-				//var_dump("indicador cuentas: " . $_SESSION['tieneCuentas']);
-				//var_dump("indicador tarjetas: " . $_SESSION['tieneTarjetas']);
+				if($r->validarRolTarjetas($usuario['id_usuario'])){
+					
+					$tieneTarjetas = TRUE;
+					$_SESSION['tieneTarjetas'] = TRUE;
+				}				
+
 
 				if($tieneCuentas){
 					//si entra significa que opera con cuentas, entonces redirecciona a la consulta de cuentas
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-				//	header("Location: PantallaSaldos.php");
+					header("Location: PantallaSaldos.php");
 					exit();
 
 				}
@@ -103,7 +93,7 @@
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-				//	header("Location: PantallaTarjetas.php");
+					header("Location: PantallaTarjetas.php");
 					exit();
 				}
 
