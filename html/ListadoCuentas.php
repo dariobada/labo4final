@@ -172,7 +172,7 @@
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<?php
 				var_dump("html cuentas: " . $this->operaCuentas);
-					if($this->operaCuentas = 1){									
+					if($this->operaCuentas == 1){									
 				
 						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
 						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';
@@ -186,7 +186,7 @@
 					}
 				
 				var_dump("html tarjetas: " . $this->operaTarjetas);
-					if($this->operaTarjetas = 1){									
+					if($this->operaTarjetas == 1){									
 				
 						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
 				

@@ -137,6 +137,15 @@
 					left:40%;
 				}
 
+				a.mensaje{
+
+				color:red;
+				font-size:25px;
+				font-weight:bold;
+				position:absolute;
+				top:90%;
+
+			}
 				
 				
 				
@@ -244,6 +253,12 @@
 					</form>
 
 				</div>
+
+				<?php
+					if ($this->mensaje){
+						echo '<a class="mensaje">' . $this->mensaje . '</a>';
+					}
+				?>
 
 			</div>
 		</div>

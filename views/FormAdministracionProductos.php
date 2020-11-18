@@ -8,6 +8,7 @@
 		public $usuarios;
 		public $tipoCuentas;
 		public $cuentas;
+		public $mensaje;
 
 		
 

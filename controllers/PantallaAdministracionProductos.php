@@ -16,10 +16,38 @@
 		exit;
 	}
 
-	if($_POST>0){
-		foreach($_SERVER as $key_name=>$key_value){
-			echo "$key_name: $key_value<br/>";
+	//esto singifica que eligió Eliminar
+	if($_POST == 1){
+
+		//se da de baja la cuenta
+		$c = new Cuentas();
+		$c->realizarBajaCuenta($_POST['cuenta']);
+
+		//se da de baja la relación cliente-cuenta
+		$c->realizarBajaRelacionClienteCuenta($_POST['cuenta']);
+
+		//se valida si el cliente conserva alguna cuenta activa, de lo contrario se debe quitar la relación persona-rol
+		if(!$c->validarCuentasActivasPorCuenta($_POST['cuenta'])){
+			//si ingresa acá significa que tenemos que quitar el rol de la persona
+			$r = new Roles();
+			$r->eliminarRolCuentas(($_POST['cuenta']);
+
 		}
+		
+		$mensaje = "Baja realizada correctamente";
+		
+
+	}
+
+	//esto singifica que eligió Modificación
+	if($_POST == 2){
+		
+
+	}
+
+	//esto singifica que eligió Alta
+	if($_POST == 3){
+		
 
 	}
 
@@ -51,6 +79,7 @@
 	$v->usuarios = $listaUsuarios;
 	$v->tipoCuentas = $listaTipoCuentas;
 	$v->cuentas = $listaCuentas;
+	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
 	$v->render();	

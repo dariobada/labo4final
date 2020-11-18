@@ -71,6 +71,20 @@
 			}
 		}
 
+		public function eliminarRolCuentas($idCuen){
+
+			$estado = "'" . "B" . "'";
+			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
+							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" in (select "id_usuario" from public."CUENTAS_USUARIOS"
+					    							                                    where "id_cuenta" = ' . $idCuen . ')   
+  							and "id_rol" = 1';
+
+			$this->db->query($sentencia);
+
+			
+
+		}
+
 	
 
 
