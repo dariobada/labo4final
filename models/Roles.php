@@ -41,6 +41,36 @@
 
 		}
 
+		public function validarRolCuentas($idUsua){
+			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
+						   WHERE "id_rol" = 1 and "id_usuario" = ';
+
+			$this->db->query($sentencia . $idUsua);
+
+			if($this->db->numRows() == 1){
+				
+				return TRUE;
+			} else{
+				
+				return FALSE;
+			}
+		}
+
+		public function validarRolTarjetas($idUsua){
+			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
+						   WHERE "id_rol" = 2 and "id_usuario" = ';
+
+			$this->db->query($sentencia . $idUsua);
+
+			if($this->db->numRows() == 1){
+				
+				return TRUE;
+			} else{
+				
+				return FALSE;
+			}
+		}
+
 	
 
 

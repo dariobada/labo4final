@@ -66,6 +66,8 @@
 
 				$aux = $r->getRolesPorUsuario($usuario['id_usuario']);
 				var_dump("aux: " . $aux);
+				var_dump("cuentas: " . $r->validarRolCuentas($usuario['id_usuario']));
+				var_dump("tarjetas: " . $r->validarRolTarjetas($usuario['id_usuario']));
 				//busco rol de cuentas
 				//var_dump("roles: " . $roles);
 				foreach($aux as $ro){
