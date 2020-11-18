@@ -148,8 +148,8 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
-				<div class="headerOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
+				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
+				<div class="headorOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
@@ -158,12 +158,7 @@
 
 			<div class="contenedorBody">
 
-				
-				<label>Cuentas</label>
-				<input type="radio" id="cuentas" name="opcion" value="c" checked="checked">
-          	 	<label>Tarjetas</label>
-           	 	<input type="radio" id="tarjetas" name="opcion" value="t">
-				
+
 				
 				<div class="Alta">
 					<form action="" method="post">
@@ -255,6 +250,68 @@
 
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
+
+			
+			document.getElementById("divAltaProductos").onmouseover = function(){			
+		
+				document.getElementById("divAltaProductos").style.cursor = "pointer";
+				
+			}
+
+			document.getElementById("divAltaProductos").onmouseout = function(){			
+			
+				document.getElementById("divAltaProductos").style.cursor = "auto";
+
+			}
+
+
+			document.getElementById("divAltaTarjetas").onmouseover = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "pointer";
+			}
+
+			document.getElementById("divAltaTarjetas").onmouseout = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "auto";
+			}
+
+			document.getElementById("divAltaUsuarios").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divAltaUsuarios").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
+			document.getElementById("divAltaUsuarios").onmouseover = function(){			
+				document.getElementById("divAltaUsuarios").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCerrarSesion").onmouseover = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCerrarSesion").onmouseout = function(){			
+				document.getElementById("divCerrarSesion").style.cursor = "auto";
+			}
+
+			$(document).ready(function(){
+				
+				$("#divAltaUsuarios").click(function(){
+					
+					window.location.href="PantallaAdministrarUsuarios.php";
+
+				});
+
+				$("#divAltaTarjetas").click(function(){
+					
+					window.location.href="PantallaAdministrarTarjetas.php";
+
+				});
+
+				$("#divAltaProductos").click(function(){
+					
+					window.location.href="PantallaAdministrarProductos.php";
+
+				});
 
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
