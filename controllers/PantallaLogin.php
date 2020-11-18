@@ -65,6 +65,7 @@
 				$aux = array();
 
 				$aux = $r->getRolesPorUsuario($usuario['id_usuario']);
+				var_dump("aux: " . $aux);
 				//busco rol de cuentas
 				//var_dump("roles: " . $roles);
 				foreach($aux as $ro){
@@ -90,7 +91,7 @@
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-					header("Location: PantallaSaldos.php");
+				//	header("Location: PantallaSaldos.php");
 					exit();
 
 				}
@@ -100,7 +101,7 @@
 					$_SESSION['logueado'] = true;
 					$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 					$_SESSION['nombre'] = $_POST['usuario'];
-					header("Location: PantallaTarjetas.php");
+				//	header("Location: PantallaTarjetas.php");
 					exit();
 				}
 
