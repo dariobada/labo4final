@@ -117,7 +117,7 @@
 					top: 13%;
 				}
 
-				input{
+				input.izq{
 					position: absolute;
 					left:40%;
 				}
@@ -167,20 +167,20 @@
 
 						
 						<label>Nombre: </label>
-						<input name="nombre_usuario" required="required">
+						<input class="izq" name="nombre_usuario" required="required">
 						<br><br>
 						<label>Apellido: </label>
-						<input name="apellido_usuario" required="required">
+						<input class="izq" name="apellido_usuario" required="required">
 						<br><br>
 						<label>Nombre de usuario: </label>
-						<input name="nombre_usuario" required="required" placeholder="Nombre para loguear">
+						<input class="izq" name="nombre_usuario" required="required" placeholder="Nombre para loguear">
 						<br><br>
 						<label>Contraseña: </label>
-						<input type="password" name="nombre_usuario" required="required">
+						<input class="izq" type="password" name="nombre_usuario" required="required">
 						<br><br>
 						<label>Es Admin?</label>
-						<input class="" type="radio" id="admin_si" name="opcion" value="Si">Si
-						<input class="" type="radio" id="admin_no" name="opcion" value="No">No
+						<input type="radio" id="admin_si" name="opcion" value="Si">Si
+						<input type="radio" id="admin_no" name="opcion" value="No">No
 						<br><br><br><br>
 
 						<button class="enviar" type="submit">Alta</button>
@@ -206,13 +206,13 @@
 						</select>
 						<br><br>
 					<label>Nombre: </label>
-					<input name="nombre_usuario" required="required">
+					<input class="izq" name="nombre_usuario" required="required">
 					<br><br>
 					<label>Apellido: </label>
-					<input name="apellido_usuario" required="required">
+					<input class="izq" name="apellido_usuario" required="required">
 					<br><br>
 					<label>Nuevo nombre de usuario:</label>
-					<input name="nombre_usuario" required="required" placeholder="Nombre para Loguear">
+					<input class="izq" name="nombre_usuario" required="required" placeholder="Nombre para Loguear">
 					<br><br>
 					<button class="enviar" type="submit">Modificar</button>
 
