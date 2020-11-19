@@ -115,6 +115,35 @@
 
 		}
 
+		public function crearRolTarjetas($idUsua){
+
+			//primero se verifica si el usuario no posee un estado dado de baja
+			$estado = "'" . 'B' . "'";
+			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
+						   WHERE "id_rol" = 2 and "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado;
+
+			$this->db->query($sentencia);
+
+			if($this->db->numRows() == 1){
+				//si ingresa significa que tiene el rol dado de baja, por lo tanto se actualiza el estado
+				$estado = "'" . 'A' . "'";
+				$sentencia = 'UPDATE public."ROLES_USUARIOS" SET "cod_estado" = ' . $estado . ' WHERE "id_rol" = 2 and "id_usuario" = ' . $idUsua;
+
+				$this->db->query($sentencia);				
+				
+			} else{
+				//si ingresa significa que no posee rol, por lo tanto se inserta uno
+				
+				$estado = "'" . 'A' . "'";
+				$sentencia = 'INSERT into public."ROLES_USUARIOS" values(2, ' . $idUsua . ', ' . $estado . ')';
+
+				$this->db->query($sentencia);
+			}
+
+
+
+		}
+
 	
 
 

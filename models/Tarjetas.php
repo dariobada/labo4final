@@ -158,6 +158,36 @@
 
 		}
 
+		public function realizarAltaTarjeta($idUsua, $proveedor){
+
+			//primero obtengo el mayor numero de tarjeta
+			$sentencia = 'SELECT max("nro_tarjeta") from public."TARJETAS"';
+			$this->db->query($sentencia);
+
+			$maximo = $this->db->fetch();
+			$nroTarjetaNueva = $maximo["max"] + "1";
+			$tarjeta = "'" . $nroTarjetaNueva . "'";
+			$codProveedor = "'" . $proveedor . "'";
+			$estado = "'" . 'A' . "'";
+			$tipoTarjeta = "'" . "P" . "'";
+
+
+			$sentencia = 'INSERT into public."TARJETAS" ( nro_tarjeta, tipo_tarjeta, cod_proveedor, fecha_alta, fecha_modificacion, cod_estado)
+			               VALUES (' . $tarjeta . ', ' . $tipoTarjeta . ', ' . $codProveedor . ', CURRENT_DATE, null, ' . $estado . ')';
+
+			$this->db->query($sentencia);
+
+			//se vincula la nueva tarjeta a la persona
+
+			$nuevoIdTarjeta = $this->getDetalleTarjetaPorNumero($nroTarjetaNueva);
+
+			$sentencia = 'INSERT INTO public."TARJETAS_USUARIOS" VALUES('. $nuevoIdTarjeta['id_tarjeta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
+
+			$this->db->query($sentencia);			
+
+
+		}
+
 
 
 	}
