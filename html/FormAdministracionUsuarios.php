@@ -179,8 +179,8 @@
 						<input type="password" name="nombre_usuario" required="required">
 						<br><br>
 						<label>Es Admin?</label>
-						<input type="radio" id="admin_si" name="opcion" value="Si">Si
-						<input type="radio" id="admin_no" name="opcion" value="No">No
+						<input class="" type="radio" id="admin_si" name="opcion" value="Si">Si
+						<input class="" type="radio" id="admin_no" name="opcion" value="No">No
 						<br><br><br><br>
 
 						<button class="enviar" type="submit">Alta</button>
