@@ -187,7 +187,7 @@
 						<br><br>
 
 						<label>Seleccionar tipo de cuenta: </label>
-						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
+						<select class="tipo_cuenta" name="tipo_cuenta" required="required" id="tipo_cuenta"> 
 							<?php 
 								foreach ($this->tipoCuentas as $tc){
 									echo '<option value="' . $tc['id_tipo_cuenta'] . '">' . $tc['desc_tipo_cuenta'] . '</option>';
