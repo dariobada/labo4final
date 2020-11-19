@@ -92,7 +92,7 @@
 					height:22%;
 					left:51%;
 					position:absolute;
-					top:75%;
+					top:69%;
 					padding-left: 2%;
 					align-items: center;
 					justify-content: center;
@@ -117,7 +117,7 @@
 					top: 13%;
 				}
 
-				input.saldo{
+				input{
 					position: absolute;
 					left:40%;
 				}
@@ -299,10 +299,6 @@
 					window.location.href="PantallaAdministracionUsuarios.php";
 
 				});
-
-			$(document).ready(function(){
-				
-				
 
 				$("#divCerrarSesion").click(function(){
 					
