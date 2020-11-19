@@ -282,11 +282,25 @@
 				document.getElementById("divCuentas").style.cursor = "auto";
 			}
 
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
 				$("#divCuentas").click(function(){
 					
 					window.location.href="PantallaAdministracionProductos.php";
+
+				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaAdministracionTarjetas.php";
 
 				});
 
