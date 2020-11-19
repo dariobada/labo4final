@@ -178,7 +178,7 @@
 						<label>Contraseña: </label>
 						<input class="izq" type="password" name="nombre_usuario" required="required">
 						<br><br>
-						<label>Es Admin?</label>
+						<label>¿Es administrador?</label>
 						<input type="radio" id="admin_si" name="opcion" value="Si">Si
 						<input type="radio" id="admin_no" name="opcion" value="No">No
 						<br><br><br><br>
