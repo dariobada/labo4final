@@ -50,7 +50,7 @@
 	if(count($_POST) == 4){
 		//se valida que no exista el nuevo nombre de usuario para loguear
 		$u = new Usuarios();
-		if($u->validarExistenciaUsuario($_POST['nombreUsuario'])){
+		if($u->validarExistenciaUsuario($_POST['nombreUsuario'], $_POST['usuario'])){
 			$mensaje = 'Error - Ya existe un cliente con el Nombre de Usuario ingresado.';
 
 		} else {
