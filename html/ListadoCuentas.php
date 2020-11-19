@@ -180,8 +180,8 @@
 					} else {
 							
 
-						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
+						echo '<div class="headerOpcionPar" id="divConsultaSaldos" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
+						echo '<div class="headerOpcionImpar" id="divTransferencias" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
 				
 					}
 				
@@ -192,7 +192,7 @@
 				
 					} else {
 				
-						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
+						echo '<div class="headerOpcionPar" id="divTarjetas" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
 				
 					}
 				?>
