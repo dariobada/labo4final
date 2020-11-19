@@ -19,34 +19,42 @@
 
 
 	//esto singifica que eligió Eliminar
-	/*if(count($_POST) == 1){
+	if(count($_POST) == 1){
 		
-		//antes de dar la baja es necesario verificar si
-		$t = new Tarjetas();
-		$t->realizarBajaTarjeta($_POST['tarjeta']);
-		
-		//se valida si el cliente conserva alguna tarjeta activa, de lo contrario se debe quitar la relación persona-rol
-		if(!$t->validarTarjetasActivasPorTarjeta($_POST['tarjeta'])){
-			//si ingresa acá significa que tenemos que quitar el rol de la persona
-			$r = new Roles();
-			$r->eliminarRolTarjetas($_POST['tarjeta']);
+		$r = new Roles();
+		$u = new Usuarios();
+
+		//antes de dar la baja es necesario verificar si el usuario es cliente o administrador
+		if($r->devolverMarcaAdministrador($_POST['usuario'])){
+			//si es administrador, se procede a realizar la baja
+			$u->bajaDeUsuario($_POST['usuario']):
+			//se realiza la baja del rol de administrador para ese usuario
+			$r->eliminarRolAdministrador($_POST['usuario']);
+
+		} else {
+			//si no es administrador, se debe verificar que no posea productos activos
+			if($r->validarRolCuentas($_POST['usuario']) or $r->validarRolTarjetas($_POST['usuario'])){
+				//si ingresa significa que posee productos activos, por lo tanto no se permite la baja
+				$mensaje = 'Error - No se puede realizar la baja ya que el usuario posee productos activos.'
+			} else{
+				//el usuario no posee productos activos, por lo tanto se procede a realizar la baja
+				$u->bajaDeUsuario($_POST['usuario']):
+			}
 
 		}
-		
-		$mensaje = "Baja realizada correctamente";		
 
-	}*/
+	}
 
 	//esto singifica que eligió Modificación
-	/*if(count($_POST) == 2){
+	if(count($_POST) == 4){
 		$c = new Cuentas();
 		$c->actualizarSaldo($_POST['cuenta'], $_POST['saldo']);
 		
 		$mensaje = "Modificación realizada correctamente";
-	}*/
+	}
 
 	//esto singifica que eligió Alta
-	/*if(count($_POST) == 2){
+	/*if(count($_POST) == 5){
 		$t = new Tarjetas();
 		$t->realizarAltaTarjeta($_POST['usuario'], $_POST['proveedor']);
 		
@@ -91,10 +99,7 @@
 	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
-	if(COUNT($_POST) > 0){
-		var_dump("cantidad: " . count($_POST));
-	} else 
-	{
+	
 	$v->render();	
 }
 
