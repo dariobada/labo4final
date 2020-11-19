@@ -38,7 +38,7 @@
 				$mensaje = 'Error - No se puede realizar la baja ya que el usuario posee productos activos.'
 			} else{
 				//el usuario no posee productos activos, por lo tanto se procede a realizar la baja
-				$u->bajaDeUsuario($_POST['usuario']):
+				$u->bajaDeUsuario($_POST['usuario']);
 			}
 
 		}
