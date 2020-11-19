@@ -36,6 +36,36 @@
 
 		}
 
+		public function validarExistenciaUsuario($idLoginUsua){
+
+			$usua = "'" . $idLoginUsua . "'";
+
+			$sentencia = 'SELECT * FROM public."USUARIOS" where "id_login_usuario" = ' . $usua;
+
+			$this->db->query($sentencia);
+			
+			if($this->db->numRows() == 1){
+				
+				return TRUE;
+			} else{
+				
+				return FALSE;
+			}
+
+
+		}
+
+		public function modificarUsuario($idUsua, $nombre, $apellido, $idLoginUsua){
+
+			$usua = "'" . $idLoginUsua . "'";
+			$nom = "'" . $nombre . "'";
+			$ape = "'" . $apellido . "'";
+
+			$sentencia = 'UPDATE public."USUARIOS" set "nombre" = ' . $nom . ', "apellido" = ' . $ape . ', "id_login_usuario" = ' . $usua . ' WHERE "id_usuario" = ' . $idUsua;
+			$this->db->query($sentencia);
+
+		}
+
 
 
 	}
