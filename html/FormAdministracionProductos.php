@@ -214,7 +214,7 @@
 					<form action="" method="post" id="formModificar">
 						<h2>Modificar cuentas</h2>
 						<label>Seleccionar cuenta: </label>
-						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
+						<select class="cuenta" name="cuenta" required="required" id="cuentaModi"> 
 							<?php 
 								foreach ($this->cuentas as $cu){
 									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
@@ -299,6 +299,10 @@
 			}
 
 			$(document).ready(function(){
+
+				$( "#cuentaModi" ).change(function() {
+				  alert( "entra" );
+				});
 				
 				$("#divCuentas").click(function(){
 					
