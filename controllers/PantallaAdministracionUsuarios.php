@@ -35,7 +35,7 @@
 			//si no es administrador, se debe verificar que no posea productos activos
 			if($r->validarRolCuentas($_POST['usuario']) or $r->validarRolTarjetas($_POST['usuario'])){
 				//si ingresa significa que posee productos activos, por lo tanto no se permite la baja
-				$mensaje = 'Error - No se puede realizar la baja ya que el usuario posee productos activos.'
+				$mensaje = 'Error - No se puede realizar la baja ya que el usuario posee productos activos.';
 			} else{
 				//el usuario no posee productos activos, por lo tanto se procede a realizar la baja
 				$u->bajaDeUsuario($_POST['usuario']);
