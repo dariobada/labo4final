@@ -62,37 +62,6 @@
 	
 			}
 
-			div.headerOpcionImparNO{
-				background-color:lightgrey;
-				height:100%;
-				width:20%;
-				font-family: Helvetica;
-				float:left;
-				color:white;
-				font-size:120%;
-				font-weight: bold;
-				justify-content:center;
-				align-items:center;
-				display:flex;
-			
-			}	
-
-			div.headerOpcionParNO{
-				background-color:lightgrey;
-				width:20%;
-				height:100%;
-				float:left;
-				color:white;
-				font-family: Helvetica;
-				font-size:120%;
-				font-weight:bold;
-				justify-content:center;
-				align-items:center;
-				display:flex;
-	
-			}
-
-
 			div.contenedorBody{
 				height:100%;
 			}
@@ -200,34 +169,10 @@
 	<body background="../fondo.jpg">
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
-				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<?php
-
-					if($this->operaCuentas == 1){									
-				
-						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';
-				
-					} else {
-							
-
-						echo '<div class="headerOpcionParNO"  title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
-						echo '<div class="headerOpcionImparNO" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
-				
-					}
-				
-			
-					if($this->operaTarjetas == 1){									
-				
-						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
-				
-					} else {
-				
-						echo '<div class="headerOpcionParNO" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
-				
-					}
-				?>
-				
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>	
+				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
+				<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
+				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>			
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">
@@ -263,6 +208,7 @@
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
+
 			document.getElementById("divConsultaSaldos").onmouseover = function(){			
 				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
 			}
@@ -296,41 +242,76 @@
 				document.getElementById("divTransferencias").style.cursor = "auto";
 			}
 
+
+
 			$(document).ready(function(){
 
-				
-				$("#divConsultaSaldos").click(function(){
-					
-					window.location.href="PantallaSaldos.php";
+				<?php
 
-				});
+				if($this->operaCuentas == 1){		
+					$("#divConsultaSaldos").click(function(){
+						
+						window.location.href="PantallaSaldos.php";
 
-				$("#divTarjetas").click(function(){
-					
-					window.location.href="PantallaTarjetas.php";
+					});
+						
+					$("#divTransferencias").click(function(){
+						
+						window.location.href="PantallaTransferencias.php";
 
-				});
-
-				$("#divTransferencias").click(function(){
-					
-					window.location.href="PantallaTransferencias.php";
-
-				});
-
-				$("#divCerrarSesion").click(function(){
-					
-					$.ajax({
-						type:"post",
-						url:"./CerrarSesion.php",
-						data:{},
-						success:function(respuestaDelServer,estado){
-							window.location.href="PantallaLogin.php";	
-						}
 					});
 
+				
+				}else{
+
+					$("#divConsultaSaldos").click(function(){
+						
+						window.alert("No posee productos para utilizar esta funcionalidad");
+
+					});
+						
+					$("#divTransferencias").click(function(){
+						
+						window.alert("No posee productos para utilizar esta funcionalidad");
+
+					});
+
+				} 
+
+				
+				if($this->operaTarjetas == 1){	
+
+					$("#divTarjetas").click(function(){
+						
+						window.location.href="PantallaTarjetas.php";
+
+					});
+				}else{
+
+					$("#divTarjetas").click(function(){
+						
+						window.alert("No posee productos para utilizar esta funcionalidad");
+
+					});
+
+				}
+				?>
+
+				$("#divCerrarSesion").click(function(){
+						
+						$.ajax({
+							type:"post",
+							url:"./CerrarSesion.php",
+							data:{},
+							success:function(respuestaDelServer,estado){
+								window.location.href="PantallaLogin.php";	
+							}
+						});
 
 
-				});
+
+					});
+
 			});
 		</script>
 
