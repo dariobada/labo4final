@@ -111,6 +111,53 @@
 			return $this->db->fetchAll();
 		}
 
+		public function realizarBajaTarjeta($idTarj){
+
+			$estado = "'" . 'B' . "'";
+			//se da de baja la tarjeta
+			$sentencia = 'UPDATE public."TARJETAS" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta" = ' . $idTarj;
+
+			$this->db->query($sentencia);
+
+			//se deben dar de baja las extensiones de esa tarjeta
+			$sentencia = 'UPDATE public."TARJETAS" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta" in ( SELECT "id_tarjeta_extension" from public."EXTENSIONES_TARJETA"
+			                WHERE "id_tarjeta_principal" = ' . $idTarj . ')';
+
+			$this->db->query($sentencia);
+
+			//se dan de baja las relaciones entre las tarjetas y sus extensiones
+			$sentencia = 'UPDATE public."EXTENSIONES_TARJETA" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta_principal" = ' . $idTarj;
+
+			$this->db->query($sentencia);
+
+			//se da de baja la relación entre la persona y la tarjeta
+			$sentencia = 'UPDATE public."TARJETAS_USUARIOS" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta" = ' . $idTarj;
+
+			$this->db->query($sentencia);
+
+		}
+
+		public function validarTarjetasActivasPorTarjeta($idTarj){
+
+			$estado = "'" . "A" . "'";
+			$sentencia = 'select * from public."TARJETAS_USUARIOS" 
+						where "id_usuario" in (select "id_usuario" from public."TARJETAS_USUARIOS"
+					    							where "id_tarjeta" = ' . $idtarj . ')   
+  						and "cod_estado" = ' . $estado;
+
+			$this->db->query($sentencia);
+
+			if($this->db->numRows() > 0){
+				
+				return TRUE;
+			} else{
+				
+				return FALSE;
+			}
+
+
+		}
+
 
 
 	}

@@ -72,6 +72,20 @@
 
 		}
 
+		public function eliminarRolTarjetas($idTarj){
+
+			$estado = "'" . "B" . "'";
+			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
+							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" in (select "id_usuario" from public."TARJETAS_USUARIOS"
+					    							                                    where "id_tarjeta" = ' . $idTarj . ')   
+  							and "id_rol" = 2';
+
+			$this->db->query($sentencia);
+
+			
+
+		}
+
 		public function crearRolCuentas($idUsua){
 
 			//primero se verifica si el usuario no posee un estado dado de baja
