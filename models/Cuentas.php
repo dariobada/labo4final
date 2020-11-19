@@ -25,6 +25,16 @@
 
 		}
 
+		public function getDetalleDeCuentaPorCuenta($nroCuen){
+
+			$cuenta = "'" . $nroCuen . "'";
+			$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "nro_cuenta" = ' . $cuenta;
+
+			$this->db->query($sentencia);
+			return $this->db->fetch();
+
+		}
+
 		public function actualizarSaldo($idCuen, $saldo){
 
 			$sentencia = 'UPDATE public."CUENTAS" SET "saldo" = ' . $saldo . ' WHERE "id_cuenta" = ' . $idCuen; 
@@ -78,6 +88,35 @@
 				
 				return FALSE;
 			}
+
+
+		}
+
+		public function realizarAltaCuenta($idUsua, $tipoCuenta, $saldo){
+
+			//primero obtengo el mayor numero de cuenta
+			$sentencia = 'SELECT max("nro_cuenta") from public."CUENTAS"';
+			$this->db->query($sentencia);
+
+			//armo el insert de la nueva cuenta
+			$maximo = $this->db->fetch();
+			$nroCuenta = "'" . ($maximo["max"] + "1") . "'";
+			$idTipoCuenta = "'" . $tipoCuenta . "'";
+			$estado = "'" . 'A' . "'";
+
+
+			$sentencia = 'INSERT into public."CUENTAS" ( nro_cuenta, id_tipo_cuenta, fecha_alta, fecha_modificacion, cod_estado, saldo)
+			               VALUES (' . $nroCuenta . ', ' . $idTipoCuenta . ', CURRENT_DATE, null, ' . $estado . ', ' . $saldo  . ')';
+
+			$this->db->query($sentencia);
+
+			//se vincula la nueva cuenta a la persona
+
+			$nuevaCuenta = $this->getDetalleDeCuentaPorCuenta($maximo["max"] + "1");
+
+			$sentencia = 'INSERT INTO public."CUENTAS_USUARIOS VALUES('. $nuevaCuenta['id_cuenta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
+
+			//se verifica si es necesario generar un nuevo rol para el usuario
 
 
 		}
