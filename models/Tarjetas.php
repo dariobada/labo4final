@@ -101,6 +101,16 @@
 			
 		}
 
+		public function getTodasLasTarjetas(){
+
+			$estado = "'" . 'A' . "'";
+			$sentencia = 'SELECT * FROM public."TARJETAS" WHERE "cod_estado" = ' . $estado;
+
+			$this->db->query($sentencia);
+
+			return $this->db->fetchAll();
+		}
+
 
 
 	}
