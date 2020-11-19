@@ -116,7 +116,7 @@
 
 			$sentencia = 'INSERT INTO public."CUENTAS_USUARIOS VALUES('. $nuevaCuenta['id_cuenta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
 
-			//se verifica si es necesario generar un nuevo rol para el usuario
+			$this->db->query($sentencia);			
 
 
 		}
