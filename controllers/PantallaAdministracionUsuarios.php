@@ -39,6 +39,7 @@
 			} else{
 				//el usuario no posee productos activos, por lo tanto se procede a realizar la baja
 				$u->bajaDeUsuario($_POST['usuario']);
+				$mensaje = 'Baja realizada correctamente.';
 			}
 
 		}
@@ -49,11 +50,16 @@
 	if(count($_POST) == 4){
 		//se valida que no exista el nuevo nombre de usuario para loguear
 		$u = new Usuarios();
-		$usua = $u->getUsuario($_POST['nombreUsuario']);
+		if($u->validarExistenciaUsuario($_POST['nombreUsuario'])){
+			$mensaje = 'Error - Ya existe un cliente con el Nombre de Usuario ingresado.';
 
-		$mensaje = 'cantidad obtenida: ' . count($usua);
+		} else {
+			$u->modificarUsuario($_POST['usuario'], $_POST['nombre'], $_POST['apellido'], $_POST['nombreUsuario']);
+			$mensaje = "Modificación realizada correctamente";
+		}
+		
 
-		//$mensaje = "Modificación realizada correctamente";
+		
 	}
 
 	//esto singifica que eligió Alta
