@@ -95,12 +95,12 @@
 		public function realizarAltaCuenta($idUsua, $tipoCuenta, $saldo){
 
 			//primero obtengo el mayor numero de cuenta
-			$sentencia = 'SELECT max("nro_cuenta") from public."CUENTAS"';
+			$sentencia = 'SELECT ("nro_cuenta") from public."CUENTAS" order by 1 desc limit 1';
 			$this->db->query($sentencia);
 
 			//armo el insert de la nueva cuenta
 			$maximo = $this->db->fetch();
-			$nroCuenta = "'" . ($maximo["max"] + "1") . "'";
+			$nroCuenta = "'" . ($maximo["nro_cuenta"] + "1") . "'";
 			$idTipoCuenta = "'" . $tipoCuenta . "'";
 			$estado = "'" . 'A' . "'";
 
