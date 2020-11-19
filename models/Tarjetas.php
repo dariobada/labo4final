@@ -142,7 +142,7 @@
 			$estado = "'" . "A" . "'";
 			$sentencia = 'select * from public."TARJETAS_USUARIOS" 
 						where "id_usuario" in (select "id_usuario" from public."TARJETAS_USUARIOS"
-					    							where "id_tarjeta" = ' . $idtarj . ')   
+					    							where "id_tarjeta" = ' . $idTarj . ')   
   						and "cod_estado" = ' . $estado;
 
 			$this->db->query($sentencia);
