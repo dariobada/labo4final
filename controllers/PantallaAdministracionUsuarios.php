@@ -47,10 +47,13 @@
 
 	//esto singifica que eligió Modificación
 	if(count($_POST) == 4){
-		$c = new Cuentas();
-		$c->actualizarSaldo($_POST['cuenta'], $_POST['saldo']);
-		
-		$mensaje = "Modificación realizada correctamente";
+		//se valida que no exista el nuevo nombre de usuario para loguear
+		$u = new Usuarios();
+		$usua = $u->getUsuario($_POST['nombreUsuario']);
+
+		$mensaje = 'cantidad obtenida: ' . count($usua);
+
+		//$mensaje = "Modificación realizada correctamente";
 	}
 
 	//esto singifica que eligió Alta
