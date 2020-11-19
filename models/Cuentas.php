@@ -114,7 +114,7 @@
 
 			$nuevaCuenta = $this->getDetalleDeCuentaPorCuenta($maximo["nro_cuenta"] + 1);
 
-			$sentencia = 'INSERT INTO public."CUENTAS_USUARIOS VALUES('. $nuevaCuenta['id_cuenta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
+			$sentencia = 'INSERT INTO public."CUENTAS_USUARIOS" VALUES('. $nuevaCuenta['id_cuenta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
 
 			$this->db->query($sentencia);			
 
