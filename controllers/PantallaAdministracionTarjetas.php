@@ -17,7 +17,7 @@
 	}
 
 	//esto singifica que eligió Eliminar
-	if(count($_POST) == 1){
+	/*if(count($_POST) == 1){
 		
 		//se da de baja la cuenta
 		$c = new Cuentas();
@@ -37,18 +37,18 @@
 		$mensaje = "Baja realizada correctamente";
 		
 
-	}
+	}*/
 
 	//esto singifica que eligió Modificación
-	if(count($_POST) == 2){
+	/*if(count($_POST) == 2){
 		$c = new Cuentas();
 		$c->actualizarSaldo($_POST['cuenta'], $_POST['saldo']);
 		
 		$mensaje = "Modificación realizada correctamente";
-	}
+	}*/
 
 	//esto singifica que eligió Alta
-	if(count($_POST) == 3){
+	/*if(count($_POST) == 3){
 		$c = new Cuentas();
 		$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
 		
@@ -60,7 +60,7 @@
 		}
 
 		$mensaje = "Alta realizada correctamente";
-	}
+	}*/
 
 	//------ se obtienen los usuarios --------
 	$u = new Usuarios();
@@ -77,19 +77,19 @@
 	}
 
 
-	//------ se obtienen los tipos de cuenta --------
-	//$tc = new TipoCuentas();
-	//$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
+	//------ se obtienen los codigos de proveedor --------
+	$p = new Proveedores();
+	$listaProveedores = $p->getTodosLosProveedores();
 
-	//------ se obtienen las cuentas --------
-	//$c = new Cuentas();
-	//$listaCuentas = $c->getTodasLasCuentas();
+	//------ se obtienen las tarjetas --------
+	$t = new Tarjetas();
+	$listaTarjetas = $t->getTodasLasTarjetas();
 
 
 	$v = new FormAdministracionTarjetas();
 	$v->usuarios = $listaUsuarios;
-	//$v->tipoCuentas = $listaTipoCuentas;
-	//$v->cuentas = $listaCuentas;
+	$v->proveedores = $listaProveedores;
+	$v->tarjetas = $listaTarjetas;
 	//$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
