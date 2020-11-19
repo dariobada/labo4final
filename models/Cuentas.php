@@ -35,7 +35,7 @@
 		public function getTodasLasCuentas(){
 
 			$estado = "'" . 'A' . "'";
-			$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "cod_estado" = ' . $estado;
+			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" WHERE "cod_estado" = ' . $estado;
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
@@ -80,6 +80,12 @@
 			}
 
 
+		}
+
+		public function actualizarSaldo($idCuen, $saldo){
+
+			$sentencia = 'UPDATE public."CUENTAS" SET "saldo" = ' . $saldo . ' WHERE "id_cuenta" = ' . $idCuen;
+			$this->db->query($sentencia);
 		}
 
 
