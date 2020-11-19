@@ -17,27 +17,23 @@
 	}
 
 	//esto singifica que eligió Eliminar
-	/*if(count($_POST) == 1){
+	if(count($_POST) == 1){
 		
-		//se da de baja la cuenta
-		$c = new Cuentas();
-		$c->realizarBajaCuenta($_POST['cuenta']);
+		//se da de baja la tarjeta
+		$t = new Tarjetas();
+		$t->realizarBajaTarjeta($_POST['tarjeta']);
 		
-		//se da de baja la relación cliente-cuenta
-		$c->realizarBajaRelacionClienteCuenta($_POST['cuenta']);
-		
-		//se valida si el cliente conserva alguna cuenta activa, de lo contrario se debe quitar la relación persona-rol
-		if(!$c->validarCuentasActivasPorCuenta($_POST['cuenta'])){
-						//si ingresa acá significa que tenemos que quitar el rol de la persona
+		//se valida si el cliente conserva alguna tarjeta activa, de lo contrario se debe quitar la relación persona-rol
+		if(!$t->validarTarjetasActivasPorTarjeta($_POST['tarjeta'])){
+			//si ingresa acá significa que tenemos que quitar el rol de la persona
 			$r = new Roles();
-			$r->eliminarRolCuentas($_POST['cuenta']);
+			$r->eliminarRolTarjetas($_POST['tarjeta']);
 
 		}
 		
-		$mensaje = "Baja realizada correctamente";
-		
+		$mensaje = "Baja realizada correctamente";		
 
-	}*/
+	}
 
 	//esto singifica que eligió Modificación
 	/*if(count($_POST) == 2){
