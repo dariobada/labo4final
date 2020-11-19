@@ -100,7 +100,7 @@
 
 			//armo el insert de la nueva cuenta
 			$maximo = $this->db->fetch();
-			$nroCuenta = "'" . ($maximo["nro_cuenta"] + "1") . "'";
+			$nroCuenta = "'" . ($maximo["nro_cuenta"] + 1) . "'";
 			$idTipoCuenta = "'" . $tipoCuenta . "'";
 			$estado = "'" . 'A' . "'";
 
