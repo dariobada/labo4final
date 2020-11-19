@@ -167,20 +167,20 @@
 
 						
 						<label>Nombre: </label>
-						<input class="izq" name="nombre_usuario" required="required">
+						<input class="izq" name="nombre" id="nombre" required="required">
 						<br><br>
 						<label>Apellido: </label>
-						<input class="izq" name="apellido_usuario" required="required">
+						<input class="izq" name="apellido" id="apellido" required="required">
 						<br><br>
 						<label>Nombre de usuario: </label>
-						<input class="izq" name="nombre_usuario" required="required" placeholder="Nombre para loguear">
+						<input class="izq" name="nombreUsuario" id="nombreUsuario" required="required" placeholder="Nombre para loguear">
 						<br><br>
 						<label>Contraseña: </label>
-						<input class="izq" type="password" name="nombre_usuario" required="required">
+						<input class="izq" type="password" name="pass" id="pass" required="required">
 						<br><br>
 						<label>¿Es administrador?</label>
-						<input type="radio" id="admin_si" name="opcion" value="Si">Si
-						<input type="radio" id="admin_no" name="opcion" value="No">No
+						<input type="radio" id="opcion" name="opcion" value="Si">Si
+						<input type="radio" id="opcion" name="opcion" value="No">No
 						<br><br><br><br>
 
 						<button class="enviar" type="submit">Alta</button>
@@ -206,13 +206,13 @@
 						</select>
 						<br><br>
 					<label>Nombre: </label>
-					<input class="izq" name="nombre_usuario" required="required">
+					<input class="izq" name="nombre" id="nombre" required="required">
 					<br><br>
 					<label>Apellido: </label>
-					<input class="izq" name="apellido_usuario" required="required">
+					<input class="izq" name="apellido" id="apellido" required="required">
 					<br><br>
 					<label>Nuevo nombre de usuario:</label>
-					<input class="izq" name="nombre_usuario" required="required" placeholder="Nombre para Loguear">
+					<input class="izq" name="nombreUsuario" id="nombreUsuario" required="required" placeholder="Nombre para Loguear">
 					<br><br>
 					<button class="enviar" type="submit">Modificar</button>
 
@@ -227,7 +227,7 @@
 					<form action="" method="post">
 						<h2>Baja de usuario</h2>
 						<label>Seleccionar usuario: </label>
-							<select class="usuario" name="usuario" required="required" id="usuario"> 
+							<select class="usuario" name="usuario" id="usuario" required="required" id="usuario"> 
 							<?php 
 								foreach ($this->usuarios as $us){
 									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
@@ -241,6 +241,12 @@
 					</form>
 
 				</div>
+				<?php
+					if ($this->mensaje){
+						echo '<a>' . $this->mensaje . '</a>';
+					}
+				?>
+
 
 			</div>
 		</div>
