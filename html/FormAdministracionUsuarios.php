@@ -179,8 +179,8 @@
 						<input class="izq" type="password" name="pass" id="pass" required="required">
 						<br><br>
 						<label>¿Es administrador?</label>
-						<input type="radio" id="opcion" name="opcion" value="Si">Si
-						<input type="radio" id="opcion" name="opcion" value="No">No
+						<input type="radio" id="opcion" name="opcion" value="Si" required="required">Si
+						<input type="radio" id="opcion" name="opcion" value="No" required="required">No
 						<br><br><br><br>
 
 						<button class="enviar" type="submit">Alta</button>
