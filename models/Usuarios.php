@@ -36,11 +36,11 @@
 
 		}
 
-		public function validarExistenciaUsuario($idLoginUsua){
+		public function validarExistenciaUsuario($idLoginUsua, $idUsua){
 
 			$usua = "'" . $idLoginUsua . "'";
 
-			$sentencia = 'SELECT * FROM public."USUARIOS" where "id_login_usuario" = ' . $usua;
+			$sentencia = 'SELECT * FROM public."USUARIOS" where "id_login_usuario" = ' . $usua . ' and "id_usuario" <> ' . $idUsua;
 
 			$this->db->query($sentencia);
 			
