@@ -89,6 +89,8 @@
 	$v->tarjetasExtensiones = $listaExtensiones;
 	$v->usuario = $_SESSION['nombre'];
 	$v->mensaje = $mensaje;
+	$v->operaCuentas = $_SESSION['tieneCuentas'];
+	$v->operaTarjetas = $_SESSION['tieneTarjetas'];
 
 	//render sería como decirle "dibujate"
 	$v->render();	

@@ -8,6 +8,8 @@
 		public $mensaje;
 		public $cuentas;
 		public $usuario;
+		public $operaCuentas;
+		public $operaTarjetas;
 
 
 	}

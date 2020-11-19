@@ -68,6 +68,8 @@
 		$v->cuentas = $arrayCuentas;
 		$v->mensaje = $mensaje;
 		$v->usuario = $_SESSION['nombre'];
+		$v->operaCuentas = $_SESSION['tieneCuentas'];
+		$v->operaTarjetas = $_SESSION['tieneTarjetas'];
 
 		//render sería como decirle "dibujate"
 		$v->render();	
@@ -75,6 +77,8 @@
 		$v = new FormTransferencias();
 		$v->cuentas = $arrayCuentas;
 		$v->usuario = $_SESSION['nombre'];
+		$v->operaCuentas = $_SESSION['tieneCuentas'];
+		$v->operaTarjetas = $_SESSION['tieneTarjetas'];
 
 		//render sería como decirle "dibujate"
 		$v->render();	

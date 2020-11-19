@@ -9,6 +9,8 @@
 		public $tarjetasExtensiones;
 		public $usuario;
 		public $mensaje;
+		public $operaCuentas;
+		public $operaTarjetas;
 
 		
 
