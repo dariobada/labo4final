@@ -104,7 +104,8 @@
 		public function getTodasLasTarjetas(){
 
 			$estado = "'" . 'A' . "'";
-			$sentencia = 'SELECT * FROM public."TARJETAS" WHERE "cod_estado" = ' . $estado;
+			$tipo = "'" . 'P' . "'";
+			$sentencia = 'SELECT * FROM public."TARJETAS" WHERE "cod_estado" = ' . $estado . ' AND "tipo_tarjeta" = ' . $tipo;
 
 			$this->db->query($sentencia);
 
