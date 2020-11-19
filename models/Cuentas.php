@@ -82,11 +82,6 @@
 
 		}
 
-		public function actualizarSaldo($idCuen, $saldo){
-
-			$sentencia = 'UPDATE public."CUENTAS" SET "saldo" = ' . $saldo . ' WHERE "id_cuenta" = ' . $idCuen;
-			$this->db->query($sentencia);
-		}
 
 
 
