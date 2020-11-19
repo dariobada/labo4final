@@ -62,6 +62,37 @@
 	
 			}
 
+			div.headerOpcionImparNO{
+				background-color:lightgrey;
+				height:100%;
+				width:20%;
+				font-family: Helvetica;
+				float:left;
+				color:white;
+				font-size:120%;
+				font-weight: bold;
+				justify-content:center;
+				align-items:center;
+				display:flex;
+			
+			}	
+
+			div.headerOpcionParNO{
+				background-color:lightgrey;
+				width:20%;
+				height:100%;
+				float:left;
+				color:white;
+				font-family: Helvetica;
+				font-size:120%;
+				font-weight:bold;
+				justify-content:center;
+				align-items:center;
+				display:flex;
+	
+			}
+
+
 			div.contenedorBody{
 				height:100%;
 			}
@@ -180,8 +211,8 @@
 					} else {
 							
 
-						echo '<div class="headerOpcionPar" id="divConsultaSaldos" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" id="divTransferencias" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
+						echo '<div class="headerOpcionParNO"  title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
+						echo '<div class="headerOpcionImparNO" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
 				
 					}
 				
@@ -192,7 +223,7 @@
 				
 					} else {
 				
-						echo '<div class="headerOpcionPar" id="divTarjetas" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
+						echo '<div class="headerOpcionParNO" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
 				
 					}
 				?>
