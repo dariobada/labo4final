@@ -148,9 +148,9 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
-				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
-				<div class="headerOpcionPar" id="divTarjetas">Administración de tarjetas</div>
+				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
+				<div class="headerOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
+				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 				
 			</div>
@@ -180,8 +180,8 @@
 						<label>Seleccionar Proveedor: </label>
 						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
 							<?php 
-								foreach ($this->tipoCuentas as $tc){
-									echo '<option value="' . $tc['id_tipo_cuenta'] . '">' . $tc['desc_tipo_cuenta'] . '</option>';
+								foreach ($this->proveedores as $p){
+									echo '<option value="' . $p['cod_proveedor'] . '">' . $p['nombre_proveedor'] . '</option>';
 								}
 
 							 ?>
@@ -191,7 +191,7 @@
 						
 						<br><br><br><br><br><br><br><br><br><br><br>
 
-						<button class="enviar" type="submit">Confirmar</button>
+						<button class="enviar" type="submit">Alta</button>
 
 						
 					</form>
@@ -204,8 +204,8 @@
 						<label>Seleccionar tarjeta: </label>
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
-									foreach ($this->cuentas as $cu){
-										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
+									foreach ($this->tarjetas as $tc){
+										echo '<option value="' . $tc['id_tarjeta'] . '">' . $tc['nro_tarjeta'] . ')</option>';
 									}
 
 								 ?>
@@ -231,9 +231,35 @@
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
 			}
 
+			document.getElementById("divCuentas").onmouseover = function(){			
+				document.getElementById("divCuentas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCuentas").onmouseout = function(){			
+				document.getElementById("divCuentas").style.cursor = "auto";
+			}
+
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
-				
+				$("#divCuentas").click(function(){
+					
+					window.location.href="PantallaAdministracionProductos.php";
+
+				});
+
+				$("#divTarjetas").click(function(){
+					
+					window.location.href="PantallaAdministracionTarjetas.php";
+
+				});
 
 				$("#divCerrarSesion").click(function(){
 					
