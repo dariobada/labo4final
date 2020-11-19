@@ -6,8 +6,8 @@
 	class FormAdministracionTarjetas extends View {
 
 		public $usuarios;
-		public $tipoCuentas;
-		public $cuentas;
+		public $proveedores;
+		public $tarjetas;
 		public $mensaje;
 
 		
