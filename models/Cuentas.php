@@ -112,7 +112,7 @@
 
 			//se vincula la nueva cuenta a la persona
 
-			$nuevaCuenta = $this->getDetalleDeCuentaPorCuenta($maximo["max"] + "1");
+			$nuevaCuenta = $this->getDetalleDeCuentaPorCuenta($maximo["nro_cuenta"] + 1));
 
 			$sentencia = 'INSERT INTO public."CUENTAS_USUARIOS VALUES('. $nuevaCuenta['id_cuenta'] . ', ' . $idUsua . ', CURRENT_DATE, null, ' . $estado . ')';
 
