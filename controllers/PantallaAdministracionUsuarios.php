@@ -92,7 +92,7 @@
 
 	//render sería como decirle "dibujate"
 	if(COUNT($_POST) > 0){
-		var_dump("cantidad: " . count($POST));
+		var_dump("cantidad: " . count($_POST));
 	} else 
 	{
 	$v->render();	
