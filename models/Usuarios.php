@@ -19,7 +19,8 @@
 
 		public function getTodosLosUsuarios(){
 
-			$sentencia = 'SELECT * FROM public."USUARIOS"';
+			$estado = "'" . 'A' . "'";
+			$sentencia = 'SELECT * FROM public."USUARIOS" where "cod_estado" = ' . $estado;
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
