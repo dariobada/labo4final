@@ -172,7 +172,7 @@
 			$tipoTarjeta = "'" . "P" . "'";
 
 
-			$sentencia = 'INSERT into public."TARJETAS" ( nro_tarjeta, tipo_tarjeta, cod_proveedor, fecha_alta, fecha_modificacion, cod_estado)
+			$sentencia = 'INSERT into public."TARJETAS" ( nro_tarjeta, tipo_tarjeta, cod_proveedor, fecha_alta, "fecha_modificación", cod_estado)
 			               VALUES (' . $tarjeta . ', ' . $tipoTarjeta . ', ' . $codProveedor . ', CURRENT_DATE, null, ' . $estado . ')';
 
 			$this->db->query($sentencia);
