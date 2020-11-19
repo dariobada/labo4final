@@ -101,6 +101,6 @@
 	//render sería como decirle "dibujate"
 	
 	$v->render();	
-}
+
 
 ?>
