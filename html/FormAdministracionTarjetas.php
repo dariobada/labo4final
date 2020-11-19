@@ -252,6 +252,14 @@
 				document.getElementById("divTarjetas").style.cursor = "auto";
 			}
 
+			document.getElementById("divUsuarios").onmouseover = function(){			
+				document.getElementById("divUsuarios").style.cursor = "pointer";
+			}
+
+			document.getElementById("divUsuarios").onmouseout = function(){			
+				document.getElementById("divUsuarios").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
 				$("#divCuentas").click(function(){
@@ -263,6 +271,12 @@
 				$("#divTarjetas").click(function(){
 					
 					window.location.href="PantallaAdministracionTarjetas.php";
+
+				});
+
+				$("#divUsuarios").click(function(){
+					
+					window.location.href="PantallaAdministracionUsuarios.php";
 
 				});
 

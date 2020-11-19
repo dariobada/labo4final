@@ -248,39 +248,6 @@
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
 
-			document.getElementById("divAltaProductos").onmouseover = function(){			
-		
-				document.getElementById("divAltaProductos").style.cursor = "pointer";
-				
-			}
-
-			document.getElementById("divAltaProductos").onmouseout = function(){			
-			
-				document.getElementById("divAltaProductos").style.cursor = "auto";
-
-			}
-
-
-			document.getElementById("divAltaTarjetas").onmouseover = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "pointer";
-			}
-
-			document.getElementById("divAltaTarjetas").onmouseout = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "auto";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseover = function(){			
-				document.getElementById("divTarjetas").style.cursor = "pointer";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseout = function(){			
-				document.getElementById("divTarjetas").style.cursor = "auto";
-			}
-
-			document.getElementById("divAltaUsuarios").onmouseover = function(){			
-				document.getElementById("divAltaUsuarios").style.cursor = "pointer";
-			}
-
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
 			}
@@ -289,23 +256,47 @@
 				document.getElementById("divCerrarSesion").style.cursor = "auto";
 			}
 
+			document.getElementById("divCuentas").onmouseover = function(){			
+				document.getElementById("divCuentas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divCuentas").onmouseout = function(){			
+				document.getElementById("divCuentas").style.cursor = "auto";
+			}
+
+			document.getElementById("divTarjetas").onmouseover = function(){			
+				document.getElementById("divTarjetas").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetas").onmouseout = function(){			
+				document.getElementById("divTarjetas").style.cursor = "auto";
+			}
+
+			document.getElementById("divUsuarios").onmouseover = function(){			
+				document.getElementById("divUsuarios").style.cursor = "pointer";
+			}
+
+			document.getElementById("divUsuarios").onmouseout = function(){			
+				document.getElementById("divUsuarios").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 				
-				$("#divAltaUsuarios").click(function(){
+				$("#divCuentas").click(function(){
 					
-					window.location.href="PantallaAdministrarUsuarios.php";
+					window.location.href="PantallaAdministracionProductos.php";
 
 				});
 
-				$("#divAltaTarjetas").click(function(){
+				$("#divTarjetas").click(function(){
 					
-					window.location.href="PantallaAdministrarTarjetas.php";
+					window.location.href="PantallaAdministracionTarjetas.php";
 
 				});
 
-				$("#divAltaProductos").click(function(){
+				$("#divUsuarios").click(function(){
 					
-					window.location.href="PantallaAdministrarProductos.php";
+					window.location.href="PantallaAdministracionUsuarios.php";
 
 				});
 
