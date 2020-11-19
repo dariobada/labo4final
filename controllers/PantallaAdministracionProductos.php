@@ -49,8 +49,10 @@
 
 	//esto singifica que eligió Alta
 	if(count($_POST) == 3){
+		$c = new Cuentas();
+		$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
 		
-
+		$mensaje = "Modificación realizada correctamente";
 	}
 
 	//------ se obtienen los usuarios --------
