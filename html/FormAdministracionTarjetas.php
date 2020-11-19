@@ -127,12 +127,12 @@
 					left:40%;
 				}
 
-				select.cuenta{
+				select.tarjeta{
 					position: absolute;
 					left:40%;
 				}
 				
-				select.tipo_cuenta{
+				select.proveedor{
 					position: absolute;
 					left:40%;
 				}
@@ -178,7 +178,7 @@
 						<br><br>
 
 						<label>Seleccionar Proveedor: </label>
-						<select class="tipo_cuenta" name="tipo_cuenta" required="required"> 
+						<select class="proveedor" name="proveedor" id="proveedor" required="required"> 
 							<?php 
 								foreach ($this->proveedores as $p){
 									echo '<option value="' . $p['cod_proveedor'] . '">' . $p['nombre_proveedor'] . '</option>';
@@ -202,10 +202,10 @@
 					<form action="" method="post">
 						<h2>Baja de tarjeta</h2>
 						<label>Seleccionar tarjeta: </label>
-							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
+							<select class="tarjeta" name="tarjeta" required="required" id="tarjeta"> 
 								<?php 
 									foreach ($this->tarjetas as $tc){
-										echo '<option value="' . $tc['id_tarjeta'] . '">' . $tc['nro_tarjeta'] . ')</option>';
+										echo '<option value="' . $tc['id_tarjeta'] . '">' . $tc['nro_tarjeta'] . '</option>';
 									}
 
 								 ?>
@@ -216,6 +216,11 @@
 					</form>
 
 				</div>
+				<?php
+					if ($this->mensaje){
+						echo '<a>' . $this->mensaje . '</a>';
+					}
+				?>
 
 			</div>
 		</div>
