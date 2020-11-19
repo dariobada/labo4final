@@ -256,7 +256,7 @@
 
 				<?php
 					if ($this->mensaje){
-						echo '<a class="mensaje">' . $this->mensaje . '</a>';
+						echo '<a>' . $this->mensaje . '</a>';
 					}
 				?>
 
