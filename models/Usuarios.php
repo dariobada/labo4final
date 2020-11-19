@@ -26,6 +26,16 @@
 			return $this->db->fetchAll();
 		}
 
+		public function bajaDeUsuario($idUsua){
+
+			$estado = "'" . 'B' . "'";
+			$sentencia = 'UPDATE public."USUARIOS" set "cod_estado" = ' . $estado ' WHERE "id_usuario" = ' . $idUsua;
+
+			$this->db->query($sentencia);
+			
+
+		}
+
 
 
 	}

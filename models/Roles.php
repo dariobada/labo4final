@@ -80,9 +80,17 @@
 					    							                                    where "id_tarjeta" = ' . $idTarj . ')   
   							and "id_rol" = 2';
 
-			$this->db->query($sentencia);
+			$this->db->query($sentencia);			
 
-			
+		}
+
+		public function eliminarRolAdministrador($idUsua){
+
+			$estado = "'" . "B" . "'";
+			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
+							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" = ' . $idUsua . ' and "id_rol" = 3';
+
+			$this->db->query($sentencia);			
 
 		}
 
