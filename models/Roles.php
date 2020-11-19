@@ -45,7 +45,7 @@
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
-						   WHERE "id_rol" = 2 and "id_usuario" = ' . $idUsua . 'and "cod_estado = ' . $estado;
+						   WHERE "id_rol" = 2 and "id_usuario" = ' . $idUsua . ' and "cod_estado = ' . $estado;
 
 			$this->db->query($sentencia);
 
