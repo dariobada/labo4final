@@ -135,6 +135,12 @@
 
 			$this->db->query($sentencia);
 
+			//se da de baja la relación entre la persona y las extensiones de la tarjeta dada de baja
+			$sentencia = 'UPDATE public."TARJETAS_USUARIOS" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta" in ( SELECT "id_tarjeta_extension" FROM public."EXTENSIONES_TARJETA"
+			               WHERE "id_tarjeta_principal" = ' . $idTarj . ')';
+
+			$this->db->query($sentencia);
+
 		}
 
 		public function validarTarjetasActivasPorTarjeta($idTarj){
