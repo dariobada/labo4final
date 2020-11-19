@@ -44,19 +44,19 @@
 	}*/
 
 	//esto singifica que eligió Alta
-	/*if(count($_POST) == 3){
-		$c = new Cuentas();
-		$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
+	if(count($_POST) == 2){
+		$t = new Tarjetas();
+		$t->realizarAltaTarjeta($_POST['usuario'], $_POST['proveedor']);
 		
 		//se debe verificar si es necesario generar un rol para el usuario
 
 		$r = new Roles();
-		if(!$r->validarRolCuentas($_POST['usuario'])){
-			$r->crearRolCuentas($_POST['usuario']);
+		if(!$r->validarRolTarjetas($_POST['usuario'])){
+			$r->crearRolTarjetas($_POST['usuario']);
 		}
 
 		$mensaje = "Alta realizada correctamente";
-	}*/
+	}
 
 	//------ se obtienen los usuarios --------
 	$u = new Usuarios();
@@ -86,7 +86,7 @@
 	$v->usuarios = $listaUsuarios;
 	$v->proveedores = $listaProveedores;
 	$v->tarjetas = $listaTarjetas;
-	//$v->mensaje = $mensaje;
+	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
 	$v->render();	
