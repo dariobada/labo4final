@@ -16,10 +16,12 @@
 		exit;
 	}
 
+
+
 	//esto singifica que eligió Eliminar
 	/*if(count($_POST) == 1){
 		
-		//se da de baja la tarjeta
+		//antes de dar la baja es necesario verificar si
 		$t = new Tarjetas();
 		$t->realizarBajaTarjeta($_POST['tarjeta']);
 		
@@ -89,7 +91,11 @@
 	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
+	if(COUNT($_POST) > 0){
+		var_dump("cantidad: " . count($POST));
+	} else 
+	{
 	$v->render();	
-
+}
 
 ?>
