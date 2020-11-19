@@ -27,7 +27,7 @@
 		//antes de dar la baja es necesario verificar si el usuario es cliente o administrador
 		if($r->devolverMarcaAdministrador($_POST['usuario'])){
 			//si es administrador, se procede a realizar la baja
-			$u->bajaDeUsuario($_POST['usuario']):
+			$u->bajaDeUsuario($_POST['usuario']);
 			//se realiza la baja del rol de administrador para ese usuario
 			$r->eliminarRolAdministrador($_POST['usuario']);
 
