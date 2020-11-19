@@ -76,7 +76,7 @@
 				div.Modi{
 					background-color:rgb(182, 123, 173 );
 					width:36%;
-					height:32%;
+					height:45%;
 					left:51%;
 					position:absolute;
 					top:20%;
@@ -92,7 +92,7 @@
 					height:22%;
 					left:51%;
 					position:absolute;
-					top:55%;
+					top:75%;
 					padding-left: 2%;
 					align-items: center;
 					justify-content: center;
@@ -148,9 +148,9 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<div class="headerOpcionPar" id="divAltaProductos">Administración de productos</div>
-				<div class="headerOpcionImpar" id="divUsuarios">Administración de usuarios</div>
-				<div class="headerOpcionPar" id="divTarjetas">Administración de tarjetas</div>
+				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
+				<div class="headerOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
+				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 				
 			</div>
@@ -173,17 +173,17 @@
 						<input name="apellido_usuario" required="required">
 						<br><br>
 						<label>Nombre de usuario: </label>
-						<input name="nombre_usuario" required="required" placeholder="Nombre para Loguear">
+						<input name="nombre_usuario" required="required" placeholder="Nombre para loguear">
 						<br><br>
 						<label>Contraseña: </label>
-						<input name="nombre_usuario" required="required">
+						<input type="password" name="nombre_usuario" required="required">
 						<br><br>
 						<label>Es Admin?</label>
 						<input type="radio" id="admin_si" name="opcion" value="Si">Si
 						<input type="radio" id="admin_no" name="opcion" value="No">No
 						<br><br><br><br>
 
-						<button class="enviar" type="submit">Confirmar</button>
+						<button class="enviar" type="submit">Alta</button>
 
 						
 					</form>
@@ -214,7 +214,7 @@
 					<label>Nuevo nombre de usuario:</label>
 					<input name="nombre_usuario" required="required" placeholder="Nombre para Loguear">
 					<br><br>
-					<button class="enviar" type="submit">Aceptar</button>
+					<button class="enviar" type="submit">Modificar</button>
 
 				</form>
 
@@ -225,7 +225,7 @@
 
 				<div class="Baja">
 					<form action="" method="post">
-						<h2>Baja de tarjeta</h2>
+						<h2>Baja de usuario</h2>
 						<label>Seleccionar usuario: </label>
 							<select class="usuario" name="usuario" required="required" id="usuario"> 
 							<?php 
