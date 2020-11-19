@@ -52,6 +52,13 @@
 		$c = new Cuentas();
 		$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
 		
+		//se debe verificar si es necesario generar un rol para el usuario
+
+		$r = new Roles();
+		if(!$r->validarRolCuentas($_POST['usuario'])){
+			$r->crearRolCuentas($_POST['usuario']);
+		}
+
 		$mensaje = "Alta realizada correctamente";
 	}
 
