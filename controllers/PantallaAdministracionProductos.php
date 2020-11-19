@@ -52,7 +52,7 @@
 		$c = new Cuentas();
 		$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
 		
-		$mensaje = "Modificación realizada correctamente";
+		$mensaje = "Alta realizada correctamente";
 	}
 
 	//------ se obtienen los usuarios --------
