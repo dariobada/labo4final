@@ -19,6 +19,13 @@
 
 		}
 
+		public function getTodosLosProveedores(){
+			$sentencia = 'SELECT * from public."PROVEEDORES_TARJETA"';
+
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+		}
+
 	
 
 
