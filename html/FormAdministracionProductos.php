@@ -242,7 +242,7 @@
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
 									foreach ($this->cuentas as $cu){
-										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo'] . ')</option>';
+										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
 									}
 
 								 ?>
