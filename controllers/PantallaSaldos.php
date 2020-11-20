@@ -51,9 +51,9 @@
 	//var_dump("saldos tarjetas: " . $_SESSION['tieneTarjetas']);
 
 	//render sería como decirle "dibujate"
-	var_dump("antes de romper");
+	
 	$v->render();	
-	var_dump("despues de romper");
+	
 
 
 ?>
