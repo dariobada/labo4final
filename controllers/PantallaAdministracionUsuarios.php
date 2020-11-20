@@ -65,17 +65,28 @@
 	//esto singifica que eligió Alta
 	if(count($_POST) == 5){
 		
-		$mensaje = 'opcion: ' . $_POST['opcion'];
+
 		//se valida que no exista el nombre de usuario para loguear
-		/*$u = new Usuarios();
+		$u = new Usuarios();
 		if($u->validarExistenciaUsuario($_POST['nombreUsuario'], 0)){
 			$mensaje = 'Error - Ya existe un cliente con el Nombre de Usuario ingresado.';
 
 		} else {
 			//se crea el usuario
 			$u->crearUsuario($_POST['nombre'], $_POST['apellido'], $_POST['nombreUsuario'], sha1($_POST['pass']));
+			
+			//si el usuario generado es administrador, se genera el rol para el usuario
+			if($_POST['opcion'] == 'Si'){
+
+				//se tiene que obtener el id de usuario generado en la creación
+				$aux = $u->getUsuarioPorNombreLogin($_POST['nombreUsuario']);
+				
+				$r = new Roles();
+				$r->crearRolAdministrador($aux['id_login_usuario']);
+			}
+
 			$mensaje = "Alta realizada correctamente";
-		}*/
+		}
 
 		
 	}
