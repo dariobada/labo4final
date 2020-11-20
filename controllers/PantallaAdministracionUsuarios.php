@@ -79,7 +79,7 @@
 			if($_POST['opcion'] == 'Si'){
 
 				//se tiene que obtener el id de usuario generado en la creación
-				$aux = $u->getUsuarioPorNombreLogin($_POST['nombreUsuario']);
+				$aux = $u->getUsuario($_POST['nombreUsuario']);
 				
 				$r = new Roles();
 				$r->crearRolAdministrador($aux['id_login_usuario']);
