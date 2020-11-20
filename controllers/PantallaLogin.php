@@ -66,7 +66,7 @@
 				
 				//busco rol de cuentas				
 				if($r->validarRolCuentas($usuario['id_usuario'])){
-					var_dump("entra cuentas");
+					//var_dump("entra cuentas");
 					$tieneCuentas = 1;
 					$_SESSION['tieneCuentas'] = 1;
 				} else{
@@ -75,15 +75,15 @@
 				}
 
 				if($r->validarRolTarjetas($usuario['id_usuario'])){
-					var_dump("entra tarjetas");
+					//var_dump("entra tarjetas");
 					$tieneTarjetas = 1;
 					$_SESSION['tieneTarjetas'] = 1;
 				} else{
 					$tieneTarjetas = 0;
 					$_SESSION['tieneTarjetas'] = 0;
 				}				
-				var_dump("cuentas: " . $_SESSION['tieneCuentas']);
-				var_dump("tarjetas: " . $_SESSION['tieneTarjetas']);
+				//var_dump("cuentas: " . $_SESSION['tieneCuentas']);
+				//var_dump("tarjetas: " . $_SESSION['tieneTarjetas']);
 
 				if($tieneCuentas){
 					//si entra significa que opera con cuentas, entonces redirecciona a la consulta de cuentas

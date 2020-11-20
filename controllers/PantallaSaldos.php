@@ -46,8 +46,8 @@
 	//le paso a la vista los indicadores para que habiliten o no los botones de las funcionalidades según el rol
 	$v->operaCuentas = $_SESSION['tieneCuentas'];
 	$v->operaTarjetas = $_SESSION['tieneTarjetas'];
-	var_dump("saldos cuentas: " . $_SESSION['tieneCuentas']);
-	var_dump("saldos tarjetas: " . $_SESSION['tieneTarjetas']);
+	//var_dump("saldos cuentas: " . $_SESSION['tieneCuentas']);
+	//var_dump("saldos tarjetas: " . $_SESSION['tieneTarjetas']);
 
 	//render sería como decirle "dibujate"
 	$v->render();	
