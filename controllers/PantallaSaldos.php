@@ -39,9 +39,9 @@
 		$i++;
 
 	}
-	var_dump("antes de romper");
+	
 	$v = new ListadoCuentas();
-	var_dump("despues de romper");
+	
 	$v->cuentas = $arrayCuentas;
 	$v->usuario = $_SESSION['nombre'];
 	//le paso a la vista los indicadores para que habiliten o no los botones de las funcionalidades según el rol
@@ -51,7 +51,9 @@
 	//var_dump("saldos tarjetas: " . $_SESSION['tieneTarjetas']);
 
 	//render sería como decirle "dibujate"
+	var_dump("antes de romper");
 	$v->render();	
+	var_dump("despues de romper");
 
 
 ?>
