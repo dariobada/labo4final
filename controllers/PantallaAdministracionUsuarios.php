@@ -82,7 +82,7 @@
 				$aux = $u->getUsuario($_POST['nombreUsuario']);
 				
 				$r = new Roles();
-				$r->crearRolAdministrador($aux['id_login_usuario']);
+				$r->crearRolAdministrador($aux['id_usuario']);
 			}
 
 			$mensaje = "Alta realizada correctamente";
