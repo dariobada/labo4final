@@ -63,19 +63,22 @@
 	}
 
 	//esto singifica que eligió Alta
-	/*if(count($_POST) == 5){
-		$t = new Tarjetas();
-		$t->realizarAltaTarjeta($_POST['usuario'], $_POST['proveedor']);
+	if(count($_POST) == 5){
 		
-		//se debe verificar si es necesario generar un rol para el usuario
+		$mensaje = 'opcion: ' . $_POST['opcion'];
+		//se valida que no exista el nombre de usuario para loguear
+		/*$u = new Usuarios();
+		if($u->validarExistenciaUsuario($_POST['nombreUsuario'], 0)){
+			$mensaje = 'Error - Ya existe un cliente con el Nombre de Usuario ingresado.';
 
-		$r = new Roles();
-		if(!$r->validarRolTarjetas($_POST['usuario'])){
-			$r->crearRolTarjetas($_POST['usuario']);
-		}
+		} else {
+			//se crea el usuario
+			$u->crearUsuario($_POST['nombre'], $_POST['apellido'], $_POST['nombreUsuario'], sha1($_POST['pass']));
+			$mensaje = "Alta realizada correctamente";
+		}*/
 
-		$mensaje = "Alta realizada correctamente";
-	}*/
+		
+	}
 
 	//------ se obtienen los usuarios --------
 	$u = new Usuarios();
