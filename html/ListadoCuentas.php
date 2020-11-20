@@ -248,7 +248,11 @@
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseout = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "auto";
+				if(document.getElementById("poseeCuentas").value == 1)	{	
+					document.getElementById("divConsultaSaldos").style.cursor = "auto";
+				} else {
+					document.getElementById("divConsultaSaldos").setAttribute("title","");
+				}
 			}
 
 
@@ -278,11 +282,20 @@
 			}
 
 			document.getElementById("divTransferencias").onmouseover = function(){			
-				document.getElementById("divTransferencias").style.cursor = "pointer";
+				if(document.getElementById("poseeCuentas").value == 1)	{
+					document.getElementById("divTransferencias").style.cursor = "pointer";
+				} else {
+					document.getElementById("divTransferencias").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
 			document.getElementById("divTransferencias").onmouseout = function(){			
-				document.getElementById("divTransferencias").style.cursor = "auto";
+				if(document.getElementById("poseeCuentas").value == 1)	{	
+					document.getElementById("divTransferencias").style.cursor = "auto";
+				} else {
+					document.getElementById("divTransferencias").setAttribute("title","");
+				}
 			}
 
 			$(document).ready(function(){
@@ -290,19 +303,25 @@
 				
 				$("#divConsultaSaldos").click(function(){
 					
-					window.location.href="PantallaSaldos.php";
+					if(document.getElementById("poseeCuentas").value == 1)	{
+						window.location.href="PantallaSaldos.php";
+					}
 
 				});
 
 				$("#divTarjetas").click(function(){
 					
-					window.location.href="PantallaTarjetas.php";
+					if(document.getElementById("poseeTarjetas").value == 1)	{
+						window.location.href="PantallaTarjetas.php";
+					}
 
 				});
 
 				$("#divTransferencias").click(function(){
 					
-					window.location.href="PantallaTransferencias.php";
+					if(document.getElementById("poseeCuentas").value == 1)	{
+						window.location.href="PantallaTransferencias.php";
+					}
 
 				});
 
