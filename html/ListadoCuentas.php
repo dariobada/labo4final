@@ -170,8 +170,8 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<input id="poseeCuentas" type="hidden"><?= $this->operaCuentas?></input>
-				<input id="poseeTarjetas" type="hidden"><?= $this->operaTarjetas?></input>
+				<input id="poseeCuentas" type="hidden" value="<?= $this->operaCuentas?>"></input>
+				<input id="poseeTarjetas" type="hidden" value="<?= $this->operaTarjetas?>"></input>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
 				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>
