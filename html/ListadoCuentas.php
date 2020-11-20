@@ -174,34 +174,7 @@
 				<input id="poseeTarjetas" type="hidden" value="<?= $this->operaTarjetas?>"></input>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
 				<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
-				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>
-				<?php/*
-				
-					if(($this->operaCuentas) == "1"){									
-				
-						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';
-				
-					} else {
-							
-
-						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
-				
-					}
-				
-				
-					if(($this->operaTarjetas) == "1"){									
-				
-						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
-				
-					} else {
-				
-						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
-				
-					}*/
-				?>
-				
+				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>				
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			<div class="contenedorBody">

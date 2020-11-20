@@ -359,9 +359,11 @@
 		<div class="contenedorPrincipalActivo" id="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
+				<input id="poseeCuentas" type="hidden" value="<?= $this->operaCuentas?>"></input>
+				<input id="poseeTarjetas" type="hidden" value="<?= $this->operaTarjetas?>"></input>
 				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
-				<div class="headerOpcionImpar" id="divTarjetas">Tarjetas</div>
-				<div class="headerOpcionPar" id="divTransferencias">Transferencias</div>
+				<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
+				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>				
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
 			
@@ -518,12 +520,22 @@
 				document.getElementById("cerrarModi").className="divHeaderCerrar";
 			}
 
-			document.getElementById("divConsultaSaldos").onmouseover = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+			document.getElementById("divConsultaSaldos").onmouseover = function(){		
+
+				if(document.getElementById("poseeCuentas").value == 1)	{
+					document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+				} else {
+					document.getElementById("divConsultaSaldos").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseout = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "auto";
+				if(document.getElementById("poseeCuentas").value == 1)	{	
+					document.getElementById("divConsultaSaldos").style.cursor = "auto";
+				} else {
+					document.getElementById("divConsultaSaldos").setAttribute("title","");
+				}
 			}
 
 
@@ -536,19 +548,37 @@
 			}
 
 			document.getElementById("divTarjetas").onmouseover = function(){			
-				document.getElementById("divTarjetas").style.cursor = "pointer";
+				if(document.getElementById("poseeTarjetas").value == 1)	{
+					document.getElementById("divTarjetas").style.cursor = "pointer";
+				} else {
+					document.getElementById("divTarjetas").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
-			document.getElementById("divTarjetas").onmouseout = function(){			
-				document.getElementById("divTarjetas").style.cursor = "auto";
+			document.getElementById("divTarjetas").onmouseout = function(){		
+				if(document.getElementById("poseeTarjetas").value == 1)	{	
+					document.getElementById("divTarjetas").style.cursor = "auto";
+				} else {
+					document.getElementById("divTarjetas").setAttribute("title","");
+				}
 			}
 
 			document.getElementById("divTransferencias").onmouseover = function(){			
-				document.getElementById("divTransferencias").style.cursor = "pointer";
+				if(document.getElementById("poseeCuentas").value == 1)	{
+					document.getElementById("divTransferencias").style.cursor = "pointer";
+				} else {
+					document.getElementById("divTransferencias").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
 			document.getElementById("divTransferencias").onmouseout = function(){			
-				document.getElementById("divTransferencias").style.cursor = "auto";
+				if(document.getElementById("poseeCuentas").value == 1)	{	
+					document.getElementById("divTransferencias").style.cursor = "auto";
+				} else {
+					document.getElementById("divTransferencias").setAttribute("title","");
+				}
 			}
 
 			$(document).ready(function(){
@@ -557,19 +587,25 @@
 				
 				$("#divConsultaSaldos").click(function(){
 					
-					window.location.href="PantallaSaldos.php";
+					if(document.getElementById("poseeCuentas").value == 1)	{
+						window.location.href="PantallaSaldos.php";
+					}
 
 				});
 
 				$("#divTarjetas").click(function(){
 					
-					window.location.href="PantallaTarjetas.php";
+					if(document.getElementById("poseeTarjetas").value == 1)	{
+						window.location.href="PantallaTarjetas.php";
+					}
 
 				});
 
 				$("#divTransferencias").click(function(){
 					
-					window.location.href="PantallaTransferencias.php";
+					if(document.getElementById("poseeCuentas").value == 1)	{
+						window.location.href="PantallaTransferencias.php";
+					}
 
 				});
 
