@@ -271,6 +271,14 @@
 				document.getElementById("divConsultaSaldos").style.cursor = "auto";
 			}
 
+			document.getElementById("divConsultaSaldosNO").onmouseover = function(){			
+				document.getElementById("divConsultaSaldosNO").style.cursor = "pointer";
+			}
+
+			document.getElementById("divConsultaSaldosNO").onmouseout = function(){			
+				document.getElementById("divConsultaSaldosNO").style.cursor = "auto";
+			}
+
 
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
@@ -288,6 +296,14 @@
 				document.getElementById("divTarjetas").style.cursor = "auto";
 			}
 
+				document.getElementById("divTarjetasno").onmouseover = function(){			
+				document.getElementById("divTarjetasNO").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTarjetasNO").onmouseout = function(){			
+				document.getElementById("divTarjetasNO").style.cursor = "auto";
+			}
+
 			document.getElementById("divTransferencias").onmouseover = function(){			
 				document.getElementById("divTransferencias").style.cursor = "pointer";
 			}
@@ -295,6 +311,15 @@
 			document.getElementById("divTransferencias").onmouseout = function(){			
 				document.getElementById("divTransferencias").style.cursor = "auto";
 			}
+
+			document.getElementById("divTransferenciasNO").onmouseover = function(){			
+				document.getElementById("divTransferenciasNO").style.cursor = "pointer";
+			}
+
+			document.getElementById("divTransferenciasNO").onmouseout = function(){			
+				document.getElementById("divTransferenciasNO").style.cursor = "auto";
+			}
+
 
 			$(document).ready(function(){
 
