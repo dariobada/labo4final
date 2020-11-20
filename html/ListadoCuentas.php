@@ -206,13 +206,16 @@
 					if($this->operaCuentas == 1 and $this->operaTarjetas == 0){									
 				
 						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';								
+						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';		
+						echo '<div class="headerOpcionParNO" id="divTarjetasNO">Tarjetas</div>';								
 					}
 				
 			
 					if($this->operaTarjetas == 1 and $this->operaCuentas == 0){									
 				
-						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
+						echo '<div class="headerOpcionParNO" id="divConsultaSaldos">Cuentas</div>';
+						echo '<div class="headerOpcionImparNO" id="divTransferencias">Transferencias</div>';		
+						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';	
 				
 					}
 				
@@ -291,6 +294,7 @@
 			}
 
 
+
 			$(document).ready(function(){
 
 				
@@ -300,6 +304,11 @@
 
 				});
 
+				$("#divConsultaSaldosNO").click(function(){
+					
+					window.alert("No posee productos para utilizar esta funcionalidad");
+
+				});
 
 				$("#divTarjetas").click(function(){
 					
@@ -307,12 +316,24 @@
 
 				});
 
-		
+				$("#divTarjetasNO").click(function(){
+					
+					window.alert("No posee productos para utilizar esta funcionalidad");
+
+				});
+
 				$("#divTransferencias").click(function(){
 					
 					window.location.href="PantallaTransferencias.php";
 
 				});
+
+				$("#divTransferenciasNO").click(function(){
+					
+					window.alert("No posee productos para utilizar esta funcionalidad");
+
+				});
+
 
 
 				$("#divCerrarSesion").click(function(){
