@@ -207,24 +207,253 @@
 				
 						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
 						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';		
-						echo '<div class="headerOpcionParNO" id="divTarjetasNO">Tarjetas</div>';								
+						echo '<div class="headerOpcionParNO" id="divTarjetasNO">Tarjetas</div>';	
+						?>
+
+						<script src="../jquery.js"></script>
+						<script type="text/javascript">
+				
+							document.getElementById("divConsultaSaldos").onmouseover = function(){			
+								document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+							}
+
+							document.getElementById("divConsultaSaldos").onmouseout = function(){			
+								document.getElementById("divConsultaSaldos").style.cursor = "auto";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseover = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "pointer";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseout = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "auto";
+							}
+
+							document.getElementById("divTransferencias").onmouseover = function(){			
+							document.getElementById("divTransferencias").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTransferencias").onmouseout = function(){			
+							document.getElementById("divTransferencias").style.cursor = "auto";
+							}
+
+
+							document.getElementById("divTarjetasNO").onmouseover = function(){			
+							document.getElementById("divTarjetasNO").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTarjetasNO").onmouseout = function(){			
+							document.getElementById("divTarjetasNO").style.cursor = "auto";
+							}
+
+							$(document).ready(function(){
+
+				
+							$("#divConsultaSaldos").click(function(){
+								
+								window.location.href="PantallaSaldos.php";
+
+							});
+
+							$("#divTarjetasNO").click(function(){
+								
+								window.alert("No posee productos para utilizar esta funcionalidad");
+
+							});
+
+							$("#divTransferencias").click(function(){
+					
+							window.location.href="PantallaTransferencias.php";
+
+							});
+
+							$("#divCerrarSesion").click(function(){
+					
+							$.ajax({
+								type:"post",
+								url:"./CerrarSesion.php",
+								data:{},
+								success:function(respuestaDelServer,estado){
+									window.location.href="PantallaLogin.php";	
+								}
+							});
+
+
+
+							});
+						});
+						</script>
 					}
 				
-			
+					<?
 					if($this->operaTarjetas == 1 and $this->operaCuentas == 0){									
 				
 						echo '<div class="headerOpcionParNO" id="divConsultaSaldos">Cuentas</div>';
 						echo '<div class="headerOpcionImparNO" id="divTransferencias">Transferencias</div>';		
 						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';	
+					?>
+						<script src="../jquery.js"></script>
+						<script type="text/javascript">
 				
+							document.getElementById("divConsultaSaldosNO").onmouseover = function(){			
+								document.getElementById("divConsultaSaldosNO").style.cursor = "pointer";
+							}
+
+							document.getElementById("divConsultaSaldosNO").onmouseout = function(){			
+								document.getElementById("divConsultaSaldosNO").style.cursor = "auto";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseover = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "pointer";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseout = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "auto";
+							}
+
+							document.getElementById("divTransferenciasNO").onmouseover = function(){			
+							document.getElementById("divTransferenciasNO").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTransferenciasNO").onmouseout = function(){			
+							document.getElementById("divTransferenciasNO").style.cursor = "auto";
+							}
+
+							document.getElementById("divTarjetas").onmouseover = function(){			
+							document.getElementById("divTarjetas").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTarjetas").onmouseout = function(){			
+							document.getElementById("divTarjetas").style.cursor = "auto";
+							}
+
+
+							$(document).ready(function(){
+
+				
+							$("#divConsultaSaldosNO").click(function(){
+								
+								window.alert("No posee productos para utilizar esta funcionalidad");
+
+							});
+
+							$("#divTarjetas").click(function(){
+								
+								window.location.href="PantallaTarjetas.php";
+
+							});
+
+							$("#divTransferenciasNO").click(function(){
+					
+								window.alert("No posee productos para utilizar esta funcionalidad");
+
+							});
+
+							$("#divCerrarSesion").click(function(){
+					
+							$.ajax({
+								type:"post",
+								url:"./CerrarSesion.php",
+								data:{},
+								success:function(respuestaDelServer,estado){
+									window.location.href="PantallaLogin.php";	
+								}
+							});
+
+
+
+							});
+						});
+						</script>
+
 					}
-				
+					
+
+
+
+				<?
 					if($this->operaTarjetas == 1 and $this->operaCuentas == 1){
 						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
 						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';		
 						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
-					}
+					
 				?>
+					<script src="../jquery.js"></script>
+						<script type="text/javascript">
+				
+							document.getElementById("divConsultaSaldos").onmouseover = function(){			
+								document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+							}
+
+							document.getElementById("divConsultaSaldos").onmouseout = function(){			
+								document.getElementById("divConsultaSaldos").style.cursor = "auto";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseover = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "pointer";
+							}
+
+							document.getElementById("divCerrarSesion").onmouseout = function(){			
+								document.getElementById("divCerrarSesion").style.cursor = "auto";
+							}
+
+							document.getElementById("divTransferencias").onmouseover = function(){			
+							document.getElementById("divTransferencias").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTransferencias").onmouseout = function(){			
+							document.getElementById("divTransferencias").style.cursor = "auto";
+							}
+
+							document.getElementById("divTarjetas").onmouseover = function(){			
+							document.getElementById("divTarjetas").style.cursor = "pointer";
+							}
+
+							document.getElementById("divTarjetas").onmouseout = function(){			
+							document.getElementById("divTarjetas").style.cursor = "auto";
+							}
+
+
+							$(document).ready(function(){
+
+				
+							$("#divConsultaSaldos").click(function(){
+								
+								window.location.href="PantallaSaldos.php";
+
+							});
+
+							$("#divTarjetas").click(function(){
+								
+								window.location.href="PantallaTarjetas.php";
+
+							});
+
+							$("#divTransferencias").click(function(){
+					
+								window.location.href="PantallaTransferencias.php";
+
+							});
+
+							$("#divCerrarSesion").click(function(){
+					
+							$.ajax({
+								type:"post",
+								url:"./CerrarSesion.php",
+								data:{},
+								success:function(respuestaDelServer,estado){
+									window.location.href="PantallaLogin.php";	
+								}
+							});
+
+
+
+							});
+						});
+						</script>
+
+					}
+				
 				
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
 			</div>
@@ -258,101 +487,6 @@
 			</div>
 		</div>
 
-	<script src="../jquery.js"></script>
-	<script type="text/javascript">
-			
-			document.getElementById("divConsultaSaldos").onmouseover = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
-			}
-
-			document.getElementById("divConsultaSaldos").onmouseout = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "auto";
-			}
-
-			document.getElementById("divCerrarSesion").onmouseover = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "pointer";
-			}
-
-			document.getElementById("divCerrarSesion").onmouseout = function(){			
-				document.getElementById("divCerrarSesion").style.cursor = "auto";
-			}
-
-			document.getElementById("divTarjetas").onmouseover = function(){			
-				document.getElementById("divTarjetas").style.cursor = "pointer";
-			}
-
-			document.getElementById("divTarjetas").onmouseout = function(){			
-				document.getElementById("divTarjetas").style.cursor = "auto";
-			}
-
-			document.getElementById("divTransferencias").onmouseover = function(){			
-				document.getElementById("divTransferencias").style.cursor = "pointer";
-			}
-
-			document.getElementById("divTransferencias").onmouseout = function(){			
-				document.getElementById("divTransferencias").style.cursor = "auto";
-			}
-
-
-
-			$(document).ready(function(){
-
-				
-				$("#divConsultaSaldos").click(function(){
-					
-					window.location.href="PantallaSaldos.php";
-
-				});
-
-				$("#divConsultaSaldosNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
-
-				$("#divTarjetas").click(function(){
-					
-					window.location.href="PantallaTarjetas.php";
-
-				});
-
-				$("#divTarjetasNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
-
-				$("#divTransferencias").click(function(){
-					
-					window.location.href="PantallaTransferencias.php";
-
-				});
-
-				$("#divTransferenciasNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
-
-
-
-				$("#divCerrarSesion").click(function(){
-					
-					$.ajax({
-						type:"post",
-						url:"./CerrarSesion.php",
-						data:{},
-						success:function(respuestaDelServer,estado){
-							window.location.href="PantallaLogin.php";	
-						}
-					});
-
-
-
-				});
-			});
-		</script>
-
-				
+	
 	</body>
 </html>
