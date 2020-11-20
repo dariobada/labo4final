@@ -203,28 +203,23 @@
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<?php
 
-					if($this->operaCuentas == 1){									
+					if($this->operaCuentas == 1 and $this->operaTarjetas == 0){									
 				
 						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
-						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';
-				
-					} else {
-							
-
-						echo '<div class="headerOpcionParNO" id="divConsultaSaldosNO" title="No posee productos para utilizar esta funcionalidad.">Cuentas</div>';
-						echo '<div class="headerOpcionImparNO" id="divTransferenciasNO" title="No posee productos para utilizar esta funcionalidad.">Transferencias</div>';
-				
+						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';								
 					}
 				
 			
-					if($this->operaTarjetas == 1){									
+					if($this->operaTarjetas == 1 and $this->operaCuentas == 0){									
 				
 						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
 				
-					} else {
+					}
 				
-						echo '<div class="headerOpcionParNO" id="divTarjetasNO" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
-				
+					if($this->operaTarjetas == 1 and $this->operaCuentas == 1){
+						echo '<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>';
+						echo '<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>';		
+						echo '<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>';
 					}
 				?>
 				
@@ -271,15 +266,6 @@
 				document.getElementById("divConsultaSaldos").style.cursor = "auto";
 			}
 
-			document.getElementById("divConsultaSaldosNO").onmouseover = function(){			
-				document.getElementById("divConsultaSaldosNO").style.cursor = "pointer";
-			}
-
-			document.getElementById("divConsultaSaldosNO").onmouseout = function(){			
-				document.getElementById("divConsultaSaldosNO").style.cursor = "auto";
-			}
-
-
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
 			}
@@ -296,28 +282,12 @@
 				document.getElementById("divTarjetas").style.cursor = "auto";
 			}
 
-				document.getElementById("divTarjetasno").onmouseover = function(){			
-				document.getElementById("divTarjetasNO").style.cursor = "pointer";
-			}
-
-			document.getElementById("divTarjetasNO").onmouseout = function(){			
-				document.getElementById("divTarjetasNO").style.cursor = "auto";
-			}
-
 			document.getElementById("divTransferencias").onmouseover = function(){			
 				document.getElementById("divTransferencias").style.cursor = "pointer";
 			}
 
 			document.getElementById("divTransferencias").onmouseout = function(){			
 				document.getElementById("divTransferencias").style.cursor = "auto";
-			}
-
-			document.getElementById("divTransferenciasNO").onmouseover = function(){			
-				document.getElementById("divTransferenciasNO").style.cursor = "pointer";
-			}
-
-			document.getElementById("divTransferenciasNO").onmouseout = function(){			
-				document.getElementById("divTransferenciasNO").style.cursor = "auto";
 			}
 
 
@@ -330,11 +300,6 @@
 
 				});
 
-				$("#divConsultaSaldosNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
 
 				$("#divTarjetas").click(function(){
 					
@@ -342,24 +307,12 @@
 
 				});
 
-				$("#divTarjetasNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
-
+		
 				$("#divTransferencias").click(function(){
 					
 					window.location.href="PantallaTransferencias.php";
 
 				});
-
-				$("#divTransferenciasNO").click(function(){
-					
-					window.alert("No posee productos para utilizar esta funcionalidad");
-
-				});
-
 
 
 				$("#divCerrarSesion").click(function(){
