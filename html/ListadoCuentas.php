@@ -170,7 +170,12 @@
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
-				<?php
+				<input id="poseeCuentas" type="hidden"><?= $this->operaCuentas?></input>
+				<input id="poseeTarjetas" type="hidden"><?= $this->operaTarjetas?></input>
+				<div class="headerOpcionPar" id="divConsultaSaldos">Cuentas</div>
+				<div class="headerOpcionImpar" id="divTransferencias">Transferencias</div>
+				<div class="headerOpcionPar" id="divTarjetas">Tarjetas</div>
+				<?php/*
 				
 					if(($this->operaCuentas) == "1"){									
 				
@@ -194,7 +199,7 @@
 				
 						echo '<div class="headerOpcionPar" title="No posee productos para utilizar esta funcionalidad.">Tarjetas</div>';
 				
-					}
+					}*/
 				?>
 				
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
