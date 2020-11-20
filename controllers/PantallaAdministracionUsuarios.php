@@ -74,7 +74,7 @@
 		} else {
 			//se crea el usuario
 			$u->crearUsuario($_POST['nombre'], $_POST['apellido'], $_POST['nombreUsuario'], sha1($_POST['pass']));
-			exit();
+			
 			//si el usuario generado es administrador, se genera el rol para el usuario
 			if($_POST['opcion'] == 'Si'){
 
