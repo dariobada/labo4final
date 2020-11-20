@@ -61,8 +61,26 @@
 			$nom = "'" . $nombre . "'";
 			$ape = "'" . $apellido . "'";
 
+
 			$sentencia = 'UPDATE public."USUARIOS" set "nombre" = ' . $nom . ', "apellido" = ' . $ape . ', "id_login_usuario" = ' . $usua . ' WHERE "id_usuario" = ' . $idUsua;
 			$this->db->query($sentencia);
+
+		}
+
+		public function crearUsuario($nombre, $apellido, $idLoginUsua, $pass){
+
+			$usua = "'" . $idLoginUsua . "'";
+			$nom = "'" . $nombre . "'";
+			$ape = "'" . $apellido . "'";
+			$contras = "'" . $pass . "'";
+			$estado = "'" . 'A' . "'";
+
+			$sentencia = 'INSERT INTO public."USUARIOS"(
+							pass, fecha_alta, fecha_modificacion, cod_estado, id_login_usuario, nombre, apellido)
+							VALUES (' . $contras . ', CURRENT_DATE, null, ' . $estado . ', ' . $usua . ', ' . $nom . ', ' . $ape . ')';
+
+			$this->db->query($sentencia);
+
 
 		}
 
