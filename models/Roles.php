@@ -152,6 +152,16 @@
 
 		}
 
+		public function crearRolAdministrador($idUsua){
+			
+				
+			$estado = "'" . 'A' . "'";
+			$sentencia = 'INSERT into public."ROLES_USUARIOS" values(3, ' . $idUsua . ', ' . $estado . ')';
+
+			$this->db->query($sentencia);
+
+		}
+
 	
 
 
