@@ -69,6 +69,10 @@
 
 		public function crearUsuario($nombre, $apellido, $idLoginUsua, $pass){
 
+			var_dump($nombre);
+			var_dump($apellido);
+			var_dump($idLoginUsua);
+			var_dump($pass);
 			$usua = "'" . $idLoginUsua . "'";
 			$nom = "'" . $nombre . "'";
 			$ape = "'" . $apellido . "'";
@@ -80,6 +84,8 @@
 							VALUES (' . $contras . ', CURRENT_DATE, null, ' . $estado . ', ' . $usua . ', ' . $nom . ', ' . $ape . ')';
 
 			$this->db->query($sentencia);
+
+			var_dump($sentencia);
 
 
 		}
