@@ -269,8 +269,12 @@
 				}
 			}
 
-			document.getElementById("divTarjetas").onmouseout = function(){			
-				document.getElementById("divTarjetas").style.cursor = "auto";
+			document.getElementById("divTarjetas").onmouseout = function(){		
+				if(document.getElementById("poseeTarjetas").value == 1)	{	
+					document.getElementById("divTarjetas").style.cursor = "auto";
+				} else {
+					document.getElementById("divTarjetas").setAttribute("title","");
+				}
 			}
 
 			document.getElementById("divTransferencias").onmouseover = function(){			
