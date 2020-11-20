@@ -237,8 +237,14 @@
 	<script src="../jquery.js"></script>
 	<script type="text/javascript">
 			
-			document.getElementById("divConsultaSaldos").onmouseover = function(){			
-				document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+			document.getElementById("divConsultaSaldos").onmouseover = function(){		
+
+				if(document.getElementById("poseeCuentas").value == 1)	{
+					document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+				} else {
+					document.getElementById("divConsultaSaldos").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
 			document.getElementById("divConsultaSaldos").onmouseout = function(){			
@@ -255,7 +261,12 @@
 			}
 
 			document.getElementById("divTarjetas").onmouseover = function(){			
-				document.getElementById("divTarjetas").style.cursor = "pointer";
+				if(document.getElementById("poseeTarjetas").value == 1)	{
+					document.getElementById("divTarjetas").style.cursor = "pointer";
+				} else {
+					document.getElementById("divTarjetas").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
 			}
 
 			document.getElementById("divTarjetas").onmouseout = function(){			
