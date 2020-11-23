@@ -17,10 +17,18 @@
 
 		}
 
-		public function getTodosLosUsuarios(){
+		public function getTodosLosUsuariosActivos(){
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."USUARIOS" where "cod_estado" = ' . $estado;
+
+			$this->db->query($sentencia);
+			return $this->db->fetchAll();
+		}
+
+		public function getTodosLosUsuarios(){
+
+			$sentencia = 'SELECT * FROM public."USUARIOS" ';
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
