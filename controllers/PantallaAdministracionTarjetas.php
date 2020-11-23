@@ -73,7 +73,7 @@
 
 			$mensaje = "Alta realizada correctamente";
 		} else {
-			$mensaje = "Error - El usuario ya posee una tarjeta para ese proveedor"
+			$mensaje = "Error - El usuario ya posee una tarjeta para ese proveedor";
 		}
 
 		
