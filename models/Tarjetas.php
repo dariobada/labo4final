@@ -8,8 +8,7 @@
 
 		public function getTarjetasPorUsuario($idUsua){
 
-			$estado = "'" . "A" . "'";
-			$sentencia = 'SELECT * FROM public."TARJETAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado;
+			$sentencia = 'SELECT * FROM public."TARJETAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua;
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
