@@ -11,6 +11,8 @@
 		public $mensaje;
 		public $operaCuentas;
 		public $operaTarjetas;
+		public $nombre;
+		public $apellido;
 
 		
 
