@@ -99,6 +99,7 @@
 
 	var_dump("todas: " . $todastarjetas);
 	foreach($todasTarjetas as $tarjeta){
+		var_dump("tarjeta: " . $tarjeta);
 		if($tarjeta[0]['cod_estado'] == 'A'){
 			var_dump("entra");
 			$listatarjetas[] = $tarjeta;
