@@ -202,7 +202,7 @@
 							<?php 
 								foreach ($this->usuarios as $us){
 									if($this->usuarioElegido == $us['id_usuario']){
-										echo '<option value="' . $us['id_usuario'] . ' selected">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
+										echo '<option value="' . $us['id_usuario'] . ' " selected>' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
 									} else {
 										echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
 									}
