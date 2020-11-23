@@ -201,7 +201,11 @@
 						<select class="usuario" name="usuario" required="required" id="usuario"> 
 							<?php 
 								foreach ($this->usuarios as $us){
-									echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
+									if($this->usuarioElegido == $us['id_usuario']){
+										echo '<option value="' . $us['id_usuario'] . ' selected">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
+									} else {
+										echo '<option value="' . $us['id_usuario'] . '">' . $us['id_login_usuario'] . ' ' . ' (' . $us['nombre'] . ' ' . $us['apellido'] . ')</option>';
+									}
 								}
 
 							 ?>
@@ -243,15 +247,19 @@
 					
 					<?php
 					
-						echo '<table id="principales">';
+						echo '<table id="cuentas">';
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número de tarjeta</th>';
 						echo '<th campo-dato="c2">Proveedor</th>';
+						echo '<th campo-dato="c3">Tipo de tarjeta</th>';
+						echo '<th campo-dato="c4">Estado</th>';
 						echo '</tr>';
-						foreach($this->tarjetasPrincipales as $tp){
+						foreach($this->tarjetas as $tp){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $tp['nro_tarjeta'] . '</td>';
 							echo '<td campo-dato="c2">' . $tp['nombre_proveedor'] . '  <img class="logo2" src="../' . $tp['nombre_proveedor'] . '.png"></td>';
+							echo '<td campo-dato="c3">' . $tp['tipo_tarjeta'] . '</td>';
+							echo '<td campo-dato="c4">' . $tp['estado'] . '</td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
