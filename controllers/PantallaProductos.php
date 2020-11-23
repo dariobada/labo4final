@@ -20,6 +20,8 @@
 
 		$c = new Cuentas();
 		$tc = new TipoCuentas();
+
+		$usuarioElegido = $_POST['usuario'];
 		
 		/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
 		$cuentasUsua = $c->getCuentasPorUsuario($_POST['usuario']);
@@ -152,6 +154,7 @@
 	//$v->tipoCuentas = $listaTipoCuentas;
 	$v->cuentas = $arrayCuentas;
 	$v->tarjetas = $listaTarjetas;
+	$v->usuarioElegido = $usuarioElegido;
 	/*
 	$v->mensaje = $mensaje;*/
 
