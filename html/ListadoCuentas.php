@@ -289,23 +289,23 @@
 			}
 
 			$(document).ready(function(){
-				alert("entra1");
+				
 				if(document.getElementById("poseeCuentas").value != 1){
-					alert("entra2");
+					
 					$('#divConsultaSaldos').removeClass("headerOpcionPar");	
 					$('#divConsultaSaldos').addClass("headerOpcionBloqueada");
 					$('#divTransferencias').removeClass("headerOpcionImpar");	
 					$('#divTransferencias').addClass("headerOpcionBloqueada");
 				};
-				alert("entra3");
+				
 
 				if(document.getElementById("poseeTarjetas").value != 1){
-					alert("entra4");
+				
 					$('#divTarjetas').removeClass("headerOpcionPar");	
 					$('#divTarjetas').addClass("headerOpcionBloqueada");
 		
 				};
-				alert("entra5");
+				
 					
 				
 				$("#divConsultaSaldos").click(function(){

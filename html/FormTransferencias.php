@@ -62,6 +62,21 @@
 	
 			}
 
+			div.headerOpcionBloqueada{
+				background-color:lightgrey;
+				width:20%;
+				height:100%;
+				float:left;
+				color:white;
+				font-family: Helvetica;
+				font-size:120%;
+				font-weight:bold;
+				justify-content:center;
+				align-items:center;
+				display:flex;
+	
+			}
+
 			div.contenedorBody{
 				height:100%;
 			}
@@ -282,6 +297,22 @@
 			}
 
 			$(document).ready(function(){
+
+				if(document.getElementById("poseeCuentas").value != 1){
+					
+					$('#divConsultaSaldos').removeClass("headerOpcionPar");	
+					$('#divConsultaSaldos').addClass("headerOpcionBloqueada");
+					$('#divTransferencias').removeClass("headerOpcionImpar");	
+					$('#divTransferencias').addClass("headerOpcionBloqueada");
+				};
+				
+
+				if(document.getElementById("poseeTarjetas").value != 1){
+				
+					$('#divTarjetas').removeClass("headerOpcionPar");	
+					$('#divTarjetas').addClass("headerOpcionBloqueada");
+		
+				};
 
 				
 				$("#divConsultaSaldos").click(function(){

@@ -70,6 +70,21 @@
 	
 			}
 
+			div.headerOpcionBloqueada{
+				background-color:lightgrey;
+				width:20%;
+				height:100%;
+				float:left;
+				color:white;
+				font-family: Helvetica;
+				font-size:120%;
+				font-weight:bold;
+				justify-content:center;
+				align-items:center;
+				display:flex;
+	
+			}
+
 			div.contenedorMarca{
 		    position: absolute; 
 		    font-family: Helvetica;
@@ -582,6 +597,22 @@
 			}
 
 			$(document).ready(function(){
+
+				if(document.getElementById("poseeCuentas").value != 1){
+					
+					$('#divConsultaSaldos').removeClass("headerOpcionPar");	
+					$('#divConsultaSaldos').addClass("headerOpcionBloqueada");
+					$('#divTransferencias').removeClass("headerOpcionImpar");	
+					$('#divTransferencias').addClass("headerOpcionBloqueada");
+				};
+				
+
+				if(document.getElementById("poseeTarjetas").value != 1){
+				
+					$('#divTarjetas').removeClass("headerOpcionPar");	
+					$('#divTarjetas').addClass("headerOpcionBloqueada");
+		
+				};
 
 				$("#modalModificacion").css("visibility","hidden");
 				
