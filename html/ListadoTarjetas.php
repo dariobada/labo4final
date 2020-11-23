@@ -327,16 +327,19 @@
 			}
 
 			[campo-dato='c1']{
-			width:25%; 
+			width:20%; 
 			}
 			[campo-dato='c2']{
-			width:25%; 
+			width:20%; 
 			}
 			[campo-dato='c3']{
-			width:25%; 
+			width:20%; 
 			}
 			[campo-dato='c4']{
-			width:25%; 
+			width:20%; 
+			}
+			[campo-dato='c5']{
+			width:20%; 
 			}
 
 			#principales{
@@ -399,21 +402,9 @@
 			
 			<div class="contenedorBody">
 				<a class="usuario">Usuario operando: <?= $this->usuario?></a>
-				<!--<div class="contenedorMarca">
-					<h1>Nuestros Proveedores</h1>
-					<br><br><br><br><br><br>
-					<img class="logo" src="../VISA.png">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../MASTERCARD.png">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../CABAL.png">
-					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-					<img class="logo" src="../AMERICAN.png">
-				</div>-->
 
-				<!--<label class="mistarjetas">Mis Tarjetas</label>-->
 				<div class="interiorTitulo1">
-					<a class="usuario">Mis tarjetas</a>
+					<a class="usuario">Mis tarjetas (<?= $this->nombre . " " . $this->apellido?>)</a>
 				</div>
 				<div class="interiorBody">
 					
@@ -450,6 +441,7 @@
 						echo '<th campo-dato="c2">Proveedor</th>';
 						echo '<th campo-dato="c3">Nombre</th>';
 						echo '<th campo-dato="c4">Apellido</th>';
+						echo '<th campo-dato="c5">Número documento</th>';
 						echo '</tr>';
 						foreach($this->tarjetasExtensiones as $te){
 							echo '<tr>';
@@ -457,6 +449,7 @@
 							echo '<td campo-dato="c2">' . $te['nombre_proveedor'] . '</td>';
 							echo '<td campo-dato="c3">' . $te['nombre_ext'] . '</td>';
 							echo '<td campo-dato="c4">' . $te['apellido_ext'] . '</td>';
+							echo '<td campo-dato="c5">' . $te['documento_ext'] . '</td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -482,24 +475,7 @@
 
 			<div class="centroModal" id="cuerpoModalModi">
 				<form action="" method="post" id="formularioModi">
-					<!--
-					<a class="col1">Nombre cliente: </a>
-					<a class="col2">Nacionalidad: </a><br/><br/>				
-					
-					<input class="col1" type="text" id="formNombreModi" name="formNombreModi" required="required" ></input>
-					<select class="col1" id="formNacionalidadesModi" name="formNacionalidadesModi" required="required"></select><br/><br/>	<br/><br/>	
-					
-					<a class="col1">Estado: </a>
-					<a class="col2">Fecha alta: </a><br/><br/>		
-
-					<input class="col1" type="text" id="formEstadoModi" name="formEstadoModi" required="required" ></input>
-					<input class="col2" type="date" id="formFechaModi" name="formFechaModi" required="required"> <br/><br/>	<br/><br/>
-					<input id="formIdClienteModi" type="hidden"></input>
-
-					
-					<button type="button"  id="enviarModi" class="AltaFormulario" disabled="true">Enviar modificación</button> <br/><br/>	
-				-->
-
+			
 					<a class="col1">Ingrese los datos del destinatario de la extensión a solicitar</a><br/><br/><br/>
 					
 					<a class="col1">Nombre: </a>
