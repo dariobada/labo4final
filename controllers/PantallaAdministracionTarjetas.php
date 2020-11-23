@@ -97,8 +97,10 @@
 	$todastarjetas = $t->getTodasLasTarjetas();
 	$listatarjetas = array();
 
+	var_dump("todas: " . $todastarjetas);
 	foreach($todasTarjetas as $tarjeta){
-		if($tarjeta['cod_estado'] == 'A'){
+		if($tarjeta[0]['cod_estado'] == 'A'){
+			var_dump("entra");
 			$listatarjetas[] = $tarjeta;
 		}
 	}
