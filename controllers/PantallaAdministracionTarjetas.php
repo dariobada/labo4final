@@ -46,16 +46,37 @@
 	//esto singifica que eligió Alta
 	if(count($_POST) == 2){
 		$t = new Tarjetas();
-		$t->realizarAltaTarjeta($_POST['usuario'], $_POST['proveedor']);
+		//se debe verificar que el usuario no posea ya una tarjeta para ese proveedor
+		$aux = $t->getTarjetasPorUsuario($_POST['usuario']);
+		$flag = true;
 		
-		//se debe verificar si es necesario generar un rol para el usuario
+		foreach($aux as $a){
+			if($a['cod_estado'] == 'A'){
+				$auxDT = $t->getDetalleTarjeta($a['id_tarjeta']);
 
-		$r = new Roles();
-		if(!$r->validarRolTarjetas($_POST['usuario'])){
-			$r->crearRolTarjetas($_POST['usuario']);
+				if($auxDT['cod_proveedor'] == $_POST['proveedor']){
+					$flag = false;
+				}
+			}
+			
 		}
 
-		$mensaje = "Alta realizada correctamente";
+		if($flag){
+			$t->realizarAltaTarjeta($_POST['usuario'], $_POST['proveedor']);
+		
+			//se debe verificar si es necesario generar un rol para el usuario
+
+			$r = new Roles();
+			if(!$r->validarRolTarjetas($_POST['usuario'])){
+				$r->crearRolTarjetas($_POST['usuario']);
+			}
+
+			$mensaje = "Alta realizada correctamente";
+		} else {
+			$mensaje = "Error - El usuario ya posee una tarjeta para ese proveedor"
+		}
+
+		
 	}
 
 	//------ se obtienen los usuarios --------
