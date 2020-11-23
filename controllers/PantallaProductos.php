@@ -60,9 +60,6 @@
 		$p = new Proveedores();
 		$u = new Usuarios();
 
-		//obtenemos el nombre y apellido del usuario
-		$usua = $u->getUsuario($_SESSION['nombre']);
-
 		$tarjetasUsuario = array();
 
 		$listaPrincipales = array();
@@ -72,11 +69,9 @@
 		$auxEXT = array();
 		$iP = 0;
 		$iE = 0;
-
-		
 		
 		//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
-		$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
+		$tarjetasUsuario = $t->getTarjetasPorUsuario($_POST['usuario']);
 			
 		//obtengo los datos necesarios para armar la lista de tarjetas principales
 		foreach($tarjetasUsuario as $tu){
