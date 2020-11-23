@@ -8,8 +8,8 @@
 
 		public function getCuentasPorUsuario($idUsua){
 
-			$estado = "'" . "A" . "'";
-			$sentencia = 'SELECT * FROM public."CUENTAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado;
+			
+			$sentencia = 'SELECT * FROM public."CUENTAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua;
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
