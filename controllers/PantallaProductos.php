@@ -4,6 +4,8 @@
 	
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
+	require '../models/Proveedores.php';
+	require '../models/Tarjetas.php';
 	require '../models/Roles.php';
 	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
@@ -18,10 +20,13 @@
 
 	if(count($_POST) > 0){
 
+
+		$usuarioElegido = $_POST['usuario'];
+
+		//buscamos las cuentas del usuario ingresado
 		$c = new Cuentas();
 		$tc = new TipoCuentas();
 
-		$usuarioElegido = $_POST['usuario'];
 		
 		/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
 		$cuentasUsua = $c->getCuentasPorUsuario($_POST['usuario']);
@@ -49,7 +54,66 @@
 
 		}
 
+		//buscamos las tarjetas del usuario ingresado
 
+		$t = new Tarjetas();
+		$p = new Proveedores();
+		$u = new Usuarios();
+
+		//obtenemos el nombre y apellido del usuario
+		$usua = $u->getUsuario($_SESSION['nombre']);
+
+		$tarjetasUsuario = array();
+
+		$listaPrincipales = array();
+		$listaExtensiones = array();
+		$listaTarjetas = array();
+		$auxDT = array();
+		$auxEXT = array();
+		$iP = 0;
+		$iE = 0;
+
+		
+		
+		//se obtienen todas las tarjetas (principales y extensiones) de ese usuario
+		$tarjetasUsuario = $t->getTarjetasPorUsuario($_SESSION['IdUsuario']);
+			
+		//obtengo los datos necesarios para armar la lista de tarjetas principales
+		foreach($tarjetasUsuario as $tu){
+			
+			//obtengo el detalle de esa tarjeta
+			$auxDT = $t->getDetalleTarjeta($tu['id_tarjeta']);			
+			
+			//obtengo el nombre del proveedor de tarjeta				
+			$nombreProv = $p->getNombreProveedor($auxDT['cod_proveedor']);		
+
+			//si es una tarjeta principal, informo al array el detalle de la tarjeta.
+			//si es una tarjeta extensión, debo obtener los datos adicionales de dicha extensión, para luego informar al array correspondiente.
+			
+			$listaTarjetas[$iP]['id_tarjeta'] = $auxDT['id_tarjeta'];
+			$listaTarjetas[$iP]['nro_tarjeta'] = $auxDT['nro_tarjeta'];
+			$listaTarjetas[$iP]['nombre_proveedor'] = $nombreProv;
+
+			if($auxDT['cod_estado'] == 'A'){
+				$listaTarjetas[$iP]['estado'] = 'Activo';
+			} else {
+				$listaTarjetas[$iP]['estado'] = 'Inactivo';
+			}
+			
+
+
+			if($auxDT['tipo_tarjeta'] == 'P'){
+				
+				$listaTarjetas[$iP]['tipo_tarjeta'] = 'Principal';
+
+			} else{
+		
+				$listaTarjetas[$iP]['tipo_tarjeta'] = 'Extensión';
+			}			
+			
+			$iP++;
+			
+		}
 
 	}
 
