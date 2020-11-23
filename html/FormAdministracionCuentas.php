@@ -142,10 +142,9 @@
 				color:red;
 				font-size:25px;
 				font-weight:bold;
-				/*position:absolute;
-				top:70%;*/
-				justify-content:center;
-				align-items:center;
+				position:absolute;
+				/*top:70%;*/
+			
 				left:15%;
 
 			}
