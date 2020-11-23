@@ -16,6 +16,41 @@
 		exit;
 	}
 
+	if(count($_POST) > 0){
+
+		$c = new Cuentas();
+		$tc = new TipoCuentas();
+		
+		/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
+		$cuentasUsua = $c->getCuentasPorUsuario($_POST['usuario']);
+
+		//en este array guardamos las cuentas y sus detalles
+		$respGetDetalle = array();
+		$arrayCuentas = array();
+
+		$i = 0;
+
+		foreach($cuentasUsua as $cu){
+		
+			$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
+		
+			$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
+			$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
+			$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
+			if($cu['cod_estado'] == 'A'){
+				$arrayCuentas[$i]['estado'] = 'Activa';
+			} else {
+				$arrayCuentas[$i]['estado'] = 'Inactiva';
+			}		
+
+			$i++;					
+
+		}
+
+
+
+	}
+
 	//esto singifica que eligió Eliminar
 	/*if(count($_POST) == 1){
 		
@@ -104,18 +139,20 @@
 
 
 	//------ se obtienen los tipos de cuenta --------
-	$tc = new TipoCuentas();
+	/*$tc = new TipoCuentas();
 	$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
 
 	//------ se obtienen las cuentas --------
 	$c = new Cuentas();
-	$listaCuentas = $c->getTodasLasCuentas();
+	$listaCuentas = $c->getTodasLasCuentas();*/
 
 
 	$v = new FormProductos();
 	$v->usuarios = $listaUsuarios;
-	$v->tipoCuentas = $listaTipoCuentas;
-	$v->cuentas = $listaCuentas;/*
+	//$v->tipoCuentas = $listaTipoCuentas;
+	$v->cuentas = $arrayCuentas;
+	$v->tarjetas = $listaTarjetas;
+	/*
 	$v->mensaje = $mensaje;*/
 
 	//render sería como decirle "dibujate"
