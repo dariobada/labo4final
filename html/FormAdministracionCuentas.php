@@ -143,9 +143,7 @@
 				font-size:25px;
 				font-weight:bold;
 				position:absolute;
-				top:5%;
-				visibility:hidden;
-			
+				top:11%;
 				left:15%;
 
 			}
@@ -258,9 +256,9 @@
 				</div>
 
 				<?php
-				//	if ($this->mensaje){
-						echo '<a class="mensaje" id="mensaje" value="' . $this->mensaje . '"></a>';
-				//	}
+					if ($this->mensaje){
+						echo '<a class="mensaje">' . $this->mensaje . '</a>';
+					}
 				?>
 
 			</div>
@@ -307,12 +305,7 @@
 
 			$(document).ready(function(){
 
-				if(document.getElementById("mensaje").value != ""){
-					alert("entra a mensaje");
-					alert(document.getElementById("mensaje").value);
-				} else {
-					alert("no entra a mensaje");
-				}
+
 
 				
 				$("#divCuentas").click(function(){
