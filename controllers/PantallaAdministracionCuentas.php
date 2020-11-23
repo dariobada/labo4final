@@ -54,7 +54,10 @@
 		//se valida que el usuario no posea ya ese tipo de cuenta
 		$aux = $c->getCuentasPorUsuario($_POST['usuario']);
 		$flag = false;
+		var_dump("enviado: " . $_POST['tipo_cuenta']);
 		foreach($aux as $a){
+			var_dump("$tipo: " . $a['id_tipo_cuenta']);
+
 			if($a['id_tipo_cuenta'] == $_POST['tipo_cuenta']){
 				//si entra al IF significa que el usuario ya posee ese tipo de cuenta dado de alta
 				$flag = true;
@@ -110,7 +113,7 @@
 	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
-	$v->render();	
+	//$v->render();	
 
 
 ?>
