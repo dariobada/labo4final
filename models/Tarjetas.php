@@ -125,7 +125,7 @@
 			$this->db->query($sentencia);
 
 			//se dan de baja las relaciones entre las tarjetas y sus extensiones
-			$sentencia = 'UPDATE public."EXTENSIONES_TARJETA" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta_principal" = ' . $idTarj;
+			$sentencia = 'UPDATE public."EXTENSIONES_TARJETA" set "cod_estado" = ' . $estado . ' WHERE ("id_tarjeta_principal" = ' . $idTarj . ') OR ("id_tarjeta_extension" = ' . $idTarj . ')';
 
 			$this->db->query($sentencia);
 
