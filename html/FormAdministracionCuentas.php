@@ -142,8 +142,10 @@
 				color:red;
 				font-size:25px;
 				font-weight:bold;
-				position:absolute;
-				top:70%;
+				/*position:absolute;
+				top:70%;*/
+				justify-content:center;
+				align-items:center;
 
 			}
 				
@@ -256,7 +258,7 @@
 
 				<?php
 					if ($this->mensaje){
-						echo '<a>' . $this->mensaje . '</a>';
+						echo '<a class="mensaje">' . $this->mensaje . '</a>';
 					}
 				?>
 
