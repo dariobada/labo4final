@@ -27,7 +27,7 @@
 				div.headerOpcionImpar{
 					background-color:rgb(220, 94, 200);
 					height:100%;
-					width:20%;
+					width:16.6%;
 					font-family: Helvetica;
 					float:left;
 					color:white;
@@ -41,7 +41,7 @@
 
 				div.headerOpcionPar{
 					background-color:rgb(219, 109, 202 );
-					width:20%;
+					width:16.6%;
 					height:100%;
 					float:left;
 					color:white;

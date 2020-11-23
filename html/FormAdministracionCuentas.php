@@ -29,7 +29,7 @@
 				div.headerOpcionImpar{
 					background-color:rgb(220, 94, 200);
 					height:100%;
-					width:15%;
+					width:16.6%;
 					font-family: Helvetica;
 					float:left;
 					color:white;
@@ -43,7 +43,7 @@
 
 				div.headerOpcionPar{
 					background-color:rgb(219, 109, 202 );
-					width:15%;
+					width:16.6%;
 					height:100%;
 					float:left;
 					color:white;
@@ -157,6 +157,7 @@
 <body>
 		<div class="contenedorPrincipal" >
 			<div class="menuSuperior">
+				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
 				<div class="headerOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
@@ -303,6 +304,14 @@
 				document.getElementById("divUsuarios").style.cursor = "auto";
 			}
 
+			document.getElementById("divProductos").onmouseover = function(){			
+				document.getElementById("divProductos").style.cursor = "pointer";
+			}
+
+			document.getElementById("divProductos").onmouseout = function(){			
+				document.getElementById("divProductos").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 
 
@@ -323,6 +332,12 @@
 				$("#divUsuarios").click(function(){
 					
 					window.location.href="PantallaAdministracionUsuarios.php";
+
+				});
+
+				$("#divProductos").click(function(){
+					
+					window.location.href="PantallaProductos.php";
 
 				});
 
