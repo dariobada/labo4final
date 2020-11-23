@@ -56,8 +56,9 @@
 		$flag = false;
 		var_dump("enviado: " . $_POST['tipo_cuenta']);
 		foreach($aux as $a){
+			var_dump("id_cuenta: " . $a['id_cuenta']);
 			$respGetDetalle = $c->getDetalleDeCuenta($a['id_cuenta']);
-			var_dump("$tipo: " . $respGetDetalle['id_tipo_cuenta']);
+			var_dump("$tipo: " . $respGetDetalle[0]['id_tipo_cuenta']);
 
 			if($respGetDetalle['id_tipo_cuenta'] == $_POST['tipo_cuenta']){
 				//si entra al IF significa que el usuario ya posee ese tipo de cuenta dado de alta
