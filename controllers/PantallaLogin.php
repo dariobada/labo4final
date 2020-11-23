@@ -30,8 +30,10 @@
 
 		} else{
 
+			$pas = sha1($_POST['pass']);
+
 		
-			if ($usuario['pass'] != sha1($_POST['pass'])){
+			if ($usuario['pass'] != $pas){
 
 				$v = new FormLoginError();
 				$v->ErrorLogin = "Usuario y/o contraseña incorrecta";
