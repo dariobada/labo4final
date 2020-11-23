@@ -113,9 +113,9 @@
 
 
 	$v = new FormProductos();
-	/*$v->usuarios = $listaUsuarios;
+	$v->usuarios = $listaUsuarios;
 	$v->tipoCuentas = $listaTipoCuentas;
-	$v->cuentas = $listaCuentas;
+	$v->cuentas = $listaCuentas;/*
 	$v->mensaje = $mensaje;*/
 
 	//render sería como decirle "dibujate"
