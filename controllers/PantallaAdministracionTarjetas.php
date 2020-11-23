@@ -94,8 +94,8 @@
 	//------ se obtienen las tarjetas --------
 	$t = new Tarjetas();
 	
-	$todastarjetas = $t->getTodasLasTarjetas();
-	$listatarjetas = array();
+	$listaTarjetas = $t->getTodasLasTarjetas();
+	/*$listatarjetas = array();
 
 	var_dump("todas: " . $todastarjetas);
 	foreach($todasTarjetas as $tarjeta){
@@ -104,7 +104,7 @@
 			var_dump("entra");
 			$listatarjetas[] = $tarjeta;
 		}
-	}
+	}*/
 
 	$v = new FormAdministracionTarjetas();
 	$v->usuarios = $listaUsuarios;
