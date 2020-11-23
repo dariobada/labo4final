@@ -179,7 +179,7 @@
 
             div.interiorTitulo1{
 				background-color:green;
-				width:12%;
+				width:35%;
 				height:11%;
 				left:20%;
 				position:absolute;
