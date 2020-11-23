@@ -57,7 +57,7 @@
 				$_SESSION['logueado'] = true;
 				$_SESSION['IdUsuario'] = $usuario['id_usuario'];
 				$_SESSION['nombre'] = $_POST['usuario'];
-				header("Location: PantallaAdministracionProductos.php");
+				header("Location: PantallaAdministracionCuentas.php");
 				exit();
 				
 
