@@ -63,7 +63,7 @@
 			}
 
 			div.headerOpcionParBloqueada{
-				background-color:lightgrey;
+				background-color:rgb(227, 225, 225);
 				width:20%;
 				height:100%;
 				float:left;
@@ -78,7 +78,7 @@
 			}
 
 			div.headerOpcionImparBloqueada{
-				background-color:grey;
+				background-color:rgb(206, 206, 206);
 				width:20%;
 				height:100%;
 				float:left;
