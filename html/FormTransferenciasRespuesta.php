@@ -62,8 +62,23 @@
 	
 			}
 
-			div.headerOpcionBloqueada{
+			div.headerOpcionParBloqueada{
 				background-color:lightgrey;
+				width:20%;
+				height:100%;
+				float:left;
+				color:white;
+				font-family: Helvetica;
+				font-size:120%;
+				font-weight:bold;
+				justify-content:center;
+				align-items:center;
+				display:flex;
+	
+			}
+
+			div.headerOpcionImparBloqueada{
+				background-color:grey;
 				width:20%;
 				height:100%;
 				float:left;
@@ -303,16 +318,16 @@
 				if(document.getElementById("poseeCuentas").value != 1){
 					
 					$('#divConsultaSaldos').removeClass("headerOpcionPar");	
-					$('#divConsultaSaldos').addClass("headerOpcionBloqueada");
+					$('#divConsultaSaldos').addClass("headerOpcionParBloqueada");
 					$('#divTransferencias').removeClass("headerOpcionImpar");	
-					$('#divTransferencias').addClass("headerOpcionBloqueada");
+					$('#divTransferencias').addClass("headerOpcionImparBloqueada");
 				};
 				
 
 				if(document.getElementById("poseeTarjetas").value != 1){
 				
 					$('#divTarjetas').removeClass("headerOpcionPar");	
-					$('#divTarjetas').addClass("headerOpcionBloqueada");
+					$('#divTarjetas').addClass("headerOpcionParBloqueada");
 		
 				};
 
