@@ -30,7 +30,7 @@
 
 		} else{
 
-			//$pas = sha1($_POST['pass']);
+			$pas = sha1($_POST['pass']);
 
 		
 			if ($usuario['pass'] != $pas){
