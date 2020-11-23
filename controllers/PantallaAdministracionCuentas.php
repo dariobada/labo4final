@@ -63,6 +63,7 @@
 				$flag = true;
 			}
 		}
+		exit();
 
 		if($flag){
 			$mensaje = "Error - el usuario ya posee una cuenta dada de alta con el tipo de cuenta seleccionado";
@@ -113,7 +114,7 @@
 	$v->mensaje = $mensaje;
 
 	//render sería como decirle "dibujate"
-	//$v->render();	
+	$v->render();	
 
 
 ?>
