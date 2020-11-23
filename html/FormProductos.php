@@ -179,6 +179,14 @@
 				  visibility: visible;
 				}
 
+				img.logo2{
+					height: 14px;
+					width: 23px;
+				
+
+				}
+
+
 		</style>
 
 </head>
@@ -309,12 +317,20 @@
 				document.getElementById("divUsuarios").style.cursor = "auto";
 			}
 
+			document.getElementById("divProductos").onmouseover = function(){			
+				document.getElementById("divProductos").style.cursor = "pointer";
+			}
+
+			document.getElementById("divProductos").onmouseout = function(){			
+				document.getElementById("divProductos").style.cursor = "auto";
+			}
+
 			$(document).ready(function(){
 
 				
 				$("#divCuentas").click(function(){
 					
-					window.location.href="PantallaAdministracionProductos.php";
+					window.location.href="PantallaAdministracionCuentas.php";
 
 				});
 
@@ -327,6 +343,12 @@
 				$("#divUsuarios").click(function(){
 					
 					window.location.href="PantallaAdministracionUsuarios.php";
+
+				});
+
+				$("#divProductos").click(function(){
+					
+					window.location.href="PantallaProductos.php";
 
 				});
 
