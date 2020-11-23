@@ -7,6 +7,7 @@
 
 		public $cuentas;
 		public $usuario;
+		public $usuarioElegido;
 		public $tarjetas;
 		public $tipoCuentas;
 		
