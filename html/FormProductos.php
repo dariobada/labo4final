@@ -186,6 +186,15 @@
 
 				}
 
+				label{
+
+					font-family: Helvetica;
+					font-size:40%;
+					font-weight:bold;
+
+
+				}
+
 
 		</style>
 
