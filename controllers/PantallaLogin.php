@@ -30,7 +30,7 @@
 
 		} else{
 
-			/*$pas = sha1($_POST['pass']);
+			$pas = sha1($_POST['pass']);
 
 		
 			if ($usuario['pass'] != $pas){
@@ -40,7 +40,7 @@
 			    //render sería como decirle "dibujate"
 				$v->render();
 				exit();
-			}*/
+			}
 
 			if ($usuario['cod_estado'] != 'A'){
 
