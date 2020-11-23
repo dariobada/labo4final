@@ -48,16 +48,20 @@
 	$i = 0;
 
 	foreach($cuentasUsua as $cu){
-				
-		$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
 
-		$arrayCuentas[$i]['id_cuenta'] = $cu['id_cuenta'];
-		$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
-		$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
-		$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
-	
+		if($cu['cod_estado'] == 'A'){
 
-		$i++;
+			$respGetDetalle = $c->getDetalleDeCuenta($cu['id_cuenta']);
+
+			$arrayCuentas[$i]['id_cuenta'] = $cu['id_cuenta'];
+			$arrayCuentas[$i]['nro_cuenta'] = $respGetDetalle[0]['nro_cuenta'];
+			$arrayCuentas[$i]['tipo_cuenta'] = $tc->getTipoCuenta($respGetDetalle[0]['id_tipo_cuenta']);
+			$arrayCuentas[$i]['saldo'] = $respGetDetalle[0]['saldo_moneda'];
+		
+
+			$i++;
+
+		}		
 
 	}
 

@@ -56,13 +56,17 @@
 		$flag = false;
 	
 		foreach($aux as $a){
+			
+			if($a['cod_estado'] == 'A'){
+				$respGetDetalle = $c->getDetalleDeCuenta($a['id_cuenta']);
 		
-			$respGetDetalle = $c->getDetalleDeCuenta($a['id_cuenta']);
-		
-			if($respGetDetalle[0]['id_tipo_cuenta'] == $_POST['tipo_cuenta']){
-				//si entra al IF significa que el usuario ya posee ese tipo de cuenta dado de alta
-				$flag = true;
+				if($respGetDetalle[0]['id_tipo_cuenta'] == $_POST['tipo_cuenta']){
+					//si entra al IF significa que el usuario ya posee ese tipo de cuenta dado de alta
+					$flag = true;
+				}
+
 			}
+			
 		}
 	
 
