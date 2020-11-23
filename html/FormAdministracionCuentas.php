@@ -1,9 +1,9 @@
-<!-- html/FormAdministracionTarjetas.php-->
+<!-- html/FormAdministracionCuentas.php-->
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Administracion tarjetas</title>
+	<title>Administracion cuentas</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 	<style>
 		html, body{
@@ -127,16 +127,25 @@
 					left:40%;
 				}
 
-				select.tarjeta{
+				select.cuenta{
 					position: absolute;
 					left:40%;
 				}
 				
-				select.proveedor{
+				select.tipo_cuenta{
 					position: absolute;
 					left:40%;
 				}
 
+				a.mensaje{
+
+				color:red;
+				font-size:25px;
+				font-weight:bold;
+				position:absolute;
+				top:70%;
+
+			}
 				
 				
 				
@@ -152,18 +161,18 @@
 				<div class="headerOpcionImpar" id="divTarjetas">Administración de tarjetas</div>
 				<div class="headerOpcionPar" id="divUsuarios">Administración de usuarios</div>
 				<div class="headerOpcionImpar" id="divCerrarSesion">Cerrar sesión</div>
-				
 			</div>
 
 
 
 			<div class="contenedorBody">
 
+								
 				
 				<div class="Alta">
-					<form action="" method="post">
+					<form action="" method="post" id="formAlta">
 
-						<h2>Dar de alta tarjeta</h2>
+						<h2>Alta cuentas</h2>
 
 						
 						<label>Seleccionar usuario: </label>
@@ -177,11 +186,11 @@
 						</select>
 						<br><br>
 
-						<label>Seleccionar Proveedor: </label>
-						<select class="proveedor" name="proveedor" id="proveedor" required="required"> 
+						<label>Seleccionar tipo de cuenta: </label>
+						<select class="tipo_cuenta" name="tipo_cuenta" required="required" id="tipo_cuenta"> 
 							<?php 
-								foreach ($this->proveedores as $p){
-									echo '<option value="' . $p['cod_proveedor'] . '">' . $p['nombre_proveedor'] . '</option>';
+								foreach ($this->tipoCuentas as $tc){
+									echo '<option value="' . $tc['id_tipo_cuenta'] . '">' . $tc['desc_tipo_cuenta'] . '</option>';
 								}
 
 							 ?>
@@ -189,33 +198,62 @@
 
 						</select>
 						
-						<br><br><br><br><br><br><br><br><br><br><br>
+						<br><br>
 
-						<button class="enviar" type="submit">Alta</button>
+						<label>Ingresar saldo: </label>
+						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
+						<br><br><br><br><br><br>
+
+						<button class="enviar" type="submit" id="btnAlta">Alta</button>
 
 						
 					</form>
 				</div>
 
+				<div class="Modi">
+					<form action="" method="post" id="formModificar">
+						<h2>Modificar cuentas</h2>
+						<label>Seleccionar cuenta: </label>
+						<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
+							<?php 
+								foreach ($this->cuentas as $cu){
+									echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
+								}
+
+							 ?>
+						</select>
+
+						<br><br>
+
+						<label>Ingresar saldo: </label>
+						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
+						<br><br>
+
+						<button class="enviar" type="submit" id="btnModificar" >Modificar</button>
+					</form>
+
+
+				</div>
 
 				<div class="Baja">
-					<form action="" method="post">
-						<h2>Baja de tarjeta</h2>
-						<label>Seleccionar tarjeta: </label>
-							<select class="tarjeta" name="tarjeta" required="required" id="tarjeta"> 
+					<form action="" method="post" id="formEliminar">
+						<h2>Baja cuentas</h2>
+						<label>Seleccionar cuenta: </label>
+							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
-									foreach ($this->tarjetas as $tc){
-										echo '<option value="' . $tc['id_tarjeta'] . '">' . $tc['nro_tarjeta'] . '</option>';
+									foreach ($this->cuentas as $cu){
+										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
 									}
 
 								 ?>
 							</select>
 						<br><br>
 
-						<button class="enviar" type="submit">Eliminar</button>
+						<button class="enviar" type="submit" id="btnEliminar">Eliminar</button>
 					</form>
 
 				</div>
+
 				<?php
 					if ($this->mensaje){
 						echo '<a>' . $this->mensaje . '</a>';
@@ -261,6 +299,7 @@
 			}
 
 			$(document).ready(function(){
+
 				
 				$("#divCuentas").click(function(){
 					

@@ -290,7 +290,7 @@
 				
 				$("#divCuentas").click(function(){
 					
-					window.location.href="PantallaAdministracionProductos.php";
+					window.location.href="PantallaAdministracionCuentas.php";
 
 				});
 
