@@ -143,7 +143,8 @@
 				font-size:25px;
 				font-weight:bold;
 				position:absolute;
-				/*top:70%;*/
+				top:5%;
+				visibility:hidden;
 			
 				left:15%;
 
@@ -257,9 +258,9 @@
 				</div>
 
 				<?php
-					if ($this->mensaje){
-						echo '<a class="mensaje">' . $this->mensaje . '</a>';
-					}
+				//	if ($this->mensaje){
+						echo '<a class="mensaje" id="mensaje">' . $this->mensaje . '</a>';
+				//	}
 				?>
 
 			</div>
@@ -267,6 +268,24 @@
 
 		<script src="../jquery.js"></script>
 		<script type="text/javascript">
+
+
+			if(document.getElementById("mensaje").value != ""){
+				alert("entra a mensaje");
+				alert(document.getElementById("mensaje").value);
+			} else {
+				alert("no entra a mensaje");
+			}
+
+			document.getElementById("divConsultaSaldos").onmouseover = function(){		
+
+				if(document.getElementById("poseeCuentas").value == 1)	{
+					document.getElementById("divConsultaSaldos").style.cursor = "pointer";
+				} else {
+					document.getElementById("divConsultaSaldos").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
+
+				}
+			}
 
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
