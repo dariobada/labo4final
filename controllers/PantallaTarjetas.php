@@ -4,6 +4,7 @@
 	
 	require '../fw/fw.php';
 	require '../models/Tarjetas.php';
+	require '../models/Usuarios.php';
 	require '../models/Proveedores.php';
 	require '../views/ListadoTarjetas.php';
 
@@ -16,6 +17,10 @@
 
 	$t = new Tarjetas();
 	$p = new Proveedores();
+	$u = new Usuarios();
+
+	//obtenemos el nombre y apellido del usuario
+	$usua = $u->getUsuario($_SESSION['nombre']);
 
 	if(count($_POST)>0){
 		//circuito de alta de extensión
@@ -76,6 +81,7 @@
 					$listaExtensiones[$iE]['nombre_ext'] = $auxEXT['nombre_ext'];
 					$listaExtensiones[$iE]['apellido_ext'] = $auxEXT['apellido_ext'];
 					$listaExtensiones[$iE]['nombre_proveedor'] = $nombreProv;
+					$listaExtensiones[$iE]['documento_ext'] = $auxEXT['documento_ext'];
 
 					$iE++;
 				}
@@ -91,6 +97,8 @@
 	$v->mensaje = $mensaje;
 	$v->operaCuentas = $_SESSION['tieneCuentas'];
 	$v->operaTarjetas = $_SESSION['tieneTarjetas'];
+	$v->nombre = $usua['nombre'];
+	$v->apellido = $usua['apellido'];
 
 	//render sería como decirle "dibujate"
 	$v->render();	
