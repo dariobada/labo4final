@@ -27,7 +27,7 @@
 				div.headerOpcionImpar{
 					background-color:rgb(220, 94, 200);
 					height:100%;
-					width:16.6%;
+					width:16.666%;
 					font-family: Helvetica;
 					float:left;
 					color:white;
@@ -41,7 +41,7 @@
 
 				div.headerOpcionPar{
 					background-color:rgb(219, 109, 202 );
-					width:16.6%;
+					width:16.666%;
 					height:100%;
 					float:left;
 					color:white;
@@ -196,6 +196,7 @@
 
 		<div class="contenedorBody"> 
 
+			<form action="" method="POST">
 				<label>Seleccionar usuario: </label>
 						<select class="usuario" name="usuario" required="required" id="usuario"> 
 							<?php 
@@ -206,6 +207,7 @@
 							 ?>
 						</select>
 				<button type="submit">Aceptar</button>
+			</form>
 			
 				<div class="interiorTitulo1">
 					<a>Cuentas</a>
@@ -218,13 +220,15 @@
 						echo '<tr>';
 						echo '<th campo-dato="c1">Número cuenta</th>';
 						echo '<th campo-dato="c2">Tipo</th>';
-						echo '<th campo-dato="c4">Saldo</th>';
+						echo '<th campo-dato="c3">Saldo</th>';
+						echo '<th campo-dato="c4">Estado</th>';
 						echo '</tr>';
 						foreach($this->cuentas as $cu){
 							echo '<tr>';
 							echo '<td campo-dato="c1">' . $cu['nro_cuenta'] . '</td>';
 							echo '<td campo-dato="c2">' . $cu['tipo_cuenta'] . '</td>';
-							echo '<td campo-dato="c4">' . $cu['saldo'] . '</td>';
+							echo '<td campo-dato="c3">' . $cu['saldo'] . '</td>';
+							echo '<td campo-dato="c4">' . $cu['estado'] . '</td>';
 							echo '</tr>';								
 						}
 						echo '</table>';					
@@ -235,7 +239,7 @@
 				<div class="interiorTitulo2">
 					<a class="usuario">Tarjetas</a>
 				</div>
-				<div class="interiorBody">
+				<div class="interiorBody2">
 					
 					<?php
 					
