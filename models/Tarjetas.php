@@ -100,7 +100,7 @@
 			
 		}
 
-		public function getTodasLasTarjetas(){
+		public function getTodasLasTarjetasActivas(){
 
 			$estado = "'" . "A" . "'";
 			$sentencia = 'SELECT * FROM public."TARJETAS" where "cod_estado" = ' . $estado;
