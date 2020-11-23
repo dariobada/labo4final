@@ -270,23 +270,9 @@
 		<script type="text/javascript">
 
 
-			if(document.getElementById("mensaje").value != ""){
-				alert("entra a mensaje");
-				alert(document.getElementById("mensaje").value);
-			} else {
-				alert("no entra a mensaje");
-			}
+			
 
-			document.getElementById("divConsultaSaldos").onmouseover = function(){		
-
-				if(document.getElementById("poseeCuentas").value == 1)	{
-					document.getElementById("divConsultaSaldos").style.cursor = "pointer";
-				} else {
-					document.getElementById("divConsultaSaldos").setAttribute("title","No posee productos para utilizar esta funcionalidad.");
-
-				}
-			}
-
+			
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
 			}
@@ -320,6 +306,13 @@
 			}
 
 			$(document).ready(function(){
+
+				if(document.getElementById("mensaje").value != ""){
+					alert("entra a mensaje");
+					alert(document.getElementById("mensaje").value);
+				} else {
+					alert("no entra a mensaje");
+				}
 
 				
 				$("#divCuentas").click(function(){
