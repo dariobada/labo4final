@@ -259,7 +259,7 @@
 
 				<?php
 				//	if ($this->mensaje){
-						echo '<a class="mensaje" id="mensaje">' . $this->mensaje . '</a>';
+						echo '<a class="mensaje" id="mensaje" value="' . $this->mensaje . '"></a>';
 				//	}
 				?>
 
