@@ -146,6 +146,7 @@
 				top:70%;*/
 				justify-content:center;
 				align-items:center;
+				left:15%;
 
 			}
 				
