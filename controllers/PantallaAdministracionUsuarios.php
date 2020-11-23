@@ -105,7 +105,7 @@
 		}
 	}
 
-
+	/*
 	//------ se obtienen los codigos de proveedor --------
 	$p = new Proveedores();
 	$listaProveedores = $p->getTodosLosProveedores();
@@ -113,7 +113,7 @@
 	//------ se obtienen las tarjetas --------
 	$t = new Tarjetas();
 	$listaTarjetas = $t->getTodasLasTarjetas();
-
+	*/
 
 	$v = new FormAdministracionUsuarios();
 	$v->usuarios = $listaUsuarios;

@@ -35,13 +35,6 @@
 
 	}
 
-	//esto singifica que eligió Modificación
-	/*if(count($_POST) == 2){
-		$c = new Cuentas();
-		$c->actualizarSaldo($_POST['cuenta'], $_POST['saldo']);
-		
-		$mensaje = "Modificación realizada correctamente";
-	}*/
 
 	//esto singifica que eligió Alta
 	if(count($_POST) == 2){
@@ -100,8 +93,15 @@
 
 	//------ se obtienen las tarjetas --------
 	$t = new Tarjetas();
-	$listaTarjetas = $t->getTodasLasTarjetas();
+	
+	$todastarjetas = $t->getTodasLasTarjetas();
+	$listatarjetas = array();
 
+	foreach($todasTarjetas as $tarjeta){
+		if($tarjeta['cod_estado'] == 'A'){
+			$listatarjetas[] = $tarjeta;
+		}
+	}
 
 	$v = new FormAdministracionTarjetas();
 	$v->usuarios = $listaUsuarios;
