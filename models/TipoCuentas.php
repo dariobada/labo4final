@@ -8,6 +8,10 @@
 
 		public function getTipoCuenta($idTipoCuenta){
 
+			if(strlen($idTipoCuenta)<1) throw new ValidacionException("Error tipoCuentas 1");
+			if(strlen($idTipoCuenta)>3) throw new ValidacionException("Error tipoCuentas 2");
+			$idTipoCuenta = $this->db->escape($idTipoCuenta);
+
 			$cons = "'" . $idTipoCuenta . "'";
 			$sentencia = 'SELECT * FROM public."TIPO_CUENTAS" WHERE "id_tipo_cuenta" = ';
 

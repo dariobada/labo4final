@@ -8,6 +8,9 @@
 		// este metodo devuelve un TRUE si el usuario tiene rol de administrador
 		public function devolverMarcaAdministrador($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 1");
+			if($idUsua < 1) throw new ValidacionException("Error roles 2");
+
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
 						   WHERE "id_rol" = 3 and "id_usuario" = ';
 
@@ -26,6 +29,9 @@
 
 		public function validarRolCuentas($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 3");
+			if($idUsua < 1) throw new ValidacionException("Error roles 4");
+
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
 						   WHERE "id_rol" = 1 and "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado;
@@ -42,6 +48,9 @@
 		}
 
 		public function validarRolTarjetas($idUsua){
+
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 5");
+			if($idUsua < 1) throw new ValidacionException("Error roles 6");
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
@@ -60,6 +69,9 @@
 
 		public function eliminarRolCuentas($idCuen){
 
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error roles 7");
+			if($idCuen < 1) throw new ValidacionException("Error roles 8");
+
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
 							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" in (select "id_usuario" from public."CUENTAS_USUARIOS"
@@ -74,6 +86,9 @@
 
 		public function eliminarRolTarjetas($idTarj){
 
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error roles 9");
+			if($idTarj < 1) throw new ValidacionException("Error roles 10");
+
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
 							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" in (select "id_usuario" from public."TARJETAS_USUARIOS"
@@ -86,6 +101,9 @@
 
 		public function eliminarRolAdministrador($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 11");
+			if($idUsua < 1) throw new ValidacionException("Error roles 12");
+
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
 							 SET "cod_estado" = ' . $estado . ' WHERE "id_usuario" = ' . $idUsua . ' and "id_rol" = 3';
@@ -95,6 +113,9 @@
 		}
 
 		public function crearRolCuentas($idUsua){
+
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 13");
+			if($idUsua < 1) throw new ValidacionException("Error roles 14");
 
 			//primero se verifica si el usuario no posee un estado dado de baja
 			$estado = "'" . 'B' . "'";
@@ -125,6 +146,9 @@
 
 		public function crearRolTarjetas($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 15");
+			if($idUsua < 1) throw new ValidacionException("Error roles 16");
+
 			//primero se verifica si el usuario no posee un estado dado de baja
 			$estado = "'" . 'B' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
@@ -153,7 +177,9 @@
 		}
 
 		public function crearRolAdministrador($idUsua){
-			
+
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 17");
+			if($idUsua < 1) throw new ValidacionException("Error roles 18");			
 				
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'INSERT into public."ROLES_USUARIOS" values(3, ' . $idUsua . ', ' . $estado . ')';

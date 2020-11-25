@@ -8,6 +8,9 @@
 
 		public function getTarjetasPorUsuario($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error tarjetas 1");
+			if($idUsua < 1) throw new ValidacionException("Error tarjetas 2");
+
 			$sentencia = 'SELECT * FROM public."TARJETAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua;
 
 			$this->db->query($sentencia);
@@ -17,6 +20,9 @@
 
 		public function getDetalleTarjeta($idTarj){
 
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 3");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 4");
+
 			$sentencia = 'SELECT * FROM public."TARJETAS" WHERE "id_tarjeta" = ';
 
 			$this->db->query($sentencia . $idTarj);
@@ -25,6 +31,10 @@
 		}
 
 		public function getDetalleTarjetaPorNumero($nroTarj){
+
+			if(!ctype_digit($nroTarj)) throw new ValidacionException("Error tarjetas 5");
+			if(strlen($nroTarj)<1) throw new ValidacionException("Error tarjetas 6");
+			if(strlen($nroTarj)>16) throw new ValidacionException("Error tarjetas 7");
 
 			$tarjeta = "'" . $nroTarj . "'";
 			$sentencia = 'SELECT * FROM public."TARJETAS" WHERE "nro_tarjeta" = ';
@@ -36,6 +46,9 @@
 
 		public function getDetalleExtension($idTarj){
 
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 8");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 9");
+
 			$sentencia = 'SELECT * FROM public."EXTENSIONES_TARJETA" WHERE "id_tarjeta_extension" = ';
 
 			$this->db->query($sentencia . $idTarj);
@@ -44,6 +57,12 @@
 		}
 
 		public function validarExtension($idTarj, $nroDocumento){
+
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 10");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 11");
+
+			if(!ctype_digit($nroDocumento)) throw new ValidacionException("Error tarjetas 12");
+			if($nroDocumento < 1) throw new ValidacionException("Error tarjetas 13");
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."EXTENSIONES_TARJETA" WHERE "id_tarjeta_principal" = ' . $idTarj . ' and "documento_ext" = ' . $nroDocumento . ' and cod_estado = ';
@@ -60,6 +79,24 @@
 		}
 
 		public function realizarAltaExtension($idTarj, $nombre, $apellido, $nroDocumento, $idUsuario){
+
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 14");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 15");
+
+			if(!ctype_digit($idUsuario)) throw new ValidacionException("Error tarjetas 16");
+			if($idUsuario < 1) throw new ValidacionException("Error tarjetas 17");
+
+			if(!ctype_digit($nroDocumento)) throw new ValidacionException("Error tarjetas 18");
+			if($nroDocumento < 1) throw new ValidacionException("Error tarjetas 19");
+
+			if(strlen($nombre)<1) throw new ValidacionException("Error tarjetas 20");
+			if(strlen($nombre)>50) throw new ValidacionException("Error tarjetas 21");
+			$nombre = $this->db->escape($nombre);
+
+			if(strlen($apellido)<1) throw new ValidacionException("Error tarjetas 22");
+			if(strlen($apellido)>50) throw new ValidacionException("Error tarjetas 23");
+			$apellido = $this->db->escape($apellido);
+
 			//primero obtengo el mayor numero de tarjeta
 			$sentencia = 'SELECT max("nro_tarjeta") from public."TARJETAS"';
 			$this->db->query($sentencia);
@@ -112,6 +149,9 @@
 
 		public function realizarBajaTarjeta($idTarj){
 
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 24");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 25");
+
 			$estado = "'" . 'B' . "'";
 			//se da de baja la tarjeta
 			$sentencia = 'UPDATE public."TARJETAS" set "cod_estado" = ' . $estado . ' WHERE "id_tarjeta" = ' . $idTarj;
@@ -144,6 +184,9 @@
 
 		public function validarTarjetasActivasPorTarjeta($idTarj){
 
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error tarjetas 26");
+			if($idTarj < 1) throw new ValidacionException("Error tarjetas 27");
+
 			$estado = "'" . "A" . "'";
 			$sentencia = 'select * from public."TARJETAS_USUARIOS" 
 						where "id_usuario" in (select "id_usuario" from public."TARJETAS_USUARIOS"
@@ -164,6 +207,12 @@
 		}
 
 		public function realizarAltaTarjeta($idUsua, $proveedor){
+
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error tarjetas 28");
+			if($idUsua < 1) throw new ValidacionException("Error tarjetas 29");
+
+			if(strlen($proveedor)<1) throw new ValidacionException("Error tarjetas 30");
+			if(strlen($proveedor)>3) throw new ValidacionException("Error tarjetas 31");
 
 			//primero obtengo el mayor numero de tarjeta
 			$sentencia = 'SELECT max("nro_tarjeta") from public."TARJETAS"';
