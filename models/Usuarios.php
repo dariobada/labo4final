@@ -36,6 +36,9 @@
 
 		public function bajaDeUsuario($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error usuarios 1");
+			if($idUsua < 1) throw new ValidacionException("Error usuarios 2");
+
 			$estado = "'" . 'B' . "'";
 			$sentencia = 'UPDATE public."USUARIOS" set "cod_estado" = ' . $estado . ' WHERE "id_usuario" = ' . $idUsua;
 
@@ -45,6 +48,13 @@
 		}
 
 		public function validarExistenciaUsuario($idLoginUsua, $idUsua){
+
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error usuarios 1");
+			if($idUsua < 1) throw new ValidacionException("Error usuarios 2");
+
+			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 2");
+			if(strlen($idLoginUsua)<20) throw new ValidacionException("Error usuarios 2");
+			$idLoginUsua = $this->db->escape($idLoginUsua);
 
 			$usua = "'" . $idLoginUsua . "'";
 
@@ -95,6 +105,8 @@
 
 
 	}
+
+	class ValidacionException extends Exception{}
 
 
 
