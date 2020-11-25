@@ -5,6 +5,7 @@
 	require '../fw/fw.php';
 	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
+	require '../models/ValidacionException.php';
 	require '../views/FormTransferencias.php';
 	require '../views/FormTransferenciasRespuesta.php';
 

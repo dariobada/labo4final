@@ -5,6 +5,7 @@
 	require '../fw/fw.php';
 	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
+	require '../models/ValidacionException.php';
 	require '../views/ListadoCuentas.php';
 
 	session_start();

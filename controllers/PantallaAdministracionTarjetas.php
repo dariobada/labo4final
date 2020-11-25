@@ -7,6 +7,7 @@
 	require '../models/Roles.php';
 	require '../models/Tarjetas.php';
 	require '../models/Proveedores.php';
+	require '../models/ValidacionException.php';
 	require '../views/FormAdministracionTarjetas.php';
 
 	session_start();

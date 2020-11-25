@@ -6,6 +6,7 @@
 	require '../models/Tarjetas.php';
 	require '../models/Usuarios.php';
 	require '../models/Proveedores.php';
+	require '../models/ValidacionException.php';
 	require '../views/ListadoTarjetas.php';
 
 	session_start();

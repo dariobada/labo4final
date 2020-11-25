@@ -7,6 +7,7 @@
 	require '../models/Roles.php';
 	require '../models/Cuentas.php';
 	require '../models/TipoCuentas.php';
+	require '../models/ValidacionException.php';
 	require '../views/FormAdministracionCuentas.php';
 
 	session_start();

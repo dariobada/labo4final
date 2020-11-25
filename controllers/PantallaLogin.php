@@ -5,6 +5,7 @@
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
 	require '../models/Roles.php';
+	require '../models/ValidacionException.php';
 	require '../views/FormLogin.php';
 	require '../views/FormLoginError.php';
 
