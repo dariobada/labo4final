@@ -50,11 +50,11 @@
 		public function validarExistenciaUsuario($idLoginUsua, $idUsua){
 
 			var_dump("usuario: " . $idUsua);
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error usuarios 3");
-			if($idUsua < 1) throw new ValidacionException("Error usuarios 4");
+			if(!is_numeric($idUsua)) throw new ValidacionException("Error usuarios 3");
+			if($idUsua < 0) throw new ValidacionException("Error usuarios 4");
 
 			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 5");
-			if(strlen($idLoginUsua)<20) throw new ValidacionException("Error usuarios 6");
+			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 6");
 			$idLoginUsua = $this->db->escape($idLoginUsua);
 
 			$usua = "'" . $idLoginUsua . "'";
