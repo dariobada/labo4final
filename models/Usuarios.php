@@ -141,7 +141,7 @@
 
 	}
 
-	class ValidacionException extends Exception{}
+	
 
 
 
