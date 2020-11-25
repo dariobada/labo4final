@@ -7,6 +7,7 @@
 	require '../models/Roles.php';
 	require '../models/Tarjetas.php';
 	require '../models/Proveedores.php';
+	require '../models/ValidacionException.php';
 	require '../views/FormAdministracionUsuarios.php';
 
 	session_start();
@@ -95,7 +96,7 @@
 	$u = new Usuarios();
 	$r = new Roles();
 	$listaUsuarios = array();
-	$aux = $u->getTodosLosUsuarios();
+	$aux = $u->getTodosLosUsuariosActivos();
 	// se recorren todos los usuarios para quedarse con los no administradores
 	foreach($aux as $us){
 		// obtengo la marca que indica si el usuario es administrador
