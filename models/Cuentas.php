@@ -127,8 +127,8 @@
 
 		public function realizarAltaCuenta($idUsua, $tipoCuenta, $saldo){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 18");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 19");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 18");
+			if($idUsua < 1) throw new ValidacionException("Error cuentas 19");
 
 			if(!is_numeric($saldo)) throw new ValidacionException("Error cuentas 20");
 			if($saldo < 0) throw new ValidacionException("Error cuentas 21");
