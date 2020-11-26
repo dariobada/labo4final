@@ -1,0 +1,7 @@
+# archivo .htaccess
+
+RewriteEngine on
+
+RewriteRule ^alta-adelanto$ controllers/formularioAltaAdelantos.php
+RewriteRule ^inicio-sesion$ controllers/PantallaLogin.php
+RewriteRule ^consulta-cuentas$ controllers/PantallaSaldos.php
