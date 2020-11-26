@@ -15,7 +15,7 @@
 	session_start();
 
 	if(!isset($_SESSION['logueado'])){
-		header("Location: PantallaLogin.php");
+		header("Location: inicio-sesion");
 		exit;
 	}
 
