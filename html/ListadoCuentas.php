@@ -351,7 +351,7 @@
 					alert("entra a cerrar1");
 					$.ajax({
 						type:"post",
-						url:"./CerrarSesion.php",
+						url:"cerrar-sesion",
 						data:{},
 						success:function(respuestaDelServer,estado){
 							alert("entra a cerrar2");
