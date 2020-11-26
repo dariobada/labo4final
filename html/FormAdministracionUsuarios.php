@@ -337,7 +337,7 @@
 					
 					$.ajax({
 						type:"post",
-						url:"./CerrarSesion.php",
+						url:"cerrar-sesion",
 						data:{},
 						success:function(respuestaDelServer,estado){
 							window.location.href="inicio-sesion";	
