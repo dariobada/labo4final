@@ -2,6 +2,11 @@
 
 RewriteEngine on
 
-RewriteRule ^alta-adelanto$ controllers/formularioAltaAdelantos.php
 RewriteRule ^inicio-sesion$ controllers/PantallaLogin.php
 RewriteRule ^consulta-cuentas$ controllers/PantallaSaldos.php
+RewriteRule ^consulta-tarjetas$ controllers/PantallaTarjetas.php
+RewriteRule ^transferencias$ controllers/PantallaTransferencias.php
+RewriteRule ^administracion-cuentas$ controllers/PantallaAdministracionCuentas.php
+RewriteRule ^administracion-tarjetas$ controllers/PantallaAdministracionTarjetas.php
+RewriteRule ^administracion-usuarios$ controllers/PantallaAdministracionUsuarios.php
+RewriteRule ^administracion-productos$ controllers/PantallaProductos.php
