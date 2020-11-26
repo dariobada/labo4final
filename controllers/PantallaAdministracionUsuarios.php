@@ -21,6 +21,8 @@
 
 	//esto singifica que eligió Eliminar
 	if(count($_POST) == 1){
+
+		if(!isset($_POST['usuario'])) die("Error 1");
 		
 		$r = new Roles();
 		$u = new Usuarios();
@@ -49,6 +51,12 @@
 
 	//esto singifica que eligió Modificación
 	if(count($_POST) == 4){
+
+		if(!isset($_POST['nombreUsuario'])) die("Error 2");
+		if(!isset($_POST['usuario'])) die("Error 3");
+		if(!isset($_POST['nombre'])) die("Error 4");
+		if(!isset($_POST['apellido'])) die("Error 5");
+
 		//se valida que no exista el nuevo nombre de usuario para loguear
 		$u = new Usuarios();
 		if($u->validarExistenciaUsuario($_POST['nombreUsuario'], $_POST['usuario'])){
@@ -65,7 +73,11 @@
 
 	//esto singifica que eligió Alta
 	if(count($_POST) == 5){
-		
+
+		if(!isset($_POST['nombreUsuario'])) die("Error 6");		
+		if(!isset($_POST['nombre'])) die("Error 7");		
+		if(!isset($_POST['apellido'])) die("Error 8");		
+		if(!isset($_POST['pass'])) die("Error 9");		
 
 		//se valida que no exista el nombre de usuario para loguear
 		$u = new Usuarios();

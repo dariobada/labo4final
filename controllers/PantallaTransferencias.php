@@ -18,6 +18,9 @@
 
 	if(count($_POST)>0){
 
+		if(!isset($_POST['cuenta'])) die("Error 1");
+		if(!isset($_POST['monto'])) die("Error 2");
+
 		//obtenemos el saldo de la cuenta
 		
 		$c = new Cuentas();
@@ -39,7 +42,6 @@
 	$c = new Cuentas();
 	$tc = new TipoCuentas();
 	
-	/////////!!!!!!!!!!!! HAY QUE VALIDAR QUE VENGA EL USUARIO !!!!!!!!!!////////////////////
 	$cuentasUsua = $c->getCuentasPorUsuario($_SESSION['IdUsuario']);
 
 	//en este array guardamos las cuentas y sus detalles

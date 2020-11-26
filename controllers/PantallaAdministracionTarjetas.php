@@ -19,6 +19,7 @@
 
 	//esto singifica que eligió Eliminar
 	if(count($_POST) == 1){
+		if(!isset($_POST['tarjeta'])) die("Error 1");
 		
 		//se da de baja la tarjeta
 		$t = new Tarjetas();
@@ -39,6 +40,10 @@
 
 	//esto singifica que eligió Alta
 	if(count($_POST) == 2){
+
+		if(!isset($_POST['usuario'])) die("Error 2");
+		if(!isset($_POST['proveedor'])) die("Error 3");
+
 		$t = new Tarjetas();
 		//se debe verificar que el usuario no posea ya una tarjeta para ese proveedor
 		$aux = $t->getTarjetasPorUsuario($_POST['usuario']);

@@ -19,6 +19,7 @@
 
 	//esto singifica que eligió Eliminar
 	if(count($_POST) == 1){
+		if(!isset($_POST['cuenta'])) die("Error 1");
 		
 		//se da de baja la cuenta
 		$c = new Cuentas();
@@ -42,6 +43,8 @@
 
 	//esto singifica que eligió Modificación
 	if(count($_POST) == 2){
+		if(!isset($_POST['cuenta'])) die("Error 2");
+		if(!isset($_POST['saldo'])) die("Error 3");
 		$c = new Cuentas();
 		$c->actualizarSaldo($_POST['cuenta'], $_POST['saldo']);
 		
@@ -50,6 +53,11 @@
 
 	//esto singifica que eligió Alta
 	if(count($_POST) == 3){
+
+		if(!isset($_POST['usuario'])) die("Error 4");
+		if(!isset($_POST['tipo_cuenta'])) die("Error 5");
+		if(!isset($_POST['saldo'])) die("Error 6");
+
 		$c = new Cuentas();
 
 		//se valida que el usuario no posea ya ese tipo de cuenta

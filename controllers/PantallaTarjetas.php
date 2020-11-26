@@ -24,6 +24,13 @@
 	$usua = $u->getUsuario($_SESSION['nombre']);
 
 	if(count($_POST)>0){
+
+		if(!isset($_POST['formIdTarjeta'])) die("Error 1");
+		if(!isset($_POST['formDocumento'])) die("Error 2");
+		if(!isset($_POST['formNombre'])) die("Error 3");
+		if(!isset($_POST['formApellido'])) die("Error 4");
+		if(!isset($_POST['IdUsuario'])) die("Error 5");
+
 		//circuito de alta de extensión
 		//debemos validar que la persona a la que se le solicita la extensión no posea otra extensión de esa misma tarjeta
 	

@@ -14,8 +14,8 @@
 
 	if(count($_POST)>0){
 
-
-		/////////////!!!!!!!!!!!!!!!!!!!! VALIDAR $_POST['usuario'] !!!!!!!!!!!!!!!!!!///////////////
+		if(!isset($_POST['usuario'])) die("Error 1");
+		if(!isset($_POST['pass'])) die("Error 2");
 
 		$u = new Usuarios();
 				
