@@ -326,7 +326,7 @@
 				$("#divConsultaSaldos").click(function(){
 					
 					if(document.getElementById("poseeCuentas").value == 1)	{
-						window.location.href="PantallaSaldos.php";
+						window.location.href="consulta-cuentas";
 					}
 
 				});
@@ -334,7 +334,7 @@
 				$("#divTarjetas").click(function(){
 					
 					if(document.getElementById("poseeTarjetas").value == 1)	{
-						window.location.href="PantallaTarjetas.php";
+						window.location.href="consulta-tarjetas";
 					}
 
 				});
@@ -342,7 +342,7 @@
 				$("#divTransferencias").click(function(){
 					
 					if(document.getElementById("poseeCuentas").value == 1)	{
-						window.location.href="PantallaTransferencias.php";
+						window.location.href="transferencias";
 					}
 
 				});
@@ -354,7 +354,7 @@
 						url:"./CerrarSesion.php",
 						data:{},
 						success:function(respuestaDelServer,estado){
-							window.location.href="PantallaLogin.php";	
+							window.location.href="inicio-sesion";	
 						}
 					});
 

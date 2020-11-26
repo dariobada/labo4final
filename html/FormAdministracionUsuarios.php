@@ -310,25 +310,25 @@
 				
 				$("#divCuentas").click(function(){
 					
-					window.location.href="PantallaAdministracionCuentas.php";
+					window.location.href="administracion-cuentas";
 
 				});
 
 				$("#divTarjetas").click(function(){
 					
-					window.location.href="PantallaAdministracionTarjetas.php";
+					window.location.href="administracion-tarjetas";
 
 				});
 
 				$("#divUsuarios").click(function(){
 					
-					window.location.href="PantallaAdministracionUsuarios.php";
+					window.location.href="administracion-usuarios";
 
 				});
 
 				$("#divProductos").click(function(){
 					
-					window.location.href="PantallaProductos.php";
+					window.location.href="administracion-productos";
 
 				});
 
@@ -340,7 +340,7 @@
 						url:"./CerrarSesion.php",
 						data:{},
 						success:function(respuestaDelServer,estado){
-							window.location.href="PantallaLogin.php";	
+							window.location.href="inicio-sesion";	
 						}
 					});
 
