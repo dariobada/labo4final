@@ -348,12 +348,13 @@
 				});
 
 				$("#divCerrarSesion").click(function(){
-					
+					alert("entra a cerrar1");
 					$.ajax({
 						type:"post",
 						url:"./CerrarSesion.php",
 						data:{},
 						success:function(respuestaDelServer,estado){
+							alert("entra a cerrar2");
 							window.location.href="inicio-sesion";	
 						}
 					});
