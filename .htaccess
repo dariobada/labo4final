@@ -10,3 +10,4 @@ RewriteRule ^administracion-cuentas$ controllers/PantallaAdministracionCuentas.p
 RewriteRule ^administracion-tarjetas$ controllers/PantallaAdministracionTarjetas.php
 RewriteRule ^administracion-usuarios$ controllers/PantallaAdministracionUsuarios.php
 RewriteRule ^administracion-productos$ controllers/PantallaProductos.php
+RewriteRule ^cerrar-sesion$ controllers/CerrarSesion.php
