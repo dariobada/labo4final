@@ -60,7 +60,7 @@
 		public function getTodasLasCuentasActivas(){
 
 			$estado = "'" . 'A' . "'";
-			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" WHERE "cod_estado" = ' . $estado;
+			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" WHERE "cod_estado" = ' . $estado . ' order by "nro_cuenta"';
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
@@ -69,7 +69,7 @@
 
 		public function getTodasLasCuentas(){
 
-			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" ';
+			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" order by "nro_cuenta"';
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();

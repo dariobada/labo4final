@@ -140,7 +140,7 @@
 		public function getTodasLasTarjetasActivas(){
 
 			$estado = "'" . "A" . "'";
-			$sentencia = 'SELECT * FROM public."TARJETAS" where "cod_estado" = ' . $estado;
+			$sentencia = 'SELECT * FROM public."TARJETAS" where "cod_estado" = ' . $estado . ' order by "nro_tarjeta"';
 
 			$this->db->query($sentencia);
 

@@ -24,7 +24,7 @@
 		public function getTodosLosUsuariosActivos(){
 
 			$estado = "'" . 'A' . "'";
-			$sentencia = 'SELECT * FROM public."USUARIOS" where "cod_estado" = ' . $estado;
+			$sentencia = 'SELECT * FROM public."USUARIOS" where "cod_estado" = ' . $estado . ' order by "id_login_usuario"';
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
@@ -32,7 +32,7 @@
 
 		public function getTodosLosUsuarios(){
 
-			$sentencia = 'SELECT * FROM public."USUARIOS" ';
+			$sentencia = 'SELECT * FROM public."USUARIOS" order by "id_login_usuario"';
 
 			$this->db->query($sentencia);
 			return $this->db->fetchAll();
