@@ -113,9 +113,9 @@
 	foreach($aux as $us){
 		// obtengo la marca que indica si el usuario es administrador
 	
-		if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
+		//if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
 			$listaUsuarios[] = $us;
-		}
+		//}
 	}
 
 	/*
