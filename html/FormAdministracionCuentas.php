@@ -320,12 +320,12 @@
 					$.ajax({
 						type:"post",
 						url:"administracion-tipo-cuentas",
-						data:{},
+						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
-							//objJson=JSON.parse(respuestaDelServer);
+							objJson=JSON.parse(respuestaDelServer);
 
-							//alert("respuesta: " . objJson);
+							alert("respuesta: " . objJson);
 
 							//$("#resultado").html("<h2>Resultado: </h2>");
 							//$("#resultado").append(respuestaDelServer);
