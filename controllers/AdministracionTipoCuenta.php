@@ -26,8 +26,9 @@
 	$tc = new TipoCuentas();
 	$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
 
-	$tiposDisponibles = array();
+	$tiposDisponibles = [];
 	/*foreach($listaTipoCuentas as $tipo){
+		$objCliente = new stdclass();
 		$flag = false;
 		foreach($cuentasUsuario as $cuenta){
 			if(($cuenta['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($cuenta['cod_estado'] == 'A')){
@@ -36,12 +37,22 @@
 		}
 
 		if($flag == false){
-			$tiposDisponibles[] = $tipo;
+			$tipo[]
 		}
 	}*/
-	$tiposDisponibles[0]['nombre'] = 'dario';
 
-	echo $listaTipoCuentas ;
+	$objCliente = new stdclass();
+	$objCliente->nombre='dario';
+	array_push($tiposDisponibles,$objCliente);
+
+
+
+
+	$jsonDatosUsuario = json_encode($tiposDisponibles);
+
+	echo $jsonDatosUsuario;
+
+	//echo $listaTipoCuentas ;
 	//$salidaJson = json_encode($tiposDisponibles);
 
 	//echo $salidaJson;
