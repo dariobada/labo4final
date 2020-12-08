@@ -39,10 +39,11 @@
 			$tiposDisponibles[] = $tipo;
 		}
 	}
-
+	var_dump("banana");
+	echo $tiposDisponibles;
 	$salidaJson = json_encode($tiposDisponibles);
 
-	echo $salidaJson;
+	//echo $salidaJson;
 
 
 ?>
