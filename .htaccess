@@ -11,3 +11,4 @@ RewriteRule ^administracion-tarjetas$ controllers/PantallaAdministracionTarjetas
 RewriteRule ^administracion-usuarios$ controllers/PantallaAdministracionUsuarios.php
 RewriteRule ^administracion-productos$ controllers/PantallaProductos.php
 RewriteRule ^cerrar-sesion$ controllers/CerrarSesion.php
+RewriteRule ^administracion-tipo-cuentas$ controllers/AdministracionTipoCuenta.php
