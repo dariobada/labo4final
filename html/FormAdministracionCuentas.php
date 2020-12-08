@@ -155,7 +155,7 @@
 
 </head>
 <body>
-		<div class="contenedorPrincipal" >
+		<div class="contenedorPrincipal" id="contenedorPrincipal">
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
@@ -323,13 +323,13 @@
 						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
-							objJson=JSON.parse(respuestaDelServer);
+							//objJson=JSON.parse(respuestaDelServer);
 							
-							alert(objJson);
+							//alert(objJson);
 
-							//$("#resultado").html("<h2>Resultado: </h2>");
-							//$("#resultado").append(respuestaDelServer);
-							//$("#estado").append("<a>" + estado + "</a>" );
+							$("#contenedorPrincipal").empty();
+							$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
+							$("#contenedorPrincipal").append(respuestaDelServer);
 						},
 						error:function(var1, var2, var3){
 							alert("entra a error");
