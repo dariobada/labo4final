@@ -331,8 +331,14 @@
 							//$("#resultado").append(respuestaDelServer);
 							//$("#estado").append("<a>" + estado + "</a>" );
 						},
-						error:function(){
+						error:function(var1, var2, var3){
 							alert("entra a error");
+							alert("var1: ");
+							alert(var1);
+							alert("var2: ");
+							alert(var2);
+							alert("var3: ");
+							alert(var3);
 						}
 					});
 
