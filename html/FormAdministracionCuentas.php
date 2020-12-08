@@ -320,7 +320,7 @@
 					$.ajax({
 						type:"post",
 						url:"./AdministracionTipoCuenta.php",
-						data:{usuario: $("#usuario").val()},
+						data:{},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
 							//objJson=JSON.parse(respuestaDelServer);
@@ -330,6 +330,9 @@
 							//$("#resultado").html("<h2>Resultado: </h2>");
 							//$("#resultado").append(respuestaDelServer);
 							//$("#estado").append("<a>" + estado + "</a>" );
+						},
+						error:function(){
+							alert("entra a error");
 						}
 					});
 
