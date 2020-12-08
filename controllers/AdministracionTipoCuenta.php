@@ -26,7 +26,7 @@
 	$tc = new TipoCuentas();
 	$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
 
-	$tiposDisponibles = new array();
+	$tiposDisponibles = array();
 	foreach($listaTipoCuentas as $tipo){
 		$flag = false;
 		foreach($cuentasUsuario as $cuenta){
