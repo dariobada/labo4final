@@ -28,11 +28,14 @@
 
 	$tiposDisponibles = [];
 	foreach($listaTipoCuentas as $tipo){
+		echo 'entra1';
 	//	$objCliente = new stdclass();
 		$flag = false;
 		foreach($cuentasUsuario as $cuenta){
+			echo 'entra2';
 			if(($cuenta['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($cuenta['cod_estado'] == 'A')){
 				$flag = true;
+				echo 'entra3';
 			}
 		}
 
