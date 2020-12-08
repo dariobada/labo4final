@@ -1,8 +1,8 @@
 <?php
 
 // controllers/AdministracionTipoCuenta.php
-	//echo '<h1>entra al controlador</h1>';
-	/*
+	
+	
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
 	require '../models/Roles.php';
@@ -42,7 +42,7 @@
 
 	$salidaJson = json_encode($tiposDisponibles);
 
-	echo $salidaJson;*/
+	echo $salidaJson;
 
 
 ?>
