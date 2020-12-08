@@ -319,7 +319,7 @@
 					
 					$.ajax({
 						type:"post",
-						url:"./AdministracionTipoCuenta.php",
+						url:"administracion-tipo-cuentas",
 						data:{},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
