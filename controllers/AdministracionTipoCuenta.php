@@ -41,8 +41,8 @@
 	}*/
 	$tiposDisponibles[0]['nombre'] = 'dario';
 
-	echo $tiposDisponibles;
-	$salidaJson = json_encode($tiposDisponibles);
+	echo $listaTipoCuentas ;
+	//$salidaJson = json_encode($tiposDisponibles);
 
 	//echo $salidaJson;
 
