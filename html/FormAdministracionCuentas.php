@@ -202,8 +202,8 @@
 						
 						<br><br>
 
-						<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">
+						<!--<label>Ingresar saldo: </label>
+						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">-->
 						<br><br><br><br><br><br>
 
 						<button class="enviar" type="submit" id="btnAlta">Alta</button>
@@ -244,7 +244,7 @@
 							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
 								<?php 
 									foreach ($this->cuentas as $cu){
-										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
+										echo '<option onclick="llamar();" value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
 									}
 
 								 ?>
@@ -270,7 +270,9 @@
 
 
 			
-
+			function llamar(){
+				alert("entra a funcion");
+			}
 			
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
