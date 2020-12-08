@@ -316,7 +316,7 @@
 
 				$("#usuario").change(function () {
 					
-					alert("hola");
+					alert($("#usuario").val());
 
 				});
 
