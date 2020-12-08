@@ -241,10 +241,10 @@
 					<form action="" method="post" id="formEliminar">
 						<h2>Baja cuentas</h2>
 						<label>Seleccionar cuenta: </label>
-							<select class="cuenta" name="cuenta" required="required" id="cuenta"> 
+							<select class="cuenta" name="cuenta" required="required" id="cuentaBaja"> 
 								<?php 
 									foreach ($this->cuentas as $cu){
-										echo '<option onclick="llamar();" value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
+										echo '<option value="' . $cu['id_cuenta'] . '">' . $cu['tipo_cuenta'] . ' ' . $cu['nro_cuenta'] . ' (' . $cu['saldo_moneda'] . ')</option>';
 									}
 
 								 ?>
@@ -270,7 +270,8 @@
 
 
 			
-			function llamar(){
+			document.getElementById("cuentaBaja").onclick=function(){
+
 				alert("entra a funcion");
 			}
 			
