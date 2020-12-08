@@ -202,8 +202,8 @@
 						
 						<br><br>
 
-						<!--<label>Ingresar saldo: </label>
-						<input class="saldo" type="number" name="saldo" id="saldo" required="required" step="any">-->
+						<!--<label>Ingresar saldo: </label>-->
+						<input  type="hidden" name="saldo" id="saldo" >
 						<br><br><br><br><br><br>
 
 						<button class="enviar" type="submit" id="btnAlta">Alta</button>
@@ -270,10 +270,7 @@
 
 
 			
-			function llamar() {
-			  alert(document.getElementById("cuentaBaja").value);
-			  
-			}
+			
 			
 			document.getElementById("divCerrarSesion").onmouseover = function(){			
 				document.getElementById("divCerrarSesion").style.cursor = "pointer";
@@ -317,7 +314,10 @@
 
 			$(document).ready(function(){
 
-
+				function llamar() {
+				  alert(document.getElementById("cuentaBaja").value);
+				  
+				};
 
 				
 				$("#divCuentas").click(function(){
