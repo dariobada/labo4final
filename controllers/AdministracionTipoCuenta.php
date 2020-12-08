@@ -19,8 +19,8 @@
 	}
 
 
-	$u = new Usuarios();
-	$cuentasUsuario = $u->getCuentasPorUsuario($_POST['usuario']);
+	$c = new Cuentas();
+	$cuentasUsuario = $c->getCuentasPorUsuario($_POST['usuario']);
 
 	//------ se obtienen los tipos de cuenta --------
 	$tc = new TipoCuentas();
