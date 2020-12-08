@@ -315,13 +315,14 @@
 			$(document).ready(function(){
 
 				$("#usuario").change(function () {
+					alert("entra a funcion");
 					
 					$.ajax({
 						type:"post",
 						url:"./AdministracionTipoCuenta.php",
 						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
-
+							alert("entra a success");
 							objJson=JSON.parse(respuestaDelServer);
 
 							alert("respuesta: " . objJson);
