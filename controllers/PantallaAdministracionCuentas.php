@@ -56,7 +56,7 @@
 
 		if(!isset($_POST['usuario'])) die("Error 4");
 		if(!isset($_POST['tipo_cuenta'])) die("Error 5");
-		if(!isset($_POST['saldo'])) die("Error 6");
+		//if(!isset($_POST['saldo'])) die("Error 6");
 
 		$c = new Cuentas();
 
@@ -82,7 +82,9 @@
 		if($flag){
 			$mensaje = "Error - el usuario ya posee una cuenta dada de alta con el tipo de cuenta seleccionado";
 		} else {
-			$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
+			$saldoCero = 0;
+			//$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $_POST['saldo']);
+			$c->realizarAltaCuenta($_POST['usuario'], $_POST['tipo_cuenta'], $saldoCero);
 		
 			//se debe verificar si es necesario generar un rol para el usuario
 
