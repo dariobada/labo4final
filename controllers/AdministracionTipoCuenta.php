@@ -1,7 +1,7 @@
 <?php
 
 // controllers/AdministracionTipoCuenta.php
-	echo '<h1>entra al controlador</h1>';
+	//echo '<h1>entra al controlador</h1>';
 	/*
 	require '../fw/fw.php';
 	require '../models/Usuarios.php';
