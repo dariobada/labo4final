@@ -325,7 +325,7 @@
 							alert("entra a success");
 							objJson=JSON.parse(respuestaDelServer);
 
-							alert("respuesta: " . objJson);
+							alert(objJson);
 
 							//$("#resultado").html("<h2>Resultado: </h2>");
 							//$("#resultado").append(respuestaDelServer);
