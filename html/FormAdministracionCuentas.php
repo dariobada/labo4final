@@ -316,7 +316,21 @@
 
 				$("#usuario").change(function () {
 					
-					alert($("#usuario").val());
+					$.ajax({
+						type:"post",
+						url:"./AdministracionTipoCuenta.php",
+						data:{usuario: $("#usuario").val()},
+						success:function(respuestaDelServer,estado){
+
+							objJson=JSON.parse(respuestaDelServer);
+
+							alert("respuesta: " . objJson);
+
+							//$("#resultado").html("<h2>Resultado: </h2>");
+							//$("#resultado").append(respuestaDelServer);
+							//$("#estado").append("<a>" + estado + "</a>" );
+						}
+					});
 
 				});
 
