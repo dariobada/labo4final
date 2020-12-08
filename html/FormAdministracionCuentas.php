@@ -324,7 +324,7 @@
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
 							//objJson=JSON.parse(respuestaDelServer);
-							alert(respuestaDelServer);
+							alert(respuestaDelServer[0]);
 							//alert(objJson);
 
 							//$("#resultado").html("<h2>Resultado: </h2>");
