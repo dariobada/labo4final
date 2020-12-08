@@ -323,8 +323,8 @@
 						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
-							//objJson=JSON.parse(respuestaDelServer);
-							alert(respuestaDelServer[0]);
+							objJson=JSON.parse(respuestaDelServer);
+							alert(objJson);
 							//alert(objJson);
 
 							//$("#resultado").html("<h2>Resultado: </h2>");
