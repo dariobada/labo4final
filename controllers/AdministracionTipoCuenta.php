@@ -28,20 +28,22 @@
 
 	$tiposDisponibles = [];
 	foreach($listaTipoCuentas as $tipo){
-		echo 'entra1';
+		
 		$objCliente = new stdclass();
 		$flag = false;
 		foreach($cuentasUsuario as $cuenta){
-			echo 'entra2';
+			
 			
 			$auxCuenta = $c->getDetalleDeCuenta($cuenta['id_cuenta']);
 			
-			echo 'cuenta: ' . $auxCuenta['id_tipo_cuenta'];
+			echo '-------------';
+			echo 'cuenta: ' . $auxCuenta[0]['id_tipo_cuenta'];
 			echo 'tipo: ' .  $tipo['id_tipo_cuenta'];
-			echo 'estado: ' . $auxCuenta['cod_estado'];
+			echo 'estado: ' . $auxCuenta[0]['cod_estado'];
+			echo '-------------';
 
-			if(($auxCuenta['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($auxCuenta['cod_estado'] == 'A')){
-				echo 'entra3';
+			if(($auxCuenta[0]['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($auxCuenta[0]['cod_estado'] == 'A')){
+				
 				$flag = true;
 
 
@@ -49,7 +51,7 @@
 		}
 
 		if(!$flag){
-			echo 'entra4';
+			
 			//$tiposDisponibles = $tipo;
 			$objCliente->idTipoCuenta=$tipo['id_tipo_cuenta'];
 			$objCliente->descTipoCuenta=$tipo['desc_tipo_cuenta'];
