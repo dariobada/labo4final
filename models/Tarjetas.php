@@ -11,8 +11,9 @@
 
 			$estado = "'" . "A" . "'";
 			$tipo = "'" . "P" . "'";
-			$sentencia = 'SELECT * from public."TARJETAS_USUARIOS" 
-						where "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado . ' and "tipo_tarjeta" = ' . $tipo;
+			$sentencia = 'SELECT * from public."TARJETAS" 
+						where "cod_estado" = ' . $estado . ' and "tipo_tarjeta" = ' . $tipo . ' and "id_tarjeta" in 
+						(SELECT "id_tarjeta" from public."TARJETAS_USUARIOS" where "id_usuario" = ' . $idUsua . ')';
 
 			$this->db->query($sentencia);
 
