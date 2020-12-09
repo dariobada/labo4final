@@ -39,7 +39,7 @@
 			}
 		}
 
-		if($flag == false){
+		if(!$flag){
 			//$tiposDisponibles = $tipo;
 			$objCliente->idTipoCuenta=$tipo['id_tipo_cuenta'];
 			$objCliente->descTipoCuenta=$tipo['desc_tipo_cuenta'];
