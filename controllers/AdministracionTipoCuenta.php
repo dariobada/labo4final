@@ -34,7 +34,7 @@
 		foreach($cuentasUsuario as $cuenta){
 			echo 'entra2';
 			
-			$auxCuenta = $c->getDetalleDeCuenta($cuenta['id_tipo_cuenta']);
+			$auxCuenta = $c->getDetalleDeCuenta($cuenta['id_cuenta']);
 			
 			echo 'cuenta: ' . $auxCuenta['id_tipo_cuenta'];
 			echo 'tipo: ' .  $tipo['id_tipo_cuenta'];
