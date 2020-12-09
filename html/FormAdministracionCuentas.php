@@ -333,8 +333,9 @@
 							objJson.forEach(function(argValor,argIndice){
 								alert("entra foreach");
 								
-								$("#contenedorPrincipal").append(argValor);
-								$("#contenedorPrincipal").append(argIndice);
+								$("#contenedorPrincipal").append(argValor.idTipoCuenta);
+								$("#contenedorPrincipal").append(argValor.descTipoCuenta);
+								
 								
 							});
 						},
