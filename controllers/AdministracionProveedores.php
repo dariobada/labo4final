@@ -36,7 +36,12 @@
 			
 			$auxTarjeta = $t->getDetalleTarjeta($tarjeta['id_tarjeta']);
 			
-
+			echo 'codigo tarjeta: ';
+			echo $auxTarjeta[0]['cod_proveedor']
+			echo 'codigo proveedor: ';
+			echo $proveedor['cod_proveedor'];
+			echo 'estado: ';
+			echo $auxTarjeta[0]['cod_estado'];
 			if(($auxTarjeta[0]['cod_proveedor'] == $proveedor['cod_proveedor']) && ($auxTarjeta[0]['cod_estado'] == 'A')){
 			
 				$flag = true;
