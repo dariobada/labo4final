@@ -298,10 +298,12 @@
 							
 							//alert(objJson);
 
-							$("#proveedor").empty();
+				//			$("#proveedor").empty();
+				$("#contenedorPrincipal").empty();
+				$("#contenedorPrincipal").append(objJson);
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
 							//$("#contenedorPrincipal").append(respuestaDelServer);
-							objJson.forEach(function(argValor,argIndice){
+				/*			objJson.forEach(function(argValor,argIndice){
 							;
 								
 								//$("#contenedorPrincipal").append(argValor.idTipoCuenta);
@@ -317,7 +319,7 @@
 								objOpcion.innerHTML = argValor.descProveedor;
 
 								document.getElementById("proveedor").appendChild(objOpcion);
-								
+				*/				
 								
 							});
 						},
