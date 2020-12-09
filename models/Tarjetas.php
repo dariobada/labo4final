@@ -4,7 +4,28 @@
 
 	class Tarjetas extends Model {
 
+		public function permiteAltaTarjeta($idUsua){
 
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 32");
+			if($idUsua < 1) throw new ValidacionException("Error cuentas 33");
+
+			$estado = "'" . "A" . "'";
+			$tipo = "'" . "P" . "'";
+			$sentencia = 'SELECT * from public."TARJETAS_USUARIOS" 
+						where "id_usuario" = ' . $idUsua . ' and "cod_estado" = ' . $estado . ' and "tipo_tarjeta" = ' . $tipo;
+
+			$this->db->query($sentencia);
+
+			if($this->db->numRows() == 4){
+				
+				return FALSE;
+			} else{
+				
+				return TRUE;
+			}
+
+
+		}
 
 		public function getTarjetasPorUsuario($idUsua){
 
