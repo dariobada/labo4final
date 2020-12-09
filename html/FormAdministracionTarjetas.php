@@ -156,7 +156,7 @@
 
 </head>
 <body>
-		<div class="contenedorPrincipal" >
+		<div class="contenedorPrincipal" id="contenedorPrincipal">
 			<div class="menuSuperior">
 				<div class="headerOpcionImpar"><img src="../logo.png"></div>
 				<div class="headerOpcionPar" id="divCuentas">Administración de cuentas</div>
