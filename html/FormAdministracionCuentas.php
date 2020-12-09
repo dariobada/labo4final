@@ -330,10 +330,11 @@
 							$("#contenedorPrincipal").empty();
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
 							//$("#contenedorPrincipal").append(respuestaDelServer);
-							objJson.forEach(function(argValor,argIndice){
+							objJson.forEach(function(argValor,argIndice,aux){
 								alert("entra foreach");
 								alert(argValor);
 								alert(argIndice);
+								alert(aux);
 							});
 						},
 						error:function(var1, var2, var3){
