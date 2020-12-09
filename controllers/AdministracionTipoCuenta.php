@@ -33,6 +33,9 @@
 		$flag = false;
 		foreach($cuentasUsuario as $cuenta){
 			echo 'entra2';
+			echo 'cuenta: ' . $cuenta['id_tipo_cuenta'];
+			echo 'tipo: ' .  $tipo['id_tipo_cuenta'];
+			echo 'estado: ' . $cuenta['cod_estado'];
 			if(($cuenta['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($cuenta['cod_estado'] == 'A')){
 				echo 'entra3';
 				$flag = true;
