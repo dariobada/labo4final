@@ -323,13 +323,18 @@
 						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
 							alert("entra a success");
-							//objJson=JSON.parse(respuestaDelServer);
+							objJson=JSON.parse(respuestaDelServer);
 							
 							//alert(objJson);
 
 							$("#contenedorPrincipal").empty();
-							$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
-							$("#contenedorPrincipal").append(respuestaDelServer);
+							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
+							//$("#contenedorPrincipal").append(respuestaDelServer);
+							objJson.forEach(function(argValor,argIndice){
+								alert("entra foreach");
+								alert(argValor);
+								alert(argIndice);
+							});
 						},
 						error:function(var1, var2, var3){
 							alert("entra a error");
