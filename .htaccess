@@ -12,3 +12,4 @@ RewriteRule ^administracion-usuarios$ controllers/PantallaAdministracionUsuarios
 RewriteRule ^administracion-productos$ controllers/PantallaProductos.php
 RewriteRule ^cerrar-sesion$ controllers/CerrarSesion.php
 RewriteRule ^administracion-tipo-cuentas$ controllers/AdministracionTipoCuenta.php
+RewriteRule ^administracion-proveedores$ controllers/AdministracionProveedores.php
