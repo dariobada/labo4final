@@ -36,12 +36,12 @@
 			
 			$auxTarjeta = $t->getDetalleTarjeta($tarjeta['id_tarjeta']);
 			
-			echo 'codigo tarjeta: ';
+			/*echo 'codigo tarjeta: ';
 			echo $auxTarjeta['cod_proveedor'];
 			echo 'codigo proveedor: ';
 			echo $proveedor['cod_proveedor'];
 			echo 'estado: ';
-			echo $auxTarjeta['cod_estado'];
+			echo $auxTarjeta['cod_estado'];*/
 			if(($auxTarjeta['cod_proveedor'] == $proveedor['cod_proveedor']) && ($auxTarjeta['cod_estado'] == 'A')){
 			
 				$flag = true;
@@ -65,7 +65,7 @@
 	*/
 	$jsonDatosUsuario = json_encode($proveedoresDisponibles);
 
-//	echo $jsonDatosUsuario;
+	echo $jsonDatosUsuario;
 
 	//echo $listaTipoCuentas ;
 	//$salidaJson = json_encode($tiposDisponibles);
