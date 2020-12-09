@@ -192,9 +192,9 @@
 						<label>Seleccionar Proveedor: </label>
 						<select class="proveedor" name="proveedor" id="proveedor" required="required"> 
 							<?php 
-								foreach ($this->proveedores as $p){
-									echo '<option value="' . $p['cod_proveedor'] . '">' . $p['nombre_proveedor'] . '</option>';
-								}
+								//foreach ($this->proveedores as $p){
+								//	echo '<option value="' . $p['cod_proveedor'] . '">' . $p['nombre_proveedor'] . '</option>';
+								//}
 
 							 ?>
 
@@ -281,6 +281,61 @@
 			}
 
 			$(document).ready(function(){
+
+
+				$('#usuario').prop('selectedIndex', -1);
+
+				$("#usuario").change(function () {
+					
+					
+					$.ajax({
+						type:"post",
+						url:"administracion-proveedores",
+						data:{usuario: $("#usuario").val()},
+						success:function(respuestaDelServer,estado){
+							
+							objJson=JSON.parse(respuestaDelServer);
+							
+							//alert(objJson);
+
+							$("#proveedor").empty();
+							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
+							//$("#contenedorPrincipal").append(respuestaDelServer);
+							objJson.forEach(function(argValor,argIndice){
+							;
+								
+								//$("#contenedorPrincipal").append(argValor.idTipoCuenta);
+								//$("#contenedorPrincipal").append(argValor.descTipoCuenta);
+
+
+								var objOpcion = document.createElement("option");
+					
+								//objOpcion.setAttribute("class","elementoOptionSelect");
+
+								objOpcion.setAttribute("value",argValor.idProveedor);
+
+								objOpcion.innerHTML = argValor.descProveedor;
+
+								document.getElementById("proveedor").appendChild(objOpcion);
+								
+								
+							});
+						},
+						error:function(var1, var2, var3){
+							alert("entra a error");
+							alert("var1: ");
+							alert(var1);
+							alert("var2: ");
+							alert(var2);
+							alert("var3: ");
+							alert(var3);
+						}
+					});
+
+				});
+
+
+
 				
 				$("#divCuentas").click(function(){
 					
