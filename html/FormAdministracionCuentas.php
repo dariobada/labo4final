@@ -189,7 +189,7 @@
 						<br><br>
 
 						<label>Seleccionar tipo de cuenta: </label>
-						<select class="tipo_cuenta" name="tipo_cuenta" required="required" id="tipo_cuenta"> 
+						<select class="tipo_cuenta" name="tipo_cuenta" required="required" id="tipoCuenta"> 
 							<?php 
 								foreach ($this->tipoCuentas as $tc){
 									echo '<option value="' . $tc['id_tipo_cuenta'] . '">' . $tc['desc_tipo_cuenta'] . '</option>';
@@ -327,14 +327,25 @@
 							
 							//alert(objJson);
 
-							$("#contenedorPrincipal").empty();
+							$("#tipoCuenta").empty();
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
-							$("#contenedorPrincipal").append(respuestaDelServer);
+							//$("#contenedorPrincipal").append(respuestaDelServer);
 							objJson.forEach(function(argValor,argIndice){
 								alert("entra foreach");
 								
-								$("#contenedorPrincipal").append(argValor.idTipoCuenta);
-								$("#contenedorPrincipal").append(argValor.descTipoCuenta);
+								//$("#contenedorPrincipal").append(argValor.idTipoCuenta);
+								//$("#contenedorPrincipal").append(argValor.descTipoCuenta);
+
+
+								var objOpcion = document.createElement("option");
+					
+								//objOpcion.setAttribute("class","elementoOptionSelect");
+
+								objOpcion.setAttribute("value",argValor.idTipoCuenta);
+
+								objOpcion.innerHTML = argValor.descTipoCuenta;
+
+								document.getElementById("tipoCuenta").appendChild(objOpcion);
 								
 								
 							});
