@@ -314,6 +314,8 @@
 
 			$(document).ready(function(){
 
+				$('#usuario').prop('selectedIndex', -1);
+
 				$("#usuario").change(function () {
 					
 					
