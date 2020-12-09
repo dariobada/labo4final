@@ -304,7 +304,7 @@
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
 							//$("#contenedorPrincipal").append(respuestaDelServer);
 				/*			objJson.forEach(function(argValor,argIndice){
-							;
+							
 								
 								//$("#contenedorPrincipal").append(argValor.idTipoCuenta);
 								//$("#contenedorPrincipal").append(argValor.descTipoCuenta);
@@ -319,10 +319,10 @@
 								objOpcion.innerHTML = argValor.descProveedor;
 
 								document.getElementById("proveedor").appendChild(objOpcion);
-				*/				
+								
 								
 							});
-						},
+				*/		},
 						error:function(var1, var2, var3){
 							alert("entra a error");
 							alert("var1: ");
