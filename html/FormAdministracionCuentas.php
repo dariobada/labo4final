@@ -329,12 +329,13 @@
 
 							$("#contenedorPrincipal").empty();
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
-							//$("#contenedorPrincipal").append(respuestaDelServer);
-							objJson.forEach(function(argValor,argIndice,aux){
+							$("#contenedorPrincipal").append(respuestaDelServer);
+							objJson.forEach(function(argValor,argIndice){
 								alert("entra foreach");
-								alert(argValor);
-								alert(argIndice);
-								alert(aux);
+								
+								$("#contenedorPrincipal").append(argValor);
+								$("#contenedorPrincipal").append(argIndice);
+								
 							});
 						},
 						error:function(var1, var2, var3){
