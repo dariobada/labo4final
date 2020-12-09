@@ -315,14 +315,14 @@
 			$(document).ready(function(){
 
 				$("#usuario").change(function () {
-					alert("entra a funcion");
+					
 					
 					$.ajax({
 						type:"post",
 						url:"administracion-tipo-cuentas",
 						data:{usuario: $("#usuario").val()},
 						success:function(respuestaDelServer,estado){
-							alert("entra a success");
+							
 							objJson=JSON.parse(respuestaDelServer);
 							
 							//alert(objJson);
@@ -331,7 +331,7 @@
 							//$("#contenedorPrincipal").append("<h3>Resultado de la transformación a json en el servidor: </h3>");
 							//$("#contenedorPrincipal").append(respuestaDelServer);
 							objJson.forEach(function(argValor,argIndice){
-								alert("entra foreach");
+							;
 								
 								//$("#contenedorPrincipal").append(argValor.idTipoCuenta);
 								//$("#contenedorPrincipal").append(argValor.descTipoCuenta);
