@@ -100,6 +100,7 @@
 	}
 
 	//------ se obtienen los usuarios --------
+	$c = new Cuentas();
 	$u = new Usuarios();
 	$r = new Roles();
 	$listaUsuarios = array();
@@ -109,7 +110,10 @@
 		// obtengo la marca que indica si el usuario es administrador
 	
 		if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
-			$listaUsuarios[] = $us;
+			if($c->permiteAltaCuenta($us['id_usuario'])){
+
+				$listaUsuarios[] = $us;
+			}
 		}
 	}
 
@@ -119,7 +123,7 @@
 	$listaTipoCuentas = $tc->getTodosLosTiposCuenta();
 
 	//------ se obtienen las cuentas --------
-	$c = new Cuentas();
+	
 	$listaCuentas = $c->getTodasLasCuentas();
 
 
