@@ -79,6 +79,7 @@
 	}
 
 	//------ se obtienen los usuarios --------
+	$t = new Tarjetas();
 	$u = new Usuarios();
 	$r = new Roles();
 	$listaUsuarios = array();
@@ -88,7 +89,9 @@
 		// obtengo la marca que indica si el usuario es administrador
 	
 		if(!$r->devolverMarcaAdministrador($us['id_usuario'])){
-			$listaUsuarios[] = $us;
+			if($t->permiteAltaTarjeta($us['id_usuario'])){
+				$listaUsuarios[] = $us;
+			}
 		}
 	}
 
@@ -98,7 +101,7 @@
 	$listaProveedores = $p->getTodosLosProveedores();
 
 	//------ se obtienen las tarjetas --------
-	$t = new Tarjetas();
+	
 	
 	$listaTarjetas = $t->getTodasLasTarjetasActivas();
 
