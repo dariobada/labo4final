@@ -42,7 +42,7 @@
 			echo 'estado: ' . $auxCuenta[0]['cod_estado'];
 			echo '-------------';
 
-			if(($auxCuenta[0]['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($auxCuenta[0]['cod_estado'] == 'A')){
+			if(($auxCuenta[0]['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) && ($auxCuenta[0]['cod_estado'] == 'A')){
 				echo '**FLAG**';
 				$flag = true;
 				echo '**FLAG-END**';
