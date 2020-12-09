@@ -43,12 +43,15 @@
 			echo '-------------';
 
 			if(($auxCuenta[0]['id_tipo_cuenta'] == $tipo['id_tipo_cuenta']) || ($auxCuenta[0]['cod_estado'] == 'A')){
-				
+				echo '**FLAG**';
 				$flag = true;
+				echo '**FLAG-END**';
 
 
 			}
 		}
+
+		echo 'fin tipo cuenta';
 
 		if(!$flag){
 			
