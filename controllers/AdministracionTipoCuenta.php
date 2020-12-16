@@ -18,7 +18,8 @@
 		exit;
 	}
 
-
+	if(!isset($_POST['usuario'])) die("Error 1");
+	
 	$c = new Cuentas();
 	$cuentasUsuario = $c->getCuentasPorUsuario($_POST['usuario']);
 

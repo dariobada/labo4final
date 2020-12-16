@@ -18,6 +18,7 @@
 		exit;
 	}
 
+	if(!isset($_POST['usuario'])) die("Error 1");
 
 	$t = new Tarjetas();
 	$tarjetasUsuario = $t->getTarjetasPorUsuario($_POST['usuario']);
