@@ -8,8 +8,9 @@
 		// este metodo devuelve un TRUE si el usuario tiene rol de administrador
 		public function devolverMarcaAdministrador($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 1");
-			if($idUsua < 1) throw new ValidacionException("Error roles 2");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 1");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 2");
+			if($idUsua < 1) throw new ValidacionException("Error roles 3");
 
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
 						   WHERE "id_rol" = 3 and "id_usuario" = ';
@@ -29,8 +30,9 @@
 
 		public function validarRolCuentas($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 3");
-			if($idUsua < 1) throw new ValidacionException("Error roles 4");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 4");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 5");
+			if($idUsua < 1) throw new ValidacionException("Error roles 6");
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
@@ -49,8 +51,9 @@
 
 		public function validarRolTarjetas($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 5");
-			if($idUsua < 1) throw new ValidacionException("Error roles 6");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 7");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 8");
+			if($idUsua < 1) throw new ValidacionException("Error roles 9");
 
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'SELECT * FROM public."ROLES_USUARIOS" 
@@ -69,8 +72,9 @@
 
 		public function eliminarRolCuentas($idCuen){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error roles 7");
-			if($idCuen < 1) throw new ValidacionException("Error roles 8");
+			if(!isset($idCuen)) throw new ValidacionException("Error roles 10");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error roles 11");
+			if($idCuen < 1) throw new ValidacionException("Error roles 12");
 
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
@@ -86,8 +90,9 @@
 
 		public function eliminarRolTarjetas($idTarj){
 
-			if(!ctype_digit($idTarj)) throw new ValidacionException("Error roles 9");
-			if($idTarj < 1) throw new ValidacionException("Error roles 10");
+			if(!isset($idTarj)) throw new ValidacionException("Error roles 13");
+			if(!ctype_digit($idTarj)) throw new ValidacionException("Error roles 14");
+			if($idTarj < 1) throw new ValidacionException("Error roles 15");
 
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
@@ -101,8 +106,9 @@
 
 		public function eliminarRolAdministrador($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 11");
-			if($idUsua < 1) throw new ValidacionException("Error roles 12");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 16");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 17");
+			if($idUsua < 1) throw new ValidacionException("Error roles 18");
 
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."ROLES_USUARIOS" 
@@ -114,8 +120,9 @@
 
 		public function crearRolCuentas($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 13");
-			if($idUsua < 1) throw new ValidacionException("Error roles 14");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 19");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 20");
+			if($idUsua < 1) throw new ValidacionException("Error roles 21");
 
 			//primero se verifica si el usuario no posee un estado dado de baja
 			$estado = "'" . 'B' . "'";
@@ -146,8 +153,9 @@
 
 		public function crearRolTarjetas($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 15");
-			if($idUsua < 1) throw new ValidacionException("Error roles 16");
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 22");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 23");
+			if($idUsua < 1) throw new ValidacionException("Error roles 24");
 
 			//primero se verifica si el usuario no posee un estado dado de baja
 			$estado = "'" . 'B' . "'";
@@ -178,8 +186,9 @@
 
 		public function crearRolAdministrador($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 17");
-			if($idUsua < 1) throw new ValidacionException("Error roles 18");			
+			if(!isset($idUsua)) throw new ValidacionException("Error roles 25");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error roles 26");
+			if($idUsua < 1) throw new ValidacionException("Error roles 27");			
 				
 			$estado = "'" . 'A' . "'";
 			$sentencia = 'INSERT into public."ROLES_USUARIOS" values(3, ' . $idUsua . ', ' . $estado . ')';

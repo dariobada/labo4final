@@ -8,8 +8,9 @@
 
 		public function getTipoCuenta($idTipoCuenta){
 
-			if(strlen($idTipoCuenta)<1) throw new ValidacionException("Error tipoCuentas 1");
-			if(strlen($idTipoCuenta)>3) throw new ValidacionException("Error tipoCuentas 2");
+			if(!isset($idTipoCuenta)) throw new ValidacionException("Error tipoCuentas 1");
+			if(strlen($idTipoCuenta)<1) throw new ValidacionException("Error tipoCuentas 2");
+			if(strlen($idTipoCuenta)>3) throw new ValidacionException("Error tipoCuentas 3");
 			$idTipoCuenta = $this->db->escape($idTipoCuenta);
 
 			$cons = "'" . $idTipoCuenta . "'";

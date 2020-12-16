@@ -6,8 +6,9 @@
 
 		public function permiteAltaCuenta($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 24");
-			if($idUsua < 1) throw new ValidacionException("Error cuentas 25");
+			if(!isset($idUsua)) throw new ValidacionException("Error cuentas 1");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 2");
+			if($idUsua < 1) throw new ValidacionException("Error cuentas 3");
 
 			$estado = "'" . "A" . "'";
 			$sentencia = 'SELECT * from public."CUENTAS_USUARIOS" 
@@ -28,8 +29,9 @@
 
 		public function getCuentasPorUsuario($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 1");
-			if($idUsua < 1) throw new ValidacionException("Error cuentas 2");
+			if(!isset($idUsua)) throw new ValidacionException("Error cuentas 4");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 5");
+			if($idUsua < 1) throw new ValidacionException("Error cuentas 6");
 			
 			$sentencia = 'SELECT * FROM public."CUENTAS_USUARIOS" WHERE "id_usuario" = ' . $idUsua;
 
@@ -40,8 +42,9 @@
 
 		public function getDetalleDeCuenta($idCuen){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 3");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 4");
+			if(!isset($idCuen)) throw new ValidacionException("Error cuentas 7");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 8");
+			if($idCuen < 1) throw new ValidacionException("Error cuentas 9");
 
 			$sentencia = 'SELECT *, (saldo::float8::numeric::money) as saldo_moneda FROM public."CUENTAS" WHERE "id_cuenta" = ';
 
@@ -52,9 +55,10 @@
 
 		public function getDetalleDeCuentaPorCuenta($nroCuen){
 
-			if(!ctype_digit($nroCuen)) throw new ValidacionException("Error cuentas 5");
-			if(strlen($nroCuen)<1) throw new ValidacionException("Error cuentas 6");
-			if(strlen($nroCuen)>22) throw new ValidacionException("Error cuentas 7");
+			if(!isset($nroCuen)) throw new ValidacionException("Error cuentas 10");
+			if(!ctype_digit($nroCuen)) throw new ValidacionException("Error cuentas 11");
+			if(strlen($nroCuen)<1) throw new ValidacionException("Error cuentas 12");
+			if(strlen($nroCuen)>22) throw new ValidacionException("Error cuentas 13");
 
 			$cuenta = "'" . $nroCuen . "'";
 			$sentencia = 'SELECT * FROM public."CUENTAS" WHERE "nro_cuenta" = ' . $cuenta;
@@ -66,11 +70,13 @@
 
 		public function actualizarSaldo($idCuen, $saldo){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 8");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 9");
+			if(!isset($idCuen)) throw new ValidacionException("Error cuentas 14");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 15");
+			if($idCuen < 1) throw new ValidacionException("Error cuentas 16");
 
-			if(!is_numeric($saldo)) throw new ValidacionException("Error cuentas 10");
-			if($saldo < 0) throw new ValidacionException("Error cuentas 11");
+			if(!isset($saldo)) throw new ValidacionException("Error cuentas 17");
+			if(!is_numeric($saldo)) throw new ValidacionException("Error cuentas 18");
+			if($saldo < 0) throw new ValidacionException("Error cuentas 19");
 
 			$sentencia = 'UPDATE public."CUENTAS" SET "saldo" = ' . $saldo . ' WHERE "id_cuenta" = ' . $idCuen; 
 
@@ -98,8 +104,9 @@
 
 		public function realizarBajaCuenta($idCuen){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 12");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 13");
+			if(!isset($idCuen)) throw new ValidacionException("Error cuentas 20");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 21");
+			if($idCuen < 1) throw new ValidacionException("Error cuentas 22");
 
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."CUENTAS" set "cod_estado" = ' . $estado . ' WHERE "id_cuenta" = ' . $idCuen; 
@@ -110,8 +117,9 @@
 
 		public function realizarBajaRelacionClienteCuenta($idCuen){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 14");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 15");
+			if(!isset($idCuen)) throw new ValidacionException("Error cuentas 23");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 24");
+			if($idCuen < 1) throw new ValidacionException("Error cuentas 25");
 
 			$estado = "'" . "B" . "'";
 			$sentencia = 'UPDATE public."CUENTAS_USUARIOS" set "cod_estado" = ' . $estado . ' WHERE "id_cuenta" = ' . $idCuen; 
@@ -123,8 +131,9 @@
 
 		public function validarCuentasActivasPorCuenta($idCuen){
 
-			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 16");
-			if($idCuen < 1) throw new ValidacionException("Error cuentas 17");
+			if(!isset($idCuen)) throw new ValidacionException("Error cuentas 26");
+			if(!ctype_digit($idCuen)) throw new ValidacionException("Error cuentas 27");
+			if($idCuen < 1) throw new ValidacionException("Error cuentas 28");
 
 			$estado = "'" . "A" . "'";
 			$sentencia = 'SELECT * from public."CUENTAS_USUARIOS" 
@@ -147,14 +156,17 @@
 
 		public function realizarAltaCuenta($idUsua, $tipoCuenta, $saldo){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 18");
-			if($idUsua < 1) throw new ValidacionException("Error cuentas 19");
+			if(!isset($idUsua)) throw new ValidacionException("Error cuentas 29");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error cuentas 30");
+			if($idUsua < 1) throw new ValidacionException("Error cuentas 31");
 
-			if(!is_numeric($saldo)) throw new ValidacionException("Error cuentas 20");
-			if($saldo < 0) throw new ValidacionException("Error cuentas 21");
+			if(!isset($saldo)) throw new ValidacionException("Error cuentas 32");
+			if(!is_numeric($saldo)) throw new ValidacionException("Error cuentas 33");
+			if($saldo < 0) throw new ValidacionException("Error cuentas 34");
 
-			if(strlen($tipoCuenta)<1) throw new ValidacionException("Error cuentas 22");
-			if(strlen($tipoCuenta)>3) throw new ValidacionException("Error cuentas 23");
+			if(!isset($tipoCuenta)) throw new ValidacionException("Error cuentas 35");
+			if(strlen($tipoCuenta)<1) throw new ValidacionException("Error cuentas 36");
+			if(strlen($tipoCuenta)>3) throw new ValidacionException("Error cuentas 37");
 			$tipoCuenta = $this->db->escape($tipoCuenta);
 
 			//primero obtengo el mayor numero de cuenta
