@@ -8,8 +8,9 @@
 
 		public function getUsuario($usua){
 
-			if(strlen($usua)<1) throw new ValidacionException("Error usuarios 1");
-			if(strlen($usua)>20) throw new ValidacionException("Error usuarios 2");
+			if(!isset($usua)) throw new ValidacionException("Error usuarios 1");
+			if(strlen($usua)<1) throw new ValidacionException("Error usuarios 2");
+			if(strlen($usua)>20) throw new ValidacionException("Error usuarios 3");
 			$usua = $this->db->escape($usua);
 
 			$cons = "'" . $usua . "'";
@@ -40,8 +41,9 @@
 
 		public function bajaDeUsuario($idUsua){
 
-			if(!ctype_digit($idUsua)) throw new ValidacionException("Error usuarios 3");
-			if($idUsua < 1) throw new ValidacionException("Error usuarios 4");
+			if(!isset($idUsua)) throw new ValidacionException("Error usuarios 4");
+			if(!ctype_digit($idUsua)) throw new ValidacionException("Error usuarios 5");
+			if($idUsua < 1) throw new ValidacionException("Error usuarios 6");
 
 			$estado = "'" . 'B' . "'";
 			$sentencia = 'UPDATE public."USUARIOS" set "cod_estado" = ' . $estado . ' WHERE "id_usuario" = ' . $idUsua;
@@ -53,11 +55,13 @@
 
 		public function validarExistenciaUsuario($idLoginUsua, $idUsua){
 
-			if(!is_numeric($idUsua)) throw new ValidacionException("Error usuarios 5");
-			if($idUsua < 0) throw new ValidacionException("Error usuarios 6");
+			if(!isset($idUsua)) throw new ValidacionException("Error usuarios 7");
+			if(!is_numeric($idUsua)) throw new ValidacionException("Error usuarios 8");
+			if($idUsua < 0) throw new ValidacionException("Error usuarios 9");
 
-			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 7");
-			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 8");
+			if(!isset($idLoginUsua)) throw new ValidacionException("Error usuarios 10");
+			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 11");
+			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 12");
 			$idLoginUsua = $this->db->escape($idLoginUsua);
 
 			$usua = "'" . $idLoginUsua . "'";
@@ -79,19 +83,23 @@
 
 		public function modificarUsuario($idUsua, $nombre, $apellido, $idLoginUsua){
 
-			if(!is_numeric($idUsua)) throw new ValidacionException("Error usuarios 9");
-			if($idUsua < 1) throw new ValidacionException("Error usuarios 10");
+			if(!isset($idUsua)) throw new ValidacionException("Error usuarios 13");
+			if(!is_numeric($idUsua)) throw new ValidacionException("Error usuarios 14");
+			if($idUsua < 1) throw new ValidacionException("Error usuarios 15");
 
-			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 11");
-			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 12");
+			if(!isset($idLoginUsua)) throw new ValidacionException("Error usuarios 16");
+			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 17");
+			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 18");
 			$idLoginUsua = $this->db->escape($idLoginUsua);
 
-			if(strlen($nombre)<1) throw new ValidacionException("Error usuarios 13");
-			if(strlen($nombre)>50) throw new ValidacionException("Error usuarios 14");
+			if(!isset($nombre)) throw new ValidacionException("Error usuarios 19");
+			if(strlen($nombre)<1) throw new ValidacionException("Error usuarios 20");
+			if(strlen($nombre)>50) throw new ValidacionException("Error usuarios 21");
 			$nombre = $this->db->escape($nombre);
 
-			if(strlen($apellido)<1) throw new ValidacionException("Error usuarios 15");
-			if(strlen($apellido)>50) throw new ValidacionException("Error usuarios 16");
+			if(!isset($apellido)) throw new ValidacionException("Error usuarios 22");
+			if(strlen($apellido)<1) throw new ValidacionException("Error usuarios 23");
+			if(strlen($apellido)>50) throw new ValidacionException("Error usuarios 24");
 			$apellido = $this->db->escape($apellido);
 
 			$usua = "'" . $idLoginUsua . "'";
@@ -106,20 +114,24 @@
 
 		public function crearUsuario($nombre, $apellido, $idLoginUsua, $pass){
 
-			if(strlen($nombre)<1) throw new ValidacionException("Error usuarios 17");
-			if(strlen($nombre)>50) throw new ValidacionException("Error usuarios 18");
+			if(!isset($nombre)) throw new ValidacionException("Error usuarios 25");
+			if(strlen($nombre)<1) throw new ValidacionException("Error usuarios 26");
+			if(strlen($nombre)>50) throw new ValidacionException("Error usuarios 27");
 			$nombre = $this->db->escape($nombre);
 
-			if(strlen($apellido)<1) throw new ValidacionException("Error usuarios 19");
-			if(strlen($apellido)>50) throw new ValidacionException("Error usuarios 20");
+			if(!isset($apellido)) throw new ValidacionException("Error usuarios 28");
+			if(strlen($apellido)<1) throw new ValidacionException("Error usuarios 29");
+			if(strlen($apellido)>50) throw new ValidacionException("Error usuarios 30");
 			$apellido = $this->db->escape($apellido);
 
-			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 21");
-			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 22");
+			if(!isset($idLoginUsua)) throw new ValidacionException("Error usuarios 31");
+			if(strlen($idLoginUsua)<1) throw new ValidacionException("Error usuarios 32");
+			if(strlen($idLoginUsua)>20) throw new ValidacionException("Error usuarios 33");
 			$idLoginUsua = $this->db->escape($idLoginUsua);
 
-			if(strlen($pass)<1) throw new ValidacionException("Error usuarios 23");
-			if(strlen($pass)>40) throw new ValidacionException("Error usuarios 24");
+			if(!isset($pass)) throw new ValidacionException("Error usuarios 34");
+			if(strlen($pass)<1) throw new ValidacionException("Error usuarios 35");
+			if(strlen($pass)>40) throw new ValidacionException("Error usuarios 36");
 			$pass = $this->db->escape($pass);
 
 			$usua = "'" . $idLoginUsua . "'";

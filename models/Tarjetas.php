@@ -235,6 +235,7 @@
 
 			if(strlen($proveedor)<1) throw new ValidacionException("Error tarjetas 30");
 			if(strlen($proveedor)>3) throw new ValidacionException("Error tarjetas 31");
+			$proveedor = $this->db->escape($proveedor);
 
 			//primero obtengo el mayor numero de tarjeta
 			$sentencia = 'SELECT max("nro_tarjeta") from public."TARJETAS"';

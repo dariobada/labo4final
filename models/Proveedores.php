@@ -9,6 +9,7 @@
 
 			if(strlen($idProv)<1) throw new ValidacionException("Error proveedores 1");
 			if(strlen($idProv)>3) throw new ValidacionException("Error proveedores 2");
+			$idProv = $this->db->escape($idProv);
 
 			$sentencia = 'SELECT * FROM public."PROVEEDORES_TARJETA" WHERE "cod_proveedor" = ';
 			$cons = "'" . $idProv . "'";
